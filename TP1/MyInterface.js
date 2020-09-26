@@ -22,6 +22,14 @@ class MyInterface extends CGFinterface {
 
         // add a group of controls (and open/expand by defult)
 
+        var primitives = this.gui.addFolder("Primitives (just for testing)");
+        primitives.open();
+        primitives.add(this.scene, 'displayRectangle').name("Display Rectangle");
+        primitives.add(this.scene, 'displayTriangle').name("Display Triangle");
+        primitives.add(this.scene, 'displayCylinder').name("Display Cylinder");
+        primitives.add(this.scene, 'displaySphere').name("Display Sphere");
+        primitives.add(this.scene, 'displayTorus').name("Display Torus");
+
         this.initKeys();
 
         return true;

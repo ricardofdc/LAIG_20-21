@@ -4,7 +4,7 @@
 class XMLscene extends CGFscene {
     /**
      * @constructor
-     * @param {MyInterface} myinterface 
+     * @param {MyInterface} myinterface
      */
     constructor(myinterface) {
         super();
@@ -37,6 +37,14 @@ class XMLscene extends CGFscene {
         this.loadingProgress=0;
 
         this.defaultAppearance=new CGFappearance(this);
+
+        //Primitives (just for testing)
+        this.displayRectangle=false;
+        this.displayTriangle=false;
+        this.displayCylinder=false;
+        this.displaySphere=false;
+        this.displayTorus=false;
+        this.rectangle=new MyRectangle(this,-1,-0.5,1,0.5);
 
     }
 
@@ -79,7 +87,7 @@ class XMLscene extends CGFscene {
         }
     }
 
-    /** Handler called when the graph is finally loaded. 
+    /** Handler called when the graph is finally loaded.
      * As loading is asynchronous, this may be called already after the application has started the run loop
      */
     onGraphLoaded() {
@@ -121,11 +129,20 @@ class XMLscene extends CGFscene {
         if (this.sceneInited) {
             // Draw axis
             this.axis.display();
- 
+
             this.defaultAppearance.apply();
 
             // Displays the scene (MySceneGraph function).
             this.graph.displayScene();
+
+            // Draw primitives (just for testing)
+            if(this.displayRectangle){
+              this.pushMatrix();
+              this.rectangle.display();
+              this.popMatrix();
+            }
+
+
         }
         else
         {
@@ -133,7 +150,7 @@ class XMLscene extends CGFscene {
             this.defaultAppearance.apply();
 
             this.rotate(-this.loadingProgress/10.0,0,0,1);
-            
+
             this.loadingProgressObject.display();
             this.loadingProgress++;
         }
