@@ -1,11 +1,11 @@
 # LAIG 2020/2021 - TP1
 
-## Group: T0xG0y
+## Group: T05G03
 
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| John Doe         | 201801010 | ...                |
-| Jane Doe         | 201801011 | ...                |
+| Name             | Number    | E-Mail                |
+| ---------------- | --------- | --------------------- |
+| Ana Teresa       | 201606703 | 201606703@fe.up.pt    |
+| Ricardo Cardoso  | 201604686 | up201604686@fe.up.pt  |
 
 ----
 ## Project information
