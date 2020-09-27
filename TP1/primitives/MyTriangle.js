@@ -2,6 +2,15 @@
  * MyTriangle
  * @constructor
  * @param scene - Reference to MyScene object
+ * @param x1 - x coordenate of the 1st point of the triangle
+ * @param y1 - y coordenate of the 1st point of the triangle
+ * @param z1 - z coordenate of the 1st point of the triangle
+ * @param x2 - x coordenate of the 2nd point of the triangle
+ * @param y2 - y coordenate of the 2nd point of the triangle
+ * @param z2 - z coordenate of the 2nd point of the triangle
+ * @param x3 - x coordenate of the 3rd point of the triangle
+ * @param y3 - y coordenate of the 3rd point of the triangle
+ * @param z3 - z coordenate of the 3rd point of the triangle
  */
 
 class MyTriangle extends CGFobject {
@@ -12,16 +21,12 @@ class MyTriangle extends CGFobject {
 		this.p3 = [x3, y3, z3];
 
 		this.initBuffers();
-	};
+	}
 
 	initBuffers() {
-		this.vertices = [
-			this.p1[0], this.p1[1], this.p1[2],
-			this.p2[0], this.p2[1], this.p2[2],
-			this.p3[0], this.p3[1], this.p3[2]
-        ];
-        
-        //Counter-clockwise reference of vertices
+		this.vertices = [...this.p1, ...this.p2, ...this.p3];
+
+    //Counter-clockwise reference of vertices
 		this.indices = [
 			0, 1, 2
 		];
@@ -31,8 +36,8 @@ class MyTriangle extends CGFobject {
 			0, 0, 1,
 			0, 0, 1,
 			0, 0, 1
-        ];
-        
+    ];
+
 		//TexCoords
 		var a = Math.sqrt(Math.pow((this.p2[0] - this.p1[0]),2) +
 			              Math.pow((this.p2[1] - this.p1[1]),2) +
@@ -49,12 +54,12 @@ class MyTriangle extends CGFobject {
 		this.texCoords = [
 			0, 0,
 			a, 0,   //(c*cos(a)+a-c*cos(a))=a
-		    c * (Math.pow(a,2) - Math.pow(b,2) + Math.pow(c,2)) / (2 * a * c), c * Math.sin(alpha) //c*cos(a), c*sin(a)
+		  c * (Math.pow(a,2) - Math.pow(b,2) + Math.pow(c,2)) / (2 * a * c), c * Math.sin(alpha) //c*cos(a), c*sin(a)
 		];
 
 		this.primitiveType = this.scene.gl.TRIANGLES;
 		this.initGLBuffers();
-	};
+	}
 
 	mapTextures(lenght_s, lenght_t) {
 
@@ -65,7 +70,7 @@ class MyTriangle extends CGFobject {
 		var ang = Math.acos((Math.pow(a, 2) - Math.pow(b, 2) + Math.pow(c, 2)) / (2 * a * c));
 
 		this.texCoords = [
-            0, 0,
+      0, 0,
 			a/lenght_s, 0,
 			(c*Math.cos(ang))/lenght_s, (c*Math.sin(ang))/lenght_t
 		];
@@ -74,5 +79,9 @@ class MyTriangle extends CGFobject {
 		this.updateTexCoordsGLBuffers();
 	}
 
-};
+	updateTexCoords(coords) {
+		this.texCoords = [...coords];
+		this.updateTexCoordsGLBuffers();
+	}
 
+}

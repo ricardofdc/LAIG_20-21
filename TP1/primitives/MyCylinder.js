@@ -92,7 +92,6 @@ class MyCylinder extends CGFobject {
         }
       }
     }
-    console.log(this.vertices);
 
     //bottom base of the Cylinder
     ////until this point we have 'this.slices * (this.stacks+1)' vertices
@@ -120,8 +119,6 @@ class MyCylinder extends CGFobject {
       origin_vertice_number + 1,
       origin_vertice_number + this.slices
     );
-
-    console.log(this.indices);
 
     //top base of the Cylinder
     ////until this point we have 'this.slices * (this.stacks+2) + 1' vertices
