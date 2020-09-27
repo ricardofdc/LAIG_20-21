@@ -45,8 +45,9 @@ class XMLscene extends CGFscene {
         this.displaySphere = false;
         this.displayTorus = false;
         this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
-        this.cylinder = new MyCylinder(this,2,1,5,8,5);
-
+        this.cylinder = new MyCylinder(this,2,2,5,8,5);
+        this.triangle = new MyTriangle(this, 0,0,0,4,0,0,2,2,0);
+        this.sphere = new MySphere(this, 1, 40,40);
     }
 
     /**
@@ -149,6 +150,17 @@ class XMLscene extends CGFscene {
               this.popMatrix();
             }
 
+            if(this.displayTriangle){
+                this.pushMatrix();
+                this.triangle.display();
+                this.popMatrix();
+            }
+
+            if(this.displaySphere){
+                this.pushMatrix();
+                this.sphere.display();
+                this.popMatrix();
+            }
 
         }
         else
