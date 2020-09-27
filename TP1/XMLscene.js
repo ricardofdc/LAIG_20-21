@@ -33,18 +33,19 @@ class XMLscene extends CGFscene {
         this.axis = new CGFaxis(this);
         this.setUpdatePeriod(100);
 
-        this.loadingProgressObject=new MyRectangle(this, -1, -.1, 1, .1);
-        this.loadingProgress=0;
+        this.loadingProgressObject = new MyRectangle(this, -1, -.1, 1, .1);
+        this.loadingProgress = 0;
 
-        this.defaultAppearance=new CGFappearance(this);
+        this.defaultAppearance = new CGFappearance(this);
 
         //Primitives (just for testing)
-        this.displayRectangle=false;
-        this.displayTriangle=false;
-        this.displayCylinder=false;
-        this.displaySphere=false;
-        this.displayTorus=false;
-        this.rectangle=new MyRectangle(this,-1,-0.5,1,0.5);
+        this.displayRectangle = false;
+        this.displayTriangle = false;
+        this.displayCylinder = false;
+        this.displaySphere = false;
+        this.displayTorus = false;
+        this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
+        this.cylinder = new MyCylinder(this,2,1,5,8,5);
 
     }
 
@@ -139,6 +140,12 @@ class XMLscene extends CGFscene {
             if(this.displayRectangle){
               this.pushMatrix();
               this.rectangle.display();
+              this.popMatrix();
+            }
+
+            if(this.displayCylinder){
+              this.pushMatrix();
+              this.cylinder.display();
               this.popMatrix();
             }
 
