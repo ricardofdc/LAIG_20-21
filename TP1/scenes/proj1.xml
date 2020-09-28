@@ -77,6 +77,9 @@
             <material id="defaultMaterial" />
             <texture id="null" />
 
+            <transformations>
+            </transformations>
+
             <descendants>
                 <noderef id="ocean" />
                 <noderef id="island" />
@@ -102,6 +105,9 @@
             <material id="null" />
             <texture id="null" />
 
+            <transformations>
+            </transformations>
+
             <descendants>
               <noderef id="islandBase" />
               <noderef id="someTrees" />
@@ -124,6 +130,9 @@
         <node id="someTrees">
             <material id="null" />
             <texture id="null" />
+
+            <transformations>
+            </transformations>
 
             <descendants>
               <noderef id="tree1" />
