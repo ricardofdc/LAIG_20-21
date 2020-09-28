@@ -41,6 +41,8 @@
     <textures>
         <!-- NOTE: this block "TEXTURE" must be repeated as necessary with different "id" -->
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
+        <texture id="wallTexture" path="./scenes/images/stone_wall.jpg" />
+        <texture id="roofTexture" path="./scenes/images/roof.jpg" />
     </textures>
 
 
@@ -141,7 +143,7 @@
 
         <node id="house">
             <material id="null" />
-            <texture id="null">
+            <texture id="clear">
             </texture>
 
             <transformations>
@@ -155,7 +157,8 @@
 
         <node id="roof">
             <material id="null" />
-            <texture id="null">
+            <texture id="roofTexture">
+                <amplification afs="60.0" aft="60.0" />
             </texture>
 
             <transformations>
@@ -265,7 +268,8 @@
 
         <node id="house_structure">
             <material id="null" />
-            <texture id="null">
+            <texture id="wallTexture">
+                <amplification afs="60.0" aft="60.0" />
             </texture>
 
             <transformations>
