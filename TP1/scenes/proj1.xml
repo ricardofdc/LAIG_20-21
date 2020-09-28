@@ -159,12 +159,12 @@
             </transformations>
 
             <descendants>
-                <noderef id="roof"/>
-                <noderef id="house_structure"/>
+                <noderef id="houseRoof"/>
+                <noderef id="houseStructure"/>
             </descendants>
         </node>
 
-        <node id="roof">
+        <node id="houseRoof">
             <material id="null" />
             <texture id="roofTexture">
                 <amplification afs="60.0" aft="60.0" />
@@ -175,10 +175,21 @@
             </transformations>
 
             <descendants>
-                <noderef id="rectangular_pyramid"/>
+                <noderef id="triangularPrism"/>
             </descendants>
         </node>
 
+        <!-- Prisma triangular com base em z=0 , base com 1 de largura e 1 de altura:
+                     y
+                     :
+                    /:\
+                   / : \
+                  /  :  \     -> base do prisma
+                 /   :   \
+            ..../____:____\....> x
+                     :
+                     :
+        -->
         <node id="triangularPrism">
             <material id="null" />
             <texture id="null">
@@ -290,6 +301,19 @@
             </descendants>
         </node>
 
+        <!-- Unit Cube com base em y=0
+                  :
+            ______:______
+            |     :     |
+            |     :     |
+        ....|.....:.....|....> x
+            |     :     |
+            |_____:_____|
+                  :
+                  :
+                  v
+                  z
+        -->
         <node id="unitCube">
             <material id="null" />
             <texture id="null">
