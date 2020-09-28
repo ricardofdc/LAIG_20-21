@@ -41,6 +41,8 @@
     <textures>
         <!-- NOTE: this block "TEXTURE" must be repeated as necessary with different "id" -->
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
+        <texture id="wallTexture" path="./scenes/images/stone_wall.jpg" />
+        <texture id="roofTexture" path="./scenes/images/roof.jpg" />
     </textures>
 
 
@@ -148,6 +150,250 @@
             </descendants>
         </node>
 
+        <node id="house">
+            <material id="null" />
+            <texture id="clear">
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="roof"/>
+                <noderef id="house_structure"/>
+            </descendants>
+        </node>   
+
+        <node id="roof">
+            <material id="null" />
+            <texture id="roofTexture">
+                <amplification afs="60.0" aft="60.0" />
+            </texture>
+
+            <transformations>
+                <translation x="0" y="2" z="0"/>
+            </transformations>
+
+            <descendants>
+                <noderef id="rectangular_pyramid"/>
+            </descendants>
+        </node>    
+
+        <node id="rectangular_pyramid">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="rect_pyramid_base"/>
+                <noderef id="rect_pyramid_front_face"/>
+                <noderef id="rect_pyramid_back_face"/>
+                <noderef id="rect_pyramid_left_face"/>
+                <noderef id="rect_pyramid_right_face"/>            
+            </descendants>
+        </node>  
+
+        <node id="rect_pyramid_base">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <rotation axis="x" angle="90" />
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+            </descendants>
+        </node>        
+
+        <node id="rect_pyramid_front_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="0.425" z="0.5"/>
+                <scale sx="1" sy="0.5" sz="1"/>
+                <rotation axis="x" angle="-30" />
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+            </descendants>
+        </node>
+
+        <node id="rect_pyramid_back_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="0.425" z="-0.5"/>
+                <scale sx="1" sy="0.5" sz="1"/>
+                <rotation axis="y" angle="180" />
+                <rotation axis="x" angle="-30" />
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+            </descendants>
+        </node>        
+
+        <node id="rect_pyramid_left_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="-1.5" y="0" z="-1" />
+                <scale sx="1" sy="0.87" sz="2" />
+                <rotation axis="y" angle="-90" />
+            </transformations>
+
+            <descendants>
+                <leaf type="triangle" x1="0" y1="0" z1= "0" x2="1" y2="0" z2="0" x3="0.5" y3="1" z3="0"/>
+            </descendants>
+        </node>     
+
+        <node id="rect_pyramid_right_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="1.5" y="0" z="1" />
+                <scale sx="1" sy="0.87" sz="2" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+
+            <descendants>
+                <leaf type="triangle" x1="0" y1="0" z1= "0" x2="1" y2="0" z2="0" x3="0.5" y3="1" z3="0"/>
+            </descendants>
+        </node>   
+
+        <node id="house_structure">
+            <material id="null" />
+            <texture id="wallTexture">
+                <amplification afs="60.0" aft="60.0" />
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="parallelepiped"/>         
+            </descendants>
+        </node>
+
+        <node id="parallelepiped">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="parallelepiped_base"/>
+                <noderef id="parallelepiped_top"/>
+                <noderef id="parallelepiped_front_face"/>
+                <noderef id="parallelepiped_back_face"/>
+                <noderef id="parallelepiped_left_face"/>            
+                <noderef id="parallelepiped_right_face"/>            
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_base">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <rotation axis="x" angle="90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_top">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="2" z="0"/>
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_front_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="1" z="1"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_back_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="1" z="-1"/>
+                <rotation axis="x" angle="180"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_left_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="-1.5" y="0" z="0"/>
+                <rotation axis="y" angle="-90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_right_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="1.5" y="0" z="0"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />           
+            </descendants>
+        </node>        
 
     </nodes>
 </lsf>
