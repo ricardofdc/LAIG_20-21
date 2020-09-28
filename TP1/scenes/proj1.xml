@@ -149,6 +149,7 @@
 
             <descendants>
                 <noderef id="roof"/>
+                <noderef id="house_structure"/>
             </descendants>
         </node>   
 
@@ -158,6 +159,7 @@
             </texture>
 
             <transformations>
+                <translation x="0" y="2" z="0"/>
             </transformations>
 
             <descendants>
@@ -260,6 +262,125 @@
                 <leaf type="triangle" x1="0" y1="0" z1= "0" x2="1" y2="0" z2="0" x3="0.5" y3="1" z3="0"/>
             </descendants>
         </node>   
+
+        <node id="house_structure">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="parallelepiped"/>         
+            </descendants>
+        </node>
+
+        <node id="parallelepiped">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+            </transformations>
+
+            <descendants>
+                <noderef id="parallelepiped_base"/>
+                <noderef id="parallelepiped_top"/>
+                <noderef id="parallelepiped_front_face"/>
+                <noderef id="parallelepiped_back_face"/>
+                <noderef id="parallelepiped_left_face"/>            
+                <noderef id="parallelepiped_right_face"/>            
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_base">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <rotation axis="x" angle="90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_top">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="2" z="0"/>
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_front_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="1" z="1"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_back_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="0" y="1" z="-1"/>
+                <rotation axis="x" angle="180"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_left_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="-1.5" y="0" z="0"/>
+                <rotation axis="y" angle="-90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />           
+            </descendants>
+        </node> 
+
+        <node id="parallelepiped_right_face">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+
+            <transformations>
+                <translation x="1.5" y="0" z="0"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />           
+            </descendants>
+        </node>        
 
     </nodes>
 </lsf>
