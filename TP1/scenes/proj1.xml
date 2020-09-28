@@ -172,6 +172,7 @@
 
             <transformations>
                 <translation x="0" y="2" z="0"/>
+                <scale sx="3" sy="2" sz="2" />
             </transformations>
 
             <descendants>
@@ -179,7 +180,7 @@
             </descendants>
         </node>
 
-        <!-- Prisma triangular com base em z=0 , base com 1 de largura e 1 de altura:
+        <!-- Prisma triangular com base em z=0 , base com 1 de largura e 1 de altura centrada na origem do referencial:
                      y
                      :
                     /:\
@@ -196,6 +197,7 @@
             </texture>
 
             <transformations>
+                <translation x="-0.5" y="0" z="-0.5"/>
             </transformations>
 
             <descendants>
@@ -217,7 +219,7 @@
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="0" y1="0" x2="1" y2="1" />
             </descendants>
         </node>
 
@@ -227,13 +229,13 @@
             </texture>
 
             <transformations>
-                <translation x="0" y="0.425" z="0.5"/>
+                <translation x="0" y="0" z="1"/>
                 <scale sx="1" sy="0.5" sz="1"/>
                 <rotation axis="x" angle="-30" />
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="0" y1="0" x2="1" y2="1" />
             </descendants>
         </node>
 
@@ -243,14 +245,14 @@
             </texture>
 
             <transformations>
-                <translation x="0" y="0.425" z="-0.5"/>
+                <translation x="1" y="0" z="0"/>
                 <scale sx="1" sy="0.5" sz="1"/>
                 <rotation axis="y" angle="180" />
                 <rotation axis="x" angle="-30" />
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="0" y1="0" x2="1" y2="1" />
             </descendants>
         </node>
 
@@ -260,8 +262,7 @@
             </texture>
 
             <transformations>
-                <translation x="-1.5" y="0" z="-1" />
-                <scale sx="1" sy="0.87" sz="2" />
+                <scale sx="1" sy="0.435" sz="1" />
                 <rotation axis="y" angle="-90" />
             </transformations>
 
@@ -276,8 +277,8 @@
             </texture>
 
             <transformations>
-                <translation x="1.5" y="0" z="1" />
-                <scale sx="1" sy="0.87" sz="2" />
+                <translation x="1" y="0" z="1" />
+                <scale sx="1" sy="0.435" sz="1" />
                 <rotation axis="y" angle="90" />
             </transformations>
 
