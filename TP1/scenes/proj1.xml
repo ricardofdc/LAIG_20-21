@@ -275,21 +275,22 @@
             </descendants>
         </node>
 
-        <node id="house_structure">
+        <node id="houseStructure">
             <material id="null" />
             <texture id="wallTexture">
-                <amplification afs="60.0" aft="60.0" />
+                <amplification afs="1.0" aft="1.0" />
             </texture>
 
             <transformations>
+                <scale sx="3" sy="2" sz="2" />
             </transformations>
 
             <descendants>
-                <noderef id="parallelepiped"/>
+                <noderef id="unitCube"/>
             </descendants>
         </node>
 
-        <node id="parallelepiped">
+        <node id="unitCube">
             <material id="null" />
             <texture id="null">
             </texture>
@@ -298,16 +299,16 @@
             </transformations>
 
             <descendants>
-                <noderef id="parallelepipedBase"/>
-                <noderef id="parallelepipedTop"/>
-                <noderef id="parallelepipedFrontFace"/>
-                <noderef id="parallelepipedBackFace"/>
-                <noderef id="parallelepipedLeftFace"/>
-                <noderef id="parallelepipedRightFace"/>
+                <noderef id="unitCubeBase"/>
+                <noderef id="unitCubeTop"/>
+                <noderef id="unitCubeFrontFace"/>
+                <noderef id="unitCubeBackFace"/>
+                <noderef id="unitCubeLeftFace"/>
+                <noderef id="unitCubeRightFace"/>
             </descendants>
         </node>
 
-        <node id="parallelepipedBase">
+        <node id="unitCubeBase">
             <material id="null" />
             <texture id="null">
             </texture>
@@ -317,81 +318,81 @@
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
-        <node id="parallelepipedTop">
+        <node id="unitCubeTop">
             <material id="null" />
             <texture id="null">
             </texture>
 
             <transformations>
-                <translation x="0" y="2" z="0"/>
                 <rotation axis="x" angle="-90"/>
+                <translation x="0" y="1" z="0"/>
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
-        <node id="parallelepipedFrontFace">
+        <node id="unitCubeFrontFace">
             <material id="null" />
             <texture id="null">
             </texture>
 
             <transformations>
-                <translation x="0" y="1" z="1"/>
+                <translation x="0" y="0.5" z="0.5"/>
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
-        <node id="parallelepipedBackFace">
+        <node id="unitCubeBackFace">
             <material id="null" />
             <texture id="null">
             </texture>
 
             <transformations>
-                <translation x="0" y="1" z="-1"/>
                 <rotation axis="x" angle="180"/>
+                <translation x="0" y="0.5" z="-0.5"/>
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1.5" y1="-1" x2="1.5" y2="1" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
-        <node id="parallelepipedLeftFace">
+        <node id="unitCubeLeftFace">
             <material id="null" />
             <texture id="null">
             </texture>
 
             <transformations>
-                <translation x="-1.5" y="0" z="0"/>
                 <rotation axis="y" angle="-90"/>
+                <translation x="-0.5" y="0.5" z="0"/>
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
-        <node id="parallelepipedRightFace">
+        <node id="unitCubeRightFace">
             <material id="null" />
             <texture id="null">
             </texture>
 
             <transformations>
-                <translation x="1.5" y="0" z="0"/>
                 <rotation axis="y" angle="90"/>
+                <translation x="0.5" y="0.5" z="0"/>
             </transformations>
 
             <descendants>
-                <leaf type="rectangle" x1="-1" y1="0" x2="1" y2="2" />
+                <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
             </descendants>
         </node>
 
