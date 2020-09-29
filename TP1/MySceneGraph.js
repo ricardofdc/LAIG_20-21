@@ -624,7 +624,7 @@ class MySceneGraph {
                             }
                             if (loops == null || isNaN(loops))
                                 return this.onXMLMinorError("Unable to parse loops of the " + leaf_type + " on node " + nodeID);
-                            this.nodes[nodeID].addLeaf(new MyTorus(this.scene, inner, outer, slices, loops);
+                            this.nodes[nodeID].addLeaf(new MyTorus(this.scene, inner, outer, slices, loops));
                             break;
 
                         default:

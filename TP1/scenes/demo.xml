@@ -79,15 +79,17 @@
                 <!-- "ss" is the identifier of a node or of leaf; -->
                 <!-- may be repeated as necessary. It can refer an -->
                 <!-- identifier of another node, before or later defined in the file. -->
-                <!-- next lines define nodes of type leaf; may be repeated, in any order, as necessary -->
+                <!-- next lines define nodes of type leaf; may be repeated, in any order, as necessary >
                 <leaf type="rectangle" x1="-2" y1="0" x2="0" y2="2" />
-                <!-- 2D coordinates on the XY plane for left-top and right-bottom vertices. -->
+                <! 2D coordinates on the XY plane for left-top and right-bottom vertices. >
                 <leaf type="triangle" x1="0" y1="0" x2="3" y2="0" x3="1.5" y3="3"/>
-                <!-- x y coordinates of each vertex; triangle on plane XY -->
+                <! x y coordinates of each vertex; triangle on plane XY >
                 <leaf type="sphere" radius="3" slices="5" stacks="5"/>
-                <!-- radius, sections along radius, parts per section -->
+                <! radius, sections along radius, parts per section >
                 <leaf type="cylinder" height="2" topRadius="2" bottomRadius="5" stacks="3" slices="10"/>
-                <!-- height, top radius, bottom radius, sections along height (stacks), parts per section (slices); main axis is aligned with ZZ; must have top and bottom caps -->
+                <! height, top radius, bottom radius, sections along height (stacks), parts per section (slices); main axis is aligned with ZZ; must have top and bottom caps -->
+                <leaf type="torus" inner="0.5" outer="3" slices="8" loops="20" />
+                <!-- inner and outer radius, sections around the inner radius, sections around the outer radius  -->
 
 
 
