@@ -482,32 +482,79 @@ class MySceneGraph {
                 if(descendants[descendant].nodeName == "leaf"){
                     var leaf_type = this.reader.getString(descendants[descendant], 'type');
                     
-                    switch(leaf_type){
-                        case 'rectangle':
-                            // x1
-                            var x1 = this.reader.getFloat(descendants[descendant], 'x1');
-                            if (!(x1 != null && !isNaN(x1)))
-                                return "Unable to parse x1 of the leaf coordinates for descendant of node " + nodeID;
+                    if(leaf_type == "rectangle"){
+                        // x1
+                        var x1 = this.reader.getFloat(descendants[descendant], 'x1');
+                        if (!(x1 != null && !isNaN(x1)))
+                            return "Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
 
-                            // x2
-                            var x2 = this.reader.getFloat(descendants[descendant], 'x2');
-                                if (!(x1 != null && !isNaN(x1)))
-                                    return "Unable to parse x2 of the leaf coordinates for descendant of node " + nodeID;
+                        // x2
+                        var x2 = this.reader.getFloat(descendants[descendant], 'x2');
+                        if (!(x1 != null && !isNaN(x1)))
+                            return "Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
 
-                            // y1
-                            var y1 = this.reader.getFloat(descendants[descendant], 'y1');
-                            if (!(y1 != null && !isNaN(y1)))
-                                return "Unable to parse y1 of the leaf coordinates for descendant of node " + nodeID;
+                        // y1
+                        var y1 = this.reader.getFloat(descendants[descendant], 'y1');
+                        if (!(y1 != null && !isNaN(y1)))
+                            return "Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
 
 
-                            // y2
-                            var y2 = this.reader.getFloat(descendants[descendant], 'y2');
-                            if (!(y2 != null && !isNaN(y2)))
-                                return "Unable to parse y2 of the leaf coordinates for descendant of node " + nodeID;
+                        // y2
+                        var y2 = this.reader.getFloat(descendants[descendant], 'y2');
+                        if (!(y2 != null && !isNaN(y2)))
+                            return "Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
 
-                            var rect = new MyRectangle(this.scene, x1, y1, x2, y2);
-                            this.leafs[leaf_type] = rect;
+                        var rect = new MyRectangle(this.scene, x1, y1, x2, y2);
+                        this.leafs[this.leafs.length] = rect;
+                    }
+                    else if(leaf_type == "triangle"){
+                        // x1
+                        var x1 = this.reader.getFloat(descendants[descendant], 'x1');
+                        if (!(x1 != null && !isNaN(x1)))
+                            return "Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
 
+                        // y1
+                        var y1 = this.reader.getFloat(descendants[descendant], 'y1');
+                        if (!(y1 != null && !isNaN(y1)))
+                            return "Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // z1
+                        var z1 = this.reader.getFloat(descendants[descendant], 'z1');
+                        if (!(z1 != null && !isNaN(z1)))
+                            return "Unable to parse z1 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // x2
+                        var x2 = this.reader.getFloat(descendants[descendant], 'x2');
+                        if (!(x2 != null && !isNaN(x2)))
+                            return "Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // y2
+                        var y2 = this.reader.getFloat(descendants[descendant], 'y2');
+                        if (!(y2 != null && !isNaN(y2)))
+                            return "Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // z2
+                        var z2 = this.reader.getFloat(descendants[descendant], 'z2');
+                        if (!(z2 != null && !isNaN(z2)))
+                            return "Unable to parse z2 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // x3
+                        var x3 = this.reader.getFloat(descendants[descendant], 'x3');
+                        if (!(x3 != null && !isNaN(x3)))
+                            return "Unable to parse x3 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // y3
+                        var y3 = this.reader.getFloat(descendants[descendant], 'y3');
+                        if (!(y3 != null && !isNaN(y3)))
+                            return "Unable to parse y3 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+
+                        // z3
+                        var z3 = this.reader.getFloat(descendants[descendant], 'z3');
+                        if (!(z3 != null && !isNaN(z3)))
+                            return "Unable to parse z3 of the " + leaf_type + " coordinates for descendant of node " + nodeID;
+                    
+                        var tri = new MyTriangle(this.scene, x1, y1, z1, x2, y2, z2, x3, y3, z3);
+                        this.leafs[this.leafs.length] = tri;
                     }
                 }
                 else if(descendants[descendant].nodeName == "noderef"){
@@ -623,7 +670,10 @@ class MySceneGraph {
      */
     displayScene() {
 
-        this.leafs['rectangle'].display();
+        //Exemplo demo
+        this.leafs[0].display();     //retangulo
+        this.leafs[1].display();    //triangulo
+
         
         //To do: Create display loop for transversing the scene graph, calling the root node's display function
         
