@@ -46,7 +46,7 @@ class XMLscene extends CGFscene {
         this.displayTorus = false;
         this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
         this.cylinder = new MyCylinder(this,2,2,5,8,5);
-        this.triangle = new MyTriangle(this, 0,0,0,4,0,0,2,2,0);
+        this.triangle = new MyTriangle(this, 0,0,4,0,2,2);
         this.sphere = new MySphere(this, 3, 10,10);
     }
 

@@ -4,21 +4,18 @@
  * @param scene - Reference to MyScene object
  * @param x1 - x coordenate of the 1st point of the triangle
  * @param y1 - y coordenate of the 1st point of the triangle
- * @param z1 - z coordenate of the 1st point of the triangle
  * @param x2 - x coordenate of the 2nd point of the triangle
  * @param y2 - y coordenate of the 2nd point of the triangle
- * @param z2 - z coordenate of the 2nd point of the triangle
  * @param x3 - x coordenate of the 3rd point of the triangle
  * @param y3 - y coordenate of the 3rd point of the triangle
- * @param z3 - z coordenate of the 3rd point of the triangle
  */
 
 class MyTriangle extends CGFobject {
-	constructor(scene, x1, y1, z1, x2, y2, z2, x3, y3, z3) {
+	constructor(scene, x1, y1, x2, y2, x3, y3) {
 		super(scene);
-		this.p1 = [x1, y1, z1];
-		this.p2 = [x2, y2, z2];
-		this.p3 = [x3, y3, z3];
+		this.p1 = [x1, y1, 0];
+		this.p2 = [x2, y2, 0];
+		this.p3 = [x3, y3, 0];
 
 		this.initBuffers();
 	}

@@ -81,8 +81,8 @@
                 <!-- identifier of another node, before or later defined in the file. -->
                 <!-- next lines define nodes of type leaf; may be repeated, in any order, as necessary -->
                 <leaf type="rectangle" x1="-2" y1="0" x2="0" y2="2" />
-                <leaf type="triangle" x1="0" y1="0" z1= "0" x2="3" y2="0" z2="0" x3="1.5" y3="3" z3="0"/>
                 <!-- 2D coordinates on the XY plane for left-top and right-bottom vertices. -->
+                <leaf type="triangle" x1="dd" y1="0" x2="3" y2="0" x3="1.5" y3="3"/>
             </descendants>
         </node>
         <node id="demoChild">            <!-- defines one intermediate node; may be repeated as necessary -->
