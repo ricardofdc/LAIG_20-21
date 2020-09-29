@@ -95,7 +95,7 @@
             </texture>
 
             <transformations>
-                <rotation axis="xx" angle="-90" />
+                <rotation axis="x" angle="-90" />
             </transformations>
 
             <descendants>
@@ -121,11 +121,11 @@
             <texture id="null" />
 
             <transformations>
-                <rotation axis="xx" angle="-90" />
+                <rotation axis="x" angle="-90" />
             </transformations>
 
             <descendants>
-                <LEAF id="sand" type="cylinder" bottomRadius="20" topRadius="15" height="0.5" slices="40" stacks="1" />
+                <leaf type="cylinder" bottomRadius="20" topRadius="15" height="0.5" slices="40" stacks="1" />
             </descendants>
         </node>
 

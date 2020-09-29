@@ -426,6 +426,8 @@ class MySceneGraph {
         var grandgrandChildren = [];
         var nodeNames = [];
 
+        this.leafs = [];
+
         // Any number of nodes.
         for (var i = 0; i < children.length; i++) {
 
@@ -463,6 +465,61 @@ class MySceneGraph {
             // Texture
 
             // Descendants
+            if(descendantsIndex == null){
+                return this.onXMLError("No Descendants tag in " + nodeID);
+            }
+
+            //All descendants of current node
+            var descendants = grandChildren[descendantsIndex].children;
+
+            if(descendants.length == 0){
+                return this.onXMLError("Node " + nodeID + ": must have at least one descendant.");
+            }
+
+            //Check for all the descendants inside descendants tag
+            for(var descendant=0; descendant<descendants.length;descendant++){
+                
+                if(descendants[descendant].nodeName == "leaf"){
+                    var leaf_type = this.reader.getString(descendants[descendant], 'type');
+                    
+                    switch(leaf_type){
+                        case 'rectangle':
+                            // x1
+                            var x1 = this.reader.getFloat(descendants[descendant], 'x1');
+                            if (!(x1 != null && !isNaN(x1)))
+                                return "Unable to parse x1 of the leaf coordinates for descendant of node " + nodeID;
+
+                            // x2
+                            var x2 = this.reader.getFloat(descendants[descendant], 'x2');
+                                if (!(x1 != null && !isNaN(x1)))
+                                    return "Unable to parse x2 of the leaf coordinates for descendant of node " + nodeID;
+
+                            // y1
+                            var y1 = this.reader.getFloat(descendants[descendant], 'y1');
+                            if (!(y1 != null && !isNaN(y1)))
+                                return "Unable to parse y1 of the leaf coordinates for descendant of node " + nodeID;
+
+
+                            // y2
+                            var y2 = this.reader.getFloat(descendants[descendant], 'y2');
+                            if (!(y2 != null && !isNaN(y2)))
+                                return "Unable to parse y2 of the leaf coordinates for descendant of node " + nodeID;
+
+                            var rect = new MyRectangle(this.scene, x1, y1, x2, y2);
+                            this.leafs[leaf_type] = rect;
+
+                    }
+                }
+                else if(descendants[descendant].nodeName == "noderef"){
+                    //parse references to other nodes
+                }
+                else{
+                    this.onXMLMinorError("unknown tag <" + descendants[descendant].nodeName + "> on descendant " + descendant_id);
+                }
+                
+                
+            }
+
         }
     }
 
@@ -565,6 +622,8 @@ class MySceneGraph {
      * Displays the scene, processing each node, starting in the root node.
      */
     displayScene() {
+
+        this.leafs['rectangle'].display();
         
         //To do: Create display loop for transversing the scene graph, calling the root node's display function
         
