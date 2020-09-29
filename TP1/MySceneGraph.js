@@ -426,8 +426,6 @@ class MySceneGraph {
         var grandgrandChildren = [];
         var nodeNames = [];
 
-        this.leafs = [];
-
         // Any number of nodes.
         for (var i = 0; i < children.length; i++) {
 
@@ -448,7 +446,7 @@ class MySceneGraph {
             grandChildren = children[i].children;
 
             nodeNames = [];
-            for (var j = 0; j < grandChildren.length; j++) {
+            for (let j = 0; j < grandChildren.length; j++) {
                 nodeNames.push(grandChildren[j].nodeName);
             }
 
@@ -481,27 +479,27 @@ class MySceneGraph {
             }
 
             //Check for all the descendants inside descendants tag
-            for(var i=0; i<descendants.length; i++){
+            for(let j=0; j<descendants.length; j++){
 
                 //parse leaf nodes
-                if(descendants[i].nodeName == "leaf"){
-                    var leaf_type = this.reader.getString(descendants[i], 'type');
+                if(descendants[j].nodeName == "leaf"){
+                    var leaf_type = this.reader.getString(descendants[j], 'type');
 
                     if(leaf_type == "rectangle"){
                         // x1
-                        var x1 = this.reader.getFloat(descendants[i], 'x1');
+                        var x1 = this.reader.getFloat(descendants[j], 'x1');
                         if (!(x1 != null && !isNaN(x1)))
                             return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
                         // x2
-                        var x2 = this.reader.getFloat(descendants[i], 'x2');
+                        var x2 = this.reader.getFloat(descendants[j], 'x2');
                         if (!(x1 != null && !isNaN(x1)))
                             return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
                         // y1
-                        var y1 = this.reader.getFloat(descendants[i], 'y1');
+                        var y1 = this.reader.getFloat(descendants[j], 'y1');
                         if (!(y1 != null && !isNaN(y1)))
                             return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
                         // y2
-                        var y2 = this.reader.getFloat(descendants[i], 'y2');
+                        var y2 = this.reader.getFloat(descendants[j], 'y2');
                         if (!(y2 != null && !isNaN(y2)))
                             return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
@@ -510,32 +508,32 @@ class MySceneGraph {
                     }
                     else if(leaf_type == "triangle"){
                         // x1
-                        var x1 = this.reader.getFloat(descendants[i], 'x1');
+                        var x1 = this.reader.getFloat(descendants[j], 'x1');
                         if (!(x1 != null && !isNaN(x1)))
                             return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
                         // y1
-                        var y1 = this.reader.getFloat(descendants[i], 'y1');
+                        var y1 = this.reader.getFloat(descendants[j], 'y1');
                         if (!(y1 != null && !isNaN(y1)))
                             return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
                         // x2
-                        var x2 = this.reader.getFloat(descendants[i], 'x2');
+                        var x2 = this.reader.getFloat(descendants[j], 'x2');
                         if (!(x2 != null && !isNaN(x2)))
                             return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
                         // y2
-                        var y2 = this.reader.getFloat(descendants[i], 'y2');
+                        var y2 = this.reader.getFloat(descendants[j], 'y2');
                         if (!(y2 != null && !isNaN(y2)))
                             return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
                         // x3
-                        var x3 = this.reader.getFloat(descendants[i], 'x3');
+                        var x3 = this.reader.getFloat(descendants[j], 'x3');
                         if (!(x3 != null && !isNaN(x3)))
                             return this.onXMLMinorError("Unable to parse x3 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
                         // y3
-                        var y3 = this.reader.getFloat(descendants[i], 'y3');
+                        var y3 = this.reader.getFloat(descendants[j], 'y3');
                         if (!(y3 != null && !isNaN(y3)))
                             return this.onXMLMinorError("Unable to parse y3 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
 
@@ -544,12 +542,11 @@ class MySceneGraph {
                     }
                 }
                 //parse intermidiate nodes
-                else if(descendants[i].nodeName == "noderef"){
-                    //TODO: parse references to other nodes
-                    this.onXMLMinorError("To do: Parse references to intermidiate nodes.");
+                else if(descendants[j].nodeName == "noderef"){
+                    this.nodes[nodeID].addNode(this.reader.getString(descendants[j], 'id'));
                 }
                 else{
-                    this.onXMLMinorError("unknown tag <" + descendants[i].nodeName + "> on descendant " + descendant_id);
+                    this.onXMLMinorError("unknown tag <" + descendants[j].nodeName + "> on descendant " + descendant_id);
                 }
 
 
@@ -657,19 +654,25 @@ class MySceneGraph {
      * Displays the scene, processing each node, starting in the root node.
      */
     displayScene() {
-        processNode(this.idRoot);
+      if (this.nodes[this.idRoot] == null){
+          this.onXMLError(this.idRoot + " not found!");
+          this.scene.sceneInited = false;
+          return;
+        }
+        this.processNode(this.idRoot);
 
         //To do: Create display loop for transversing the scene graph, calling the root node's display function
     }
 
     /**
      * Recursive process of each node.
+     * @param {string} id - id of the node to process
      */
     processNode(id){
       /**
       *
       * ProcessNode(id, tg, mat, text, afs, aft){
-      *   ajustar tg->tg1 (matriz transformação Ma*Mn);
+      *   ajustar tg->tg1(matriz transformação Ma*Mn);
       *   ajustar mat->mat1 (material);
       *   ajustar text->text1 (textura);
       *   para cada descendente:
@@ -683,5 +686,20 @@ class MySceneGraph {
       * }
       *
       */
+
+      for(let i=0; i<this.nodes[id].descendants.leaves.length; i++){
+        this.nodes[id].descendants.leaves[i].display();
+      }
+      for(let i=0; i<this.nodes[id].descendants.nodes.length; i++){
+
+        var child_id = this.nodes[id].descendants.nodes[i];
+        //console.log(child_id);
+        if (this.nodes[child_id] == null){
+            this.onXMLError(child_id + " node used in " + id + " not found!");
+            this.scene.sceneInited = false;
+            return;
+          }
+        this.processNode(child_id);
+      }
     }
 }

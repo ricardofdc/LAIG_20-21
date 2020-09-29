@@ -17,7 +17,19 @@ class MyNode {
         };
     }
 
+    /*
+     * Adds a leaf to the node's descendants
+     * @param {primitive object} leaf
+     */
     addLeaf(leaf){
-      this.descendants.leaves.push(leaf);
+        this.descendants.leaves.push(leaf);
+    }
+
+    /*
+     * Adds a node to the node's descendants
+     * @param {string} node_id
+     */
+    addNode(node_id){
+        this.descendants.nodes.push(node_id);
     }
 }

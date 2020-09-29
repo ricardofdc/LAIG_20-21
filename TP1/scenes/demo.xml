@@ -82,7 +82,7 @@
                 <!-- next lines define nodes of type leaf; may be repeated, in any order, as necessary -->
                 <leaf type="rectangle" x1="-2" y1="0" x2="0" y2="2" />
                 <!-- 2D coordinates on the XY plane for left-top and right-bottom vertices. -->
-                <leaf type="triangle" x1="dd" y1="0" x2="3" y2="0" x3="1.5" y3="3"/>
+                <leaf type="triangle" x1="0" y1="0" x2="3" y2="0" x3="1.5" y3="3"/>
             </descendants>
         </node>
         <node id="demoChild">            <!-- defines one intermediate node; may be repeated as necessary -->
