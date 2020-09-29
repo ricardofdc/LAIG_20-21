@@ -484,61 +484,152 @@ class MySceneGraph {
                 //parse leaf nodes
                 if(descendants[j].nodeName == "leaf"){
                     var leaf_type = this.reader.getString(descendants[j], 'type');
+                    switch (leaf_type) {
+                        case "rectangle":
+                            // x1
+                            var x1 = this.reader.getFloat(descendants[j], 'x1');
+                            if (x1 == null || isNaN(x1))
+                                return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // x2
+                            var x2 = this.reader.getFloat(descendants[j], 'x2');
+                            if (x2 == null || isNaN(x2))
+                                return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // y1
+                            var y1 = this.reader.getFloat(descendants[j], 'y1');
+                            if (y1 == null || isNaN(y1))
+                                return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // y2
+                            var y2 = this.reader.getFloat(descendants[j], 'y2');
+                            if (y2 == null || isNaN(y2))
+                                return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates on node " + nodeID);
 
-                    if(leaf_type == "rectangle"){
-                        // x1
-                        var x1 = this.reader.getFloat(descendants[j], 'x1');
-                        if (!(x1 != null && !isNaN(x1)))
-                            return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
-                        // x2
-                        var x2 = this.reader.getFloat(descendants[j], 'x2');
-                        if (!(x1 != null && !isNaN(x1)))
-                            return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
-                        // y1
-                        var y1 = this.reader.getFloat(descendants[j], 'y1');
-                        if (!(y1 != null && !isNaN(y1)))
-                            return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
-                        // y2
-                        var y2 = this.reader.getFloat(descendants[j], 'y2');
-                        if (!(y2 != null && !isNaN(y2)))
-                            return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                            this.nodes[nodeID].addLeaf(new MyRectangle(this.scene, x1, y1, x2, y2));
+                            break;
 
-                        this.nodes[nodeID].addLeaf(new MyRectangle(this.scene, x1, y1, x2, y2));
-                        //this.leafs.push(new MyRectangle(this.scene, x1, y1, x2, y2));
-                    }
-                    else if(leaf_type == "triangle"){
-                        // x1
-                        var x1 = this.reader.getFloat(descendants[j], 'x1');
-                        if (!(x1 != null && !isNaN(x1)))
-                            return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                        case "triangle":
+                            // x1
+                            var x1 = this.reader.getFloat(descendants[j], 'x1');
+                            if (x1 == null || isNaN(x1))
+                                return this.onXMLMinorError("Unable to parse x1 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // y1
+                            var y1 = this.reader.getFloat(descendants[j], 'y1');
+                            if (y1 == null || isNaN(y1))
+                                return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // x2
+                            var x2 = this.reader.getFloat(descendants[j], 'x2');
+                            if (x2 == null || isNaN(x2))
+                                return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // y2
+                            var y2 = this.reader.getFloat(descendants[j], 'y2');
+                            if (y2 == null || isNaN(y2))
+                                return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // x3
+                            var x3 = this.reader.getFloat(descendants[j], 'x3');
+                            if (x3 == null || isNaN(x3))
+                                return this.onXMLMinorError("Unable to parse x3 of the " + leaf_type + " coordinates on node " + nodeID);
+                            // y3
+                            var y3 = this.reader.getFloat(descendants[j], 'y3');
+                            if (y3 == null || isNaN(y3))
+                                return this.onXMLMinorError("Unable to parse y3 of the " + leaf_type + " coordinates on node " + nodeID);
+                            this.nodes[nodeID].addLeaf(new MyTriangle(this.scene, x1, y1, x2, y2, x3, y3));
+                            break;
 
-                        // y1
-                        var y1 = this.reader.getFloat(descendants[j], 'y1');
-                        if (!(y1 != null && !isNaN(y1)))
-                            return this.onXMLMinorError("Unable to parse y1 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                        case "sphere":
+                            // radius
+                            var radius = this.reader.getFloat(descendants[j], 'radius');
+                            if (radius == null || isNaN(radius))
+                                return this.onXMLMinorError("Unable to parse radius of the " + leaf_type + " on node " + nodeID);
 
-                        // x2
-                        var x2 = this.reader.getFloat(descendants[j], 'x2');
-                        if (!(x2 != null && !isNaN(x2)))
-                            return this.onXMLMinorError("Unable to parse x2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                            // slices
+                            var slices = this.reader.getInteger(descendants[j], 'slices');
+                            var slices_float = this.reader.getFloat(descendants[j], 'slices');
+                            if(slices != slices_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration slices=" + slices_float + " was rounded to slices=" + slices + " on node " + nodeID);
+                            }
+                            if (slices == null || isNaN(slices))
+                                return this.onXMLMinorError("Unable to parse slices of the " + leaf_type + " on node " + nodeID);
 
-                        // y2
-                        var y2 = this.reader.getFloat(descendants[j], 'y2');
-                        if (!(y2 != null && !isNaN(y2)))
-                            return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                            // stacks
+                            var stacks = this.reader.getInteger(descendants[j], 'stacks');
+                            var stacks_float = this.reader.getFloat(descendants[j], 'stacks');
+                            if(stacks != stacks_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration stacks=" + stacks_float + " was rounded to stacks=" + stacks + " on node " + nodeID);
+                            }
+                            if (stacks == null || isNaN(stacks))
+                                return this.onXMLMinorError("Unable to parse stacks of the " + leaf_type + " on node " + nodeID);
+                            this.nodes[nodeID].addLeaf(new MySphere(this.scene, radius, slices, stacks));
+                            break;
 
-                        // x3
-                        var x3 = this.reader.getFloat(descendants[j], 'x3');
-                        if (!(x3 != null && !isNaN(x3)))
-                            return this.onXMLMinorError("Unable to parse x3 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                        case "cylinder":
+                            // height
+                            var height = this.reader.getFloat(descendants[j], 'height');
+                            if (height == null || isNaN(height))
+                                return this.onXMLMinorError("Unable to parse height of the " + leaf_type + " on node " + nodeID);
 
-                        // y3
-                        var y3 = this.reader.getFloat(descendants[j], 'y3');
-                        if (!(y3 != null && !isNaN(y3)))
-                            return this.onXMLMinorError("Unable to parse y3 of the " + leaf_type + " coordinates for descendant of node " + nodeID);
+                            // topRadius
+                            var topRadius = this.reader.getFloat(descendants[j], 'topRadius');
+                            if (topRadius == null || isNaN(topRadius))
+                            return this.onXMLMinorError("Unable to parse topRadius of the " + leaf_type + " on node " + nodeID);
 
-                        this.nodes[nodeID].addLeaf(new MyTriangle(this.scene, x1, y1, x2, y2, x3, y3));
-                        //this.leafs.push(new MyTriangle(this.scene, x1, y1, x2, y2, x3, y3));
+                            // bottomRadius
+                            var bottomRadius = this.reader.getFloat(descendants[j], 'bottomRadius');
+                            if (bottomRadius == null || isNaN(bottomRadius))
+                                return this.onXMLMinorError("Unable to parse bottomRadius of the " + leaf_type + " on node " + nodeID);
+
+                            // slices
+                            var slices = this.reader.getInteger(descendants[j], 'slices');
+                            var slices_float = this.reader.getFloat(descendants[j], 'slices');
+                            if(slices != slices_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration slices=" + slices_float + " was rounded to slices=" + slices + " on node " + nodeID);
+                            }
+                            if (slices == null || isNaN(slices))
+                                return this.onXMLMinorError("Unable to parse slices of the " + leaf_type + " on node " + nodeID);
+
+                            // stacks
+                            var stacks = this.reader.getInteger(descendants[j], 'stacks');
+                            var stacks_float = this.reader.getFloat(descendants[j], 'stacks');
+                            if(stacks != stacks_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration stacks=" + stacks_float + " was rounded to stacks=" + stacks + " on node " + nodeID);
+                            }
+                            if (stacks == null || isNaN(stacks))
+                                return this.onXMLMinorError("Unable to parse stacks of the " + leaf_type + " on node " + nodeID);
+                            this.nodes[nodeID].addLeaf(new MyCylinder(this.scene, bottomRadius, topRadius, height, slices, stacks));
+                            break;
+
+                        case "torus":
+                            // inner
+                            var inner = this.reader.getFloat(descendants[j], 'inner');
+                            if (inner == null || isNaN(inner))
+                                return this.onXMLMinorError("Unable to parse inner of the " + leaf_type + " on node " + nodeID);
+
+                            // outer
+                            var outer = this.reader.getFloat(descendants[j], 'outer');
+                            if (outer == null || isNaN(outer))
+                            return this.onXMLMinorError("Unable to parse outer of the " + leaf_type + " on node " + nodeID);
+
+                            // slices
+                            var slices = this.reader.getInteger(descendants[j], 'slices');
+                            var slices_float = this.reader.getFloat(descendants[j], 'slices');
+                            if(slices != slices_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration slices=" + slices_float + " was rounded to slices=" + slices + " on node " + nodeID);
+                            }
+                            if (slices == null || isNaN(slices))
+                                return this.onXMLMinorError("Unable to parse slices of the " + leaf_type + " on node " + nodeID);
+
+                            // loops
+                            var loops = this.reader.getInteger(descendants[j], 'loops');
+                            var loops_float = this.reader.getFloat(descendants[j], 'loops');
+                            if(loops != loops_float){
+                              this.onXMLMinorError("On " + leaf_type + " declaration loops=" + loops_float + " was rounded to loops=" + loops + " on node " + nodeID);
+                            }
+                            if (loops == null || isNaN(loops))
+                                return this.onXMLMinorError("Unable to parse loops of the " + leaf_type + " on node " + nodeID);
+                            this.nodes[nodeID].addLeaf(new MyTorus(this.scene, inner, outer, slices, loops);
+                            break;
+
+                        default:
+                            this.onXMLMinorError("unknown leaf type " + leaf_type + " on node " + nodeID);
+                            break;
                     }
                 }
                 //parse intermidiate nodes
@@ -546,12 +637,9 @@ class MySceneGraph {
                     this.nodes[nodeID].addNode(this.reader.getString(descendants[j], 'id'));
                 }
                 else{
-                    this.onXMLMinorError("unknown tag <" + descendants[j].nodeName + "> on descendant " + descendant_id);
+                    this.onXMLMinorError("unknown tag <" + descendants[j].nodeName + "> on node " + nodeID);
                 }
-
-
             }
-
         }
     }
 
@@ -564,6 +652,7 @@ class MySceneGraph {
 
         return boolVal || 1;
     }
+
     /**
      * Parse the coordinates from a node with ID = id
      * @param {block element} node
