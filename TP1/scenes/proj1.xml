@@ -43,6 +43,9 @@
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
         <texture id="wallTexture" path="./scenes/images/stone_wall.jpg" />
         <texture id="roofTexture" path="./scenes/images/roof.jpg" />
+        <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
+        <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
+        <texture id="sandTexture" path="./scenes/images/sand.jpg" />
     </textures>
 
 
@@ -105,7 +108,7 @@
 
         <node id="island">
             <material id="null" />
-            <texture id="null" />
+            <texture id="sandTexture" />
 
             <transformations>
             </transformations>
@@ -247,7 +250,7 @@
 
         <node id="coconuts">
             <material id="null" />
-            <texture id="clear">
+            <texture id="coconutTexture">
             </texture>
 
             <transformations>
@@ -301,7 +304,7 @@
 
         <node id="treeTopFront">
             <material id="null" />
-            <texture id="clear">
+            <texture id="leavesTexture">
             </texture>
 
             <transformations>
