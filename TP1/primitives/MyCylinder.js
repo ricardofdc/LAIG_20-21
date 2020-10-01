@@ -15,7 +15,7 @@ class MyCylinder extends CGFobject {
 		this.topRadius = topRadius;
 		this.height = height;
 		this.slices = slices;
-    this.stacks = stacks;
+    	this.stacks = stacks;
 
 		this.initBuffers();
 	}
