@@ -14,8 +14,8 @@
 
 - Scene
   - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
-  - [Island scene](TP1/scenes/proj1.xml).
-  
+  - [Island scene](TP1/scenes/island.xml).
+
 ![Initial draft](TP1/photos/draft.jpg)
 
 -----
