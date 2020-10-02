@@ -10,9 +10,10 @@
 ----
 ## Project information
 
+- XML file (island scene) already full of information.
 - Scene
   - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
-  - [Island scene](scenes/island.xml).
+  - Island scene: [island.xml](TP1/scenes/island.xml).
 
 <img src="photos/draft.jpg" alt="Initial draft" width="500"/>
 ----
