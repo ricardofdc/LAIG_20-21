@@ -15,6 +15,7 @@
   - [Island scene](scenes/proj1.xml).
   
 <img src="photos/draft.jpg" alt="Initial draft" width="500"/>
+
 ----
 ## Issues/Problems
 
