@@ -46,6 +46,9 @@
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
+        <texture id="mainSailsTexture" path="./scenes/images/mainsails.png" />
+        <texture id="boatFlagTexture" path="./scenes/images/boatFlag.png" />
+        <texture id="boatGlassTexture" path="./scenes/images/boatGlass.jpg" />
     </textures>
 
 
@@ -122,7 +125,7 @@
         </node>
 
         <node id="islandBase">
-            <material id="null" />
+            <material id="sandMaterial" />
             <texture id="sandTexture" />
             <transformations>
                 <rotation axis="x" angle="-90" />
@@ -1255,7 +1258,7 @@
 
         <node id="boat1">                                                                       <!-- -->
             <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->            
+            <texture id="boatFlagTexture" />                                                               <!-- -->            
             <transformations>                                                                   <!-- -->
                 <translation x="65" y="0" z="-30"/>
                 <scale x="0.3" y="0.3" z="0.3"/>
@@ -1519,7 +1522,7 @@
 
         <node id="boatMainSails">                                                                       <!-- -->
             <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->            
+            <texture id="mainSailsTexture" />                                                               <!-- -->            
             <transformations>
                 <translation x="10.5" y="7.5" z="3"/>
             </transformations>                                                  <!-- -->
@@ -1619,7 +1622,7 @@
 
         <node id="boatWindowGlass">                                                                       <!-- -->
             <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->            
+            <texture id="boatGlassTexture" />                                                               <!-- -->            
             <transformations>
             </transformations>                                                  <!-- -->
             <descendants>                                                                       <!-- -->
