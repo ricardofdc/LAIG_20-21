@@ -12,10 +12,9 @@
 
 ### [TP1 - Scene Graph](TP1)
 
-- (items briefly describing main strong points)
 - Scene
-  - (Brief description of the created scene)
-  - (relative link to the scene)
+  - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
+  - [Island scene](TP1/scenes/proj1.xml).
 
 -----
 
@@ -26,4 +25,3 @@
 
 ### [TP3 - ...](TP3)
 - (items briefly describing main strong points)
-

@@ -10,11 +10,10 @@
 ----
 ## Project information
 
-- (items describing main strong points)
 - Scene
-  - (Brief description of the created scene)
-  - (relative link to the scene)
+  - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
+  - [Island scene](scenes/proj1.xml).
 ----
 ## Issues/Problems
 
-- (items describing unimplemented features, bugs, problems, etc.)
+- We don't have the [parser](MySceneGraph.js) complete yet, so we can't see the scene we created, there might be some bugs.
