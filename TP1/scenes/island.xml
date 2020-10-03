@@ -41,8 +41,7 @@
     <textures>
         <!-- NOTE: this block "texture" must be repeated as necessary with different "id" -->
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
-        <texture id="wallTexture" path="./scenes/images/stone_wall.jpg" />
-        <texture id="roofTexture" path="./scenes/images/roof.jpg" />
+        <texture id="trunkTexture" file="./scenes/images/trunk-image.jpg"/>
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
@@ -926,7 +925,9 @@
                                                                                                 <!-- -->
         <node id="treeBase">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+            <texture id="trunkTexture">
+                <amplification afs="1.0" aft="1.0" />
+            </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
                 <rotation axis="x" angle="-90" />                                               <!-- -->
                 <scale x="0.25" y="1" z="0.25"/>                                                <!-- -->
