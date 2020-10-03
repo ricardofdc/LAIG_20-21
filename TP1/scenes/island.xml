@@ -135,7 +135,7 @@
                 <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" slices="40" stacks="1" />
+                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" stacks="1" slices="40"/>
             </descendants>
         </node>
 
@@ -932,7 +932,7 @@
                 <scale x="0.25" y="1" z="0.25"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
-                <leaf type="cylinder" height="5" topRadius="0.7" bottomRadius="1.3" slices="8" stacks="2" />
+                <leaf type="cylinder" height="5" topRadius="0.7" bottomRadius="1.3" stacks="2" slices="8"/>
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
@@ -1112,7 +1112,7 @@
                 <rotation axis="x" angle="-90"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
-                <leaf type="cylinder" height="5" topRadius="0.05" bottomRadius="0.05" slices="8" stacks="2" />
+                <leaf type="cylinder" height="5" topRadius="0.05" bottomRadius="0.05" stacks="2" slices="8"  />
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
