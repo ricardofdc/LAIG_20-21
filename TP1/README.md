@@ -13,9 +13,11 @@
 - XML file (island scene) already full of information.
 - Scene
   - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
-  - Island scene: [island.xml](TP1/scenes/island.xml).
+  - Island scene: [island.xml](TP1/scenes/LAIG_TP1_XML_T5_G03_v03.xml).
 
 <img src="photos/draft.jpg" alt="Initial draft" width="500"/>
+
+
 ----
 ## Issues/Problems
 
