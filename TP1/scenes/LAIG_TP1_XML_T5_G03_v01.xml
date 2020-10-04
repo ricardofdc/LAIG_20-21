@@ -41,7 +41,7 @@
     <textures>
         <!-- NOTE: this block "texture" must be repeated as necessary with different "id" -->
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
-        <texture id="trunkTexture" file="./scenes/images/trunk-image.jpg"/>
+        <texture id="trunkTexture" path="./scenes/images/trunk-image.jpg"/>
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
@@ -184,8 +184,8 @@
           <material id="null" />
           <texture id="null" />
           <transformations>
-              <rotation axis="x" angle="90"/>
               <rotation axis="z" angle="60"/>
+              <rotation axis="x" angle="90"/>
           </transformations>
           <translation x="-0.05" y="4.1" z="-2.3"/>
           <descendants>
@@ -245,8 +245,8 @@
           <material id="null" />
           <texture id="null" />
           <transformations>
-              <rotation axis="y" angle="90"/>
               <translation x="-2.5" y="0" z="-2.1"/>
+              <rotation axis="y" angle="90"/>
           </transformations>
           <descendants>
               <noderef id="parede_lateral"/>
@@ -258,8 +258,8 @@
           <material id="null" />
           <texture id="null" />
           <transformations>
-              <rotation axis="y" angle="90"/>
               <translation x="-2.5" y="0" z="2.1"/>
+              <rotation axis="y" angle="90"/>
           </transformations>
           <descendants>
               <noderef id="parede_porta"/>
@@ -929,8 +929,8 @@
                 <amplification afs="1.0" aft="1.0" />
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
+                <scale sx="0.25" sy="1" sz="0.25"/>                                                <!-- -->
                 <rotation axis="x" angle="-90" />                                               <!-- -->
-                <scale x="0.25" y="1" z="0.25"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="cylinder" height="5" topRadius="0.7" bottomRadius="1.3" stacks="2" slices="8"/>
@@ -990,7 +990,7 @@
                 <amplification afs="1.0" aft="1.0" />
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
-                <scale x="0.5" y="0.5" z="0.5"/>                            <!-- TREE'S RELATED CODE -->
+                <scale sx="0.5" sy="0.5" sz="0.5"/>                            <!-- TREE'S RELATED CODE -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf1"/>                                                           <!-- -->
@@ -1017,8 +1017,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <rotation axis="z" angle="100"/>                                                <!-- -->
                 <translation x="0" y="10" z="0.2"/>                                             <!-- -->
+                <rotation axis="z" angle="100"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1029,8 +1029,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="60"/>                                                 <!-- -->
                 <translation x="-1" y="11" z="0"/>                                              <!-- -->
+                <rotation axis="z" angle="60"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1041,8 +1041,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <rotation axis="z" angle="20"/>                                                 <!-- -->
                 <translation x="0" y="11" z="0"/>                                               <!-- -->
+                <rotation axis="z" angle="20"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1053,8 +1053,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-10"/>                                                <!-- -->
                 <translation x="1" y="11" z="0"/>                                               <!-- -->
+                <rotation axis="z" angle="-10"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1065,8 +1065,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                           <!-- TREE'S RELATED CODE -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-60"/>                                                <!-- -->
                 <translation x="1" y="11" z="0"/>                                               <!-- -->
+                <rotation axis="z" angle="-60"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1077,8 +1077,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-110"/>                                               <!-- -->
                 <translation x="0" y="11" z="0"/>                                               <!-- -->
+                <rotation axis="z" angle="-110"/>                                               <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf"/>                                                            <!-- -->
@@ -1121,8 +1121,8 @@
             <material id="null" />                                          <!-- TREE'S RELATED CODE -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
                 <translation x="-0.1" y="0" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1133,8 +1133,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
                 <translation x="0" y="0.15" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1145,8 +1145,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
                 <translation x="-0.1" y="1" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1157,8 +1157,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
                 <translation x="0" y="1.15" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1169,8 +1169,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
                 <translation x="-0.1" y="2" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1181,8 +1181,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
                 <translation x="0" y="2.15" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1193,8 +1193,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
                 <translation x="-0.1" y="3" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1205,8 +1205,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
                 <translation x="0" y="3.15" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1217,8 +1217,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
                 <translation x="-0.1" y="4" z="0"/>                                             <!-- -->
+                <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1229,8 +1229,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
                 <translation x="0" y="4.15" z="0"/>                         <!-- TREE'S RELATED CODE -->
+                <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1241,8 +1241,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <scale x="-0.05" y="5" z="0"/>                                                  <!-- -->
                 <translation x="0" y="4.15" z="0"/>                                             <!-- -->
+                <scale sx="-0.05" sy="5" sz="0"/>                                                  <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
@@ -1271,8 +1271,8 @@
                 <amplification afs="1.0" aft="1.0" />
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
+                <scale sx="0.3" sy="0.3" sz="0.3"/>
                 <translation x="65" y="0" z="-30"/>
-                <scale x="0.3" y="0.3" z="0.3"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boat"/>                                                            <!-- -->
@@ -1284,8 +1284,8 @@
             <texture id="null" />                                                               <!-- -->
             <transformations>
                 <rotation axis="y" angle="35"/>                                                 <!-- -->
+                <scale sx="0.3" sy="0.3" sz="0.3"/>
                 <translation x="-70" y="0" z="50"/>
-                <scale x="0.3" y="0.3" z="0.3"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boat"/>                                                            <!-- -->
@@ -1295,7 +1295,7 @@
         <node id="boat">                                                                        <!-- -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
-            <transformations>              </transformations>                                   <!-- -->
+            <transformations></transformations>                                                 <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boatStructure"/>                                                   <!-- -->
                 <noderef id="boatMast"/>                                                        <!-- -->
@@ -1309,7 +1309,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <scale x="1.5" y="1.5" z="1"/>
+                <scale sx="1.5" sy="1.5" sz="1"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boatStructureLeft"/>                                               <!-- -->
@@ -1368,8 +1368,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="y" angle="180"/>
                 <translation x="14" y="0" z="0"/>
+                <rotation axis="y" angle="180"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boatStructureSide1"/>                                              <!-- -->
@@ -1403,8 +1403,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="x" angle="-90"/>
                 <translation x="0" y="0" z="6"/>
+                <rotation axis="x" angle="-90"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="rectangle" x1="0" y1="0" x2="8" y2="6" />
@@ -1426,9 +1426,9 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="x" angle="36.9"/>
-                <rotation axis="y" angle="90"/>
                 <translation x="11" y="0" z="6"/>
+                <rotation axis="y" angle="90"/>
+                <rotation axis="x" angle="36.9"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="rectangle" x1="0" y1="0" x2="6" y2="5" />
@@ -1439,9 +1439,9 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="y" angle="-90"/>
-                <rotation axis="z" angle="-36.9"/>
                 <translation x="11" y="0" z="0"/>
+                <rotation axis="z" angle="-36.9"/>
+                <rotation axis="y" angle="-90"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="rectangle" x1="0" y1="0" x2="6" y2="5" />
@@ -1463,9 +1463,9 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="x" angle="-36.9"/>
-                <rotation axis="y" angle="90"/>
                 <translation x="3" y="0" z="6"/>
+                <rotation axis="y" angle="90"/>
+                <rotation axis="x" angle="-36.9"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="rectangle" x1="0" y1="0" x2="6" y2="5" />
@@ -1476,9 +1476,9 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="y" angle="-90"/>
-                <rotation axis="z" angle="36.9"/>
                 <translation x="3" y="0" z="0"/>
+                <rotation axis="z" angle="36.9"/>
+                <rotation axis="y" angle="-90"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="rectangle" x1="0" y1="0" x2="6" y2="5" />
@@ -1489,8 +1489,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="x" angle="270"/>
                 <translation x="10.5" y="0" z="3"/>
+                <rotation axis="x" angle="270"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <leaf type="cylinder" height="25" topRadius="0.3" bottomRadius="0.3" stacks="10" slices="20"/>
@@ -1523,8 +1523,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>
-                <rotation axis="y" angle="-180"/>
                 <translation x="3" y="0" z="0"/>
+                <rotation axis="y" angle="-180"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boatFlag1"/>
@@ -1690,9 +1690,9 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="-30" />
-                <scale sx="1" sy="0.5" sz="1"/>
                 <translation x="0" y="0" z="1"/>
+                <scale sx="1" sy="0.5" sz="1"/>
+                <rotation axis="x" angle="-30" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="1" y2="1" />
@@ -1703,10 +1703,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="-30" />
-                <rotation axis="y" angle="180" />
-                <scale sx="1" sy="0.5" sz="1"/>
                 <translation x="1" y="0" z="0"/>
+                <scale sx="1" sy="0.5" sz="1"/>
+                <rotation axis="y" angle="180" />
+                <rotation axis="x" angle="-30" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="1" y2="1" />
@@ -1717,8 +1717,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="y" angle="-90" />
                 <scale sx="1" sy="0.435" sz="1" />
+                <rotation axis="y" angle="-90" />
             </transformations>
             <descendants>
                 <leaf type="triangle" x1="0" y1="0" x2="1" y2="0" x3="0.5" y3="1"/>
@@ -1729,9 +1729,9 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="y" angle="90" />
-                <scale sx="1" sy="0.435" sz="1" />
                 <translation x="1" y="0" z="1" />
+                <scale sx="1" sy="0.435" sz="1" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
                 <leaf type="triangle" x1="0" y1="0" x2="1" y2="0" x3="0.5" y3="1"/>
@@ -1783,8 +1783,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="-90"/>
                 <translation x="0" y="1" z="0"/>
+                <rotation axis="x" angle="-90"/>
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -1806,8 +1806,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="180"/>
                 <translation x="0" y="0.5" z="-0.5"/>
+                <rotation axis="x" angle="180"/>
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -1818,8 +1818,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="y" angle="-90"/>
                 <translation x="-0.5" y="0.5" z="0"/>
+                <rotation axis="y" angle="-90"/>
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -1830,8 +1830,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="y" angle="90"/>
                 <translation x="0.5" y="0.5" z="0"/>
+                <rotation axis="y" angle="90"/>
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
