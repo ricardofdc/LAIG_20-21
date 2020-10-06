@@ -1022,7 +1022,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="y" angle="180"/>                                                <!-- -->
+                <rotation axis="y" angle="-180"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="treeTopFront"/>                                                    <!-- -->
@@ -1118,7 +1118,6 @@
                 <noderef id="leafPt8"/>                                                         <!-- -->
                 <noderef id="leafPt9"/>                                                         <!-- -->
                 <noderef id="leafPt10"/>                                                        <!-- -->
-                <noderef id="leafPt11"/>                                                        <!-- -->
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
@@ -1252,19 +1251,6 @@
                 <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt11">                                                                    <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="4.15" z="0"/>                                             <!-- -->
-                <scale sx="-0.05" sy="5" sz="0"/>                                                  <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="triangle" x1="0" y1="0" x2="0.2" y2="0" x3="0.1" y3="2.5"/>         <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
         <!--  END OF TREE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
