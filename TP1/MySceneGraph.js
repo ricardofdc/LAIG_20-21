@@ -455,12 +455,59 @@ class MySceneGraph {
             var textureIndex = nodeNames.indexOf("texture");
             var descendantsIndex = nodeNames.indexOf("descendants");
 
-            this.onXMLMinorError("To do: Parse nodes.");
+//            this.onXMLMinorError("To do: Parse nodes.");
 
             //add node to nodes array
             this.nodes[nodeID] = new MyNode(nodeID);
 
             // Transformations
+            if(transformationsIndex == null){
+                return this.onXMLError("No Transformations tag in " + nodeID);
+            }
+
+            var transformationMatrix = mat4.create();
+            var transformations = grandChildren[transformationsIndex].children;
+
+            for(var j=0; j<transformations.length;j++){
+                switch(transformations[j].nodeName){
+                    case 'translation':
+                        var coordinates = this.parseCoordinates3D(transformations[j], "translate transformation for node " + nodeID);
+                        if (!Array.isArray(coordinates))
+                            return coordinates;
+
+                        transformationMatrix = mat4.translate(transformationMatrix, transformationMatrix, coordinates);
+                        break;
+                        case 'scale':          
+                        var coordinates=this.parseScaleCoordinates(transformations[j], "scale transformation for node " + nodeID);
+                        if(!Array.isArray(coordinates))
+                            return coordinates;
+                            transformationMatrix = mat4.scale(transformationMatrix, transformationMatrix, coordinates);              
+                        break;
+                    case 'rotation':
+                        var axis = this.reader.getString(transformations[j], 'axis');
+                        var angle = this.reader.getFloat(transformations[j], 'angle');
+            
+                        if (angle == null) {
+                            this.onXMLMinorError("Rotation angle can't be null");
+                            continue;
+                        }
+                        if (axis == "x") {
+                            mat4.rotate(transformationMatrix, transformationMatrix, angle * DEGREE_TO_RAD, [1, 0, 0]);
+                        }
+                        else if (axis == "y") {
+                            mat4.rotate(transformationMatrix, transformationMatrix, angle * DEGREE_TO_RAD, [0, 1, 0]);
+                        }
+                        else if (axis == "z") {
+                            mat4.rotate(transformationMatrix, transformationMatrix, angle * DEGREE_TO_RAD, [0, 0, 1]);
+                        }
+                        else {
+                            this.onXMLMinorError("Invalid rotation axis");
+                            continue;
+                        }
+                        break;
+                }
+                this.nodes[nodeID].transformations = transformationMatrix;
+            }
 
             // Material
 
@@ -682,6 +729,35 @@ class MySceneGraph {
     }
 
     /**
+     * Parse the coordinates from a scale transformation
+     * @param {block element} node
+     * @param {message to be displayed in case of error} messageError
+     */
+    parseScaleCoordinates(node, messageError) {
+        var position = [];
+
+        // sx
+        var x = this.reader.getFloat(node, 'sx');
+        if (!(x != null && !isNaN(x)))
+            return "unable to parse x-coordinate of the " + messageError;
+
+        // sy
+        var y = this.reader.getFloat(node, 'sy');
+        if (!(y != null && !isNaN(y)))
+            return "unable to parse y-coordinate of the " + messageError;
+
+        // sz
+        var z = this.reader.getFloat(node, 'sz');
+        if (!(z != null && !isNaN(z)))
+            return "unable to parse z-coordinate of the " + messageError;
+
+        position.push(...[x, y, z]);
+
+        return position;
+    }
+
+
+    /**
      * Parse the coordinates from a node with ID = id
      * @param {block element} node
      * @param {message to be displayed in case of error} messageError
@@ -775,6 +851,11 @@ class MySceneGraph {
       * }
       *
       */
+        this.scene.pushMatrix();
+
+        if(this.nodes[id].transformations!=null){
+            this.scene.multMatrix(this.nodes[id].transformations);
+        } 
 
       for(let i=0; i<this.nodes[id].descendants.leaves.length; i++){
         this.nodes[id].descendants.leaves[i].display();
@@ -790,5 +871,7 @@ class MySceneGraph {
           }
         this.processNode(child_id);
       }
+      this.scene.popMatrix();
+
     }
 }

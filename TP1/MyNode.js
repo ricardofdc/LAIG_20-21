@@ -9,7 +9,7 @@ class MyNode {
      */
     constructor(id){
         this.id = id;
-        this.transformations = [];
+        this.transformations = mat4.create();
         this.material = [];
         this.descendants = {
             nodes:[],
