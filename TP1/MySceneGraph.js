@@ -634,11 +634,26 @@ class MySceneGraph {
             }
 
             // MATERIAL
+            if(materialIndex == null){
+                return this.onXMLError("No <material> tag in " + nodeID);
+            }
 
+            var material = grandChildren[materialIndex];
+            var material_id = this.reader.getString(material, 'id');
+            var materials = [];
+
+            if(this.materials[material_id] == null && material_id != 'null' && material_id!="clear"){
+                return this.onXMLError("Material " + material_id + " not defined!");
+            }
+            else{
+                materials.push(material_id);
+            }
+
+            this.nodes[nodeID].material = materials;
 
             // TEXTURE
             var textureNode = grandChildren[textureIndex];
-            if(materialIndex == null){
+            if(textureIndex == null){
                 return this.onXMLError("No <texture> tag in " + nodeID);
             }
 
@@ -1006,7 +1021,7 @@ class MySceneGraph {
      * Recursive process of each node.
      * @param {string} id - id of the node to process
      */
-    processNode(id){
+    processNode(id, mat){
         /**
         *
         * ProcessNode(id, tg, mat, text, afs, aft){

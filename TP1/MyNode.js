@@ -59,4 +59,12 @@ class MyNode {
     setTextureAfs(texture_aft){
         this.texture_aft = texture_aft;
     }
+
+    /**
+     * Defines new material of a node
+     * @param {string} material 
+     */
+    createMaterial(material){
+        this.material = material;
+    }
 }
