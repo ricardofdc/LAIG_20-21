@@ -249,12 +249,12 @@ class MySceneGraph {
         this.views = [];
 
         var children = viewsNode.children;
-       
+
         if (this.default_view == null) {
             this.onXMLError("Default view must be defined!");
         }
 
-        if (children.length == 0){ 
+        if (children.length == 0){
             this.onXMLError("No view defined!");
         }
 
@@ -288,7 +288,7 @@ class MySceneGraph {
                 var right = this.reader.getFloat(children[i], 'right');
                 var top = this.reader.getFloat(children[i], 'top');
                 var bottom = this.reader.getFloat(children[i], 'bottom');
-                
+
                 if(left==null || right==null || top==null || bottom == null){
                     this.onXMLError("Invalid left / right / top / bottom value!");
                     continue;
@@ -302,7 +302,7 @@ class MySceneGraph {
                 else up = this.parseCoordinates3D(grandChildren[indexUp]);
 
                 this.views[view_id] = new CGFcameraOrtho(left, right, bottom, top, near, far, from, to, up);
-            } 
+            }
             else if(cameraType == "perspective") {
                 var angle = this.reader.getFloat(children[i], 'angle');
                 angle *= DEGREE_TO_RAD;
@@ -439,6 +439,22 @@ class MySceneGraph {
      */
     parseTextures(texturesNode) {
 
+        this.textures = [];
+
+        var textures = texturesNode.children;
+
+        for(let i=0; i<textures.length; i++){
+            let nodeName = textures.nodeName;
+            if(nodeName != "texture"){
+                this.onXMLMinorError("All nodes inside textures must be called \"texture\".");
+                continue;
+            }
+
+            
+        }
+
+
+
         //For each texture in textures block, check ID and file URL
         this.onXMLMinorError("To do: Parse textures.");
         return null;
@@ -545,18 +561,18 @@ class MySceneGraph {
 
                         transformationMatrix = mat4.translate(transformationMatrix, transformationMatrix, coordinates);
                         break;
-                        case 'scale':          
-                        var coordinates=this.parseScaleCoordinates(transformations[j], "scale transformation for node " + nodeID);
+                    case 'scale':
+                        var coordinates = this.parseScaleCoordinates(transformations[j], "scale transformation for node " + nodeID);
                         if(!Array.isArray(coordinates))
                             return coordinates;
-                            transformationMatrix = mat4.scale(transformationMatrix, transformationMatrix, coordinates);              
+                        transformationMatrix = mat4.scale(transformationMatrix, transformationMatrix, coordinates);
                         break;
                     case 'rotation':
                         var axis = this.reader.getString(transformations[j], 'axis');
                         var angle = this.reader.getFloat(transformations[j], 'angle');
-            
-                        if (angle == null) {
-                            this.onXMLMinorError("Rotation angle can't be null");
+
+                        if (angle == null || isNaN(angle)) {
+                            this.onXMLMinorError("Rotation angle must be a number.");
                             continue;
                         }
                         if (axis == "x") {
@@ -762,10 +778,12 @@ class MySceneGraph {
     parseBoolean(node, name, messageError){
         var boolVal = true;
         boolVal = this.reader.getBoolean(node, name);
-        if (!(boolVal != null && !isNaN(boolVal) && (boolVal == true || boolVal == false)))
+        if (!(boolVal != null && !isNaN(boolVal) && (boolVal == true || boolVal == false))){
             this.onXMLMinorError("unable to parse value component " + messageError + "; assuming 'value = 1'");
+            return true;
+        }
 
-        return boolVal || 1;
+        return boolVal;
     }
 
     /**
@@ -889,16 +907,16 @@ class MySceneGraph {
     changeView(){
         this.scene.camera = this.views[this.default_view];
         this.scene.interface.setActiveCamera(this.scene.camera);
-    }    
+    }
 
     /**
      * Displays the scene, processing each node, starting in the root node.
      */
     displayScene() {
-      if (this.nodes[this.idRoot] == null){
-          this.onXMLError(this.idRoot + " not found!");
-          this.scene.sceneInited = false;
-          return;
+        if (this.nodes[this.idRoot] == null){
+            this.onXMLError(this.idRoot + " not found!");
+            this.scene.sceneInited = false;
+            return;
         }
         this.processNode(this.idRoot);
 
@@ -910,46 +928,45 @@ class MySceneGraph {
      * @param {string} id - id of the node to process
      */
     processNode(id){
-      /**
-      *
-      * ProcessNode(id, tg, mat, text, afs, aft){
-      *   ajustar tg->tg1(matriz transformação Ma*Mn);
-      *   ajustar mat->mat1 (material);
-      *   ajustar text->text1 (textura);
-      *   para cada descendente:
-      *       if(descendente == primitiva):
-      *           desenhar descendente;
-      *       else:
-      *           push(t1);
-      *           push(mat1);
-      *           push(text1);
-      *           ProcessNode(child, tg1, mat1, text1, afs, aft);
-      * }
-      *
-      */
+        /**
+        *
+        * ProcessNode(id, tg, mat, text, afs, aft){
+        *   ajustar tg->tg1(matriz transformação Ma*Mn);
+        *   ajustar mat->mat1 (material);
+        *   ajustar text->text1 (textura);
+        *   para cada descendente:
+        *       if(descendente == primitiva):
+        *           desenhar descendente;
+        *       else:
+        *           push(t1);
+        *           push(mat1);
+        *           push(text1);
+        *           ProcessNode(child, tg1, mat1, text1, afs, aft);
+        * }
+        *
+        */
 
         var node = this.nodes[id];
         this.scene.pushMatrix();
 
         if(node.transformations!=null){
             this.scene.multMatrix(node.transformations);
-        } 
+        }
 
-      for(let i=0; i<node.descendants.leaves.length; i++){
-        node.descendants.leaves[i].display();
-      }
-      for(let i=0; i<node.descendants.nodes.length; i++){
+        for(let i=0; i<node.descendants.leaves.length; i++){
+            node.descendants.leaves[i].display();
+        }
+        for(let i=0; i<node.descendants.nodes.length; i++){
 
-        var child_id = node.descendants.nodes[i];
-        //console.log(child_id);
-        if (this.nodes[child_id] == null){
-            this.onXMLError(child_id + " node used in " + id + " not found!");
-            this.scene.sceneInited = false;
-            return;
-          }
-        this.processNode(child_id);
-      }
-      this.scene.popMatrix();
-
+            var child_id = node.descendants.nodes[i];
+            //console.log(child_id);
+            if (this.nodes[child_id] == null){
+                this.onXMLError(child_id + " node used in " + id + " not found!");
+                this.scene.sceneInited = false;
+                return;
+            }
+            this.processNode(child_id);
+        }
+        this.scene.popMatrix();
     }
 }
