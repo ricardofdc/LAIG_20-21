@@ -10,6 +10,9 @@ class MyNode {
     constructor(id){
         this.id = id;
         this.transformations = mat4.create();
+        this.texture = null;
+        this.texture_afs = null;
+        this.texture_aft = null;
         this.material = [];
         this.descendants = {
             nodes:[],
@@ -31,5 +34,29 @@ class MyNode {
      */
     addNode(node_id){
         this.descendants.nodes.push(node_id);
+    }
+
+    /*
+     * Sets the texture of a node
+     * @param {string} texture_id
+     */
+    setTexture(texture_id){
+        this.texture = texture_id;
+    }
+
+    /*
+     * Sets the texture afs of a node
+     * @param {float} texture_afs
+     */
+    setTextureAfs(texture_afs){
+        this.texture_afs = texture_afs;
+    }
+
+    /*
+     * Sets the texture aft of a node
+     * @param {float} texture_afs
+     */
+    setTextureAfs(texture_aft){
+        this.texture_aft = texture_aft;
     }
 }

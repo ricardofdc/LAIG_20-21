@@ -551,14 +551,13 @@ class MySceneGraph {
             var textureIndex = nodeNames.indexOf("texture");
             var descendantsIndex = nodeNames.indexOf("descendants");
 
-//            this.onXMLMinorError("To do: Parse nodes.");
 
             //add node to nodes array
             this.nodes[nodeID] = new MyNode(nodeID);
 
-            // Transformations
+            // TRANSFORMATIONS
             if(transformationsIndex == null){
-                return this.onXMLError("No Transformations tag in " + nodeID);
+                return this.onXMLError("No <transformations> tag in " + nodeID);
             }
 
             var transformationMatrix = mat4.create();
@@ -605,13 +604,51 @@ class MySceneGraph {
                 this.nodes[nodeID].transformations = transformationMatrix;
             }
 
-            // Material
+            // MATERIAL
 
-            // Texture
 
-            // Descendants
+            // TEXTURE
+            var textureNode = grandChildren[textureIndex];
+            if(materialIndex == null){
+                return this.onXMLError("No <texture> tag in " + nodeID);
+            }
+
+            //reads texture id
+            var textureID = this.reader.getString(textureNode, 'id');
+            if(textureID == null){
+                this.onXMLMinorError("Texture of node " + nodeID + " doesn't have 'id' defined. Assuming id=\"null\".");
+                textureID = "null";
+            }
+
+            //looks for texture id if it is dfferent from null or clear
+            if(this.textures[textureID] == null && textureID != "null" && textureID != "clear"){
+                this.onXMLMinorError("Texture of node \"" + nodeID + "\" with id=\"" + textureID + "\" is not defined in <textures>. Assuming id=\"null\".");
+            }
+            this.nodes[nodeID].setTexture(textureID);
+
+            //reads amplification
+            var textureChildren = textureNode.children;
+            for(let j=0, j<textureChildren.length; j++){
+                if(var nodeName = textureChildren[j].nodeName == "amplification"){
+                    var texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
+                    var texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
+                    if (texture_afs == null || isNaN(texture_afs)){
+                        this.onXMLMinorError("Unable to parse afs in texture of node " + nodeID + ". Assuming afs=1.");
+                        texture_afs = 1;
+                    }
+                    if (texture_aft == null || isNaN(texture_aft)){
+                        this.onXMLMinorError("Unable to parse aft in texture of node " + nodeID + ". Assuming aft=1.");
+                        texture_aft = 1;
+                    }
+                }
+                else{
+                    this.onXMLMinorError("Tag <" + nodeName + "> is not recognized in " + nodeID);
+                }
+            }
+
+            // DESCENDANTS
             if(descendantsIndex == null){
-                return this.onXMLError("No Descendants tag in " + nodeID);
+                return this.onXMLError("No <descendants> tag in " + nodeID);
             }
 
             //All descendants of current node
