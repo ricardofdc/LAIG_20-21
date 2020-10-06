@@ -657,8 +657,9 @@ class MySceneGraph {
 
             //reads amplification
             var textureChildren = textureNode.children;
-            for(let j=0, j<textureChildren.length; j++){
-                if(var nodeName = textureChildren[j].nodeName == "amplification"){
+            for(let j=0; j<textureChildren.length; j++){
+                var nodeName = textureChildren[j].nodeName;
+                if(nodeName == "amplification"){
                     var texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
                     var texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
                     if (texture_afs == null || isNaN(texture_afs)){
