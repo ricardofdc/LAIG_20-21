@@ -444,20 +444,32 @@ class MySceneGraph {
         var textures = texturesNode.children;
 
         for(let i=0; i<textures.length; i++){
-            let nodeName = textures.nodeName;
+            let nodeName = textures[i].nodeName;
             if(nodeName != "texture"){
-                this.onXMLMinorError("All nodes inside textures must be called \"texture\".");
+                this.onXMLMinorError("Unknown tag name <" + nodeName + "> inside textures.");
                 continue;
             }
 
+            //get texture id
+            let textureID = this.reader.getString(textures[i], 'id');
+            if(textureID == null){
+                this.onXMLMinorError("Failed to parse texture ID");
+                continue;
+            }
+            if(this.textures[textureID] != null){
+                this.onXMLMinorError("Texture ID must be unique. (ID=" + textureID + " is duplicated).");
+                continue;
+            }
 
+            //get texture path
+            var texturePath = this.reader.getString(textures[i], 'path');
+            if(texturePath == null){
+                this.onXMLMinorError("Unable to parse texture path of texture with ID=" + textureID);
+                continue;
+            }
+
+            this.textures[textureID] = new CGFtexture(this.scene, texturePath);
         }
-
-
-
-        //For each texture in textures block, check ID and file URL
-        this.onXMLMinorError("To do: Parse textures.");
-        return null;
     }
 
     /**
@@ -949,17 +961,18 @@ class MySceneGraph {
         var node = this.nodes[id];
         this.scene.pushMatrix();
 
+        //ajustar matriz de transformação
         if(node.transformations!=null){
             this.scene.multMatrix(node.transformations);
         }
 
+        //correr os descendentes
         for(let i=0; i<node.descendants.leaves.length; i++){
             node.descendants.leaves[i].display();
         }
         for(let i=0; i<node.descendants.nodes.length; i++){
 
             var child_id = node.descendants.nodes[i];
-            //console.log(child_id);
             if (this.nodes[child_id] == null){
                 this.onXMLError(child_id + " node used in " + id + " not found!");
                 this.scene.sceneInited = false;
