@@ -545,12 +545,15 @@ class MySceneGraph {
 
                         transformationMatrix = mat4.translate(transformationMatrix, transformationMatrix, coordinates);
                         break;
+
                         case 'scale':          
                         var coordinates=this.parseScaleCoordinates(transformations[j], "scale transformation for node " + nodeID);
                         if(!Array.isArray(coordinates))
                             return coordinates;
-                            transformationMatrix = mat4.scale(transformationMatrix, transformationMatrix, coordinates);              
+
+                        transformationMatrix = mat4.scale(transformationMatrix, transformationMatrix, coordinates);              
                         break;
+                        
                     case 'rotation':
                         var axis = this.reader.getString(transformations[j], 'axis');
                         var angle = this.reader.getFloat(transformations[j], 'angle');
