@@ -649,7 +649,7 @@ class MySceneGraph {
                 materials.push(material_id);
             }
 
-            this.nodes[nodeID].material = materials;
+            this.nodes[nodeID].createMaterial(materials);
 
             // TEXTURE
             var textureNode = grandChildren[textureIndex];
@@ -1012,7 +1012,7 @@ class MySceneGraph {
             this.scene.sceneInited = false;
             return;
         }
-        this.processNode(this.idRoot);
+        this.processNode(this.idRoot, this.nodes[this.idRoot].material[0]);
 
         //To do: Create display loop for transversing the scene graph, calling the root node's display function
     }
@@ -1041,7 +1041,27 @@ class MySceneGraph {
         */
 
         var node = this.nodes[id];
+        var node_material;
+        var mat_id = mat;
+
         this.scene.pushMatrix();
+
+
+        //Materials
+
+        //maintains material from parent node 
+        if(node.material[0] != "null"){
+            mat_id = node.material[0];
+        }
+
+        node_material = this.materials[mat_id];
+
+        //Texturas -> TODO
+
+        node_material.setTexture(null);
+        node_material.setTextureWrap('REPEAT', 'REPEAT');
+        node_material.apply();
+
 
         //ajustar matriz de transformação
         if(node.transformations!=null){
@@ -1060,7 +1080,7 @@ class MySceneGraph {
                 this.scene.sceneInited = false;
                 return;
             }
-            this.processNode(child_id);
+            this.processNode(child_id,mat_id);
         }
         this.scene.popMatrix();
     }
