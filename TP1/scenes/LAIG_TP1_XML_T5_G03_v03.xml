@@ -9,8 +9,8 @@
     <views default="defaultCamera">
         <!-- at least one of the following type of cameras must be declared -->
         <perspective id="defaultCamera" near="0.3" far="500" angle="35">
-            <from x="2" y="30" z="10" />
-            <to x="0" y="4" z="0" />
+            <from x="30" y="15" z="50" />
+            <to x="0" y="-3" z="0" />
         </perspective>
         <ortho id="demoOrtho" near="0.2" far="100" left="-0.2" right="0.2" top="0.2" bottom="-0.2">
             <from x="5" y="0" z="10" />
@@ -111,11 +111,10 @@
             <texture id="null" />
             <transformations></transformations>
             <descendants>
-                <!--<noderef id="ocean" />
+                <noderef id="ocean" />
                 <noderef id="island" />
                 <noderef id="caban" />
-                <noderef id="boats" />-->
-                <noderef id="tree"/>
+                <noderef id="boats" />
             </descendants>
         </node>
 
@@ -872,8 +871,8 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- TREE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
                                                                                                 <!-- -->
-        <node id="tree1">                                                                       <!-- -->
-            <material id="null" />
+        <node id="tree1">                                                   <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->                                                          <!-- -->
             <transformations>                                                                   <!-- -->
                 <translation x="-15" y="0" z="-7"/>                                             <!-- -->
@@ -883,7 +882,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="tree2">                                                                       <!-- -->
+        <node id="tree2">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -894,7 +893,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="tree3">                                                                       <!-- -->
+        <node id="tree3">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -902,10 +901,10 @@
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                  <!-- TREE'S RELATED CODE -->
+            </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="tree4">                                                                       <!-- -->
+        <node id="tree4">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -916,7 +915,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="tree5">                                                                       <!-- -->
+        <node id="tree5">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -927,7 +926,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="tree">                                                                        <!-- -->
+        <node id="tree">                                                    <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="clear" />                                                              <!-- -->
             <transformations>                                                                   <!-- -->
@@ -935,17 +934,17 @@
             <descendants>                                                                       <!-- -->
                 <noderef id="treeBase"/>                                                        <!-- -->
                 <noderef id="coconuts"/>                                                        <!-- -->
-                <noderef id="treeTop"/>                                                    <!-- -->
+                <noderef id="treeTop"/>                                                         <!-- -->
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
         <node id="treeBase">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
-            <texture id="trunkTexture">
-                <amplification afs="1.0" aft="1.0" />
+            <texture id="trunkTexture">                                                         <!-- -->
+                <amplification afs="1.0" aft="1.0" />                                           <!-- -->
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
-                <scale sx="0.25" sy="1" sz="0.25"/>                                                <!-- -->
+                <scale sx="0.25" sy="1" sz="0.25"/>                                             <!-- -->
                 <rotation axis="x" angle="-90" />                                               <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -953,10 +952,10 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="coconuts">                                                                    <!-- -->
+        <node id="coconuts">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
-            <texture id="coconutTexture">
-                <amplification afs="1.0" aft="1.0" />
+            <texture id="coconutTexture">                                                       <!-- -->
+                <amplification afs="1.0" aft="1.0" />                                           <!-- -->
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
             </transformations>                                                                  <!-- -->
@@ -967,7 +966,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="coconut1">                                                                    <!-- -->
+        <node id="coconut1">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -977,8 +976,8 @@
                 <leaf type="sphere" radius="0.2" slices="12" stacks="4" />                      <!-- -->
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
-                                                                            <!-- TREE'S RELATED CODE -->
-        <node id="coconut2">                                                                    <!-- -->
+                                                                                                <!-- -->
+        <node id="coconut2">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -989,7 +988,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="coconut3">                                                                    <!-- -->
+        <node id="coconut3">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1000,13 +999,13 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="treeTop">                                                                <!-- -->
+        <node id="treeTop">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
-            <texture id="leavesTexture">
-                <amplification afs="1.0" aft="1.0" />
+            <texture id="leavesTexture">                                                        <!-- -->
+                <amplification afs="1.0" aft="1.0" />                                           <!-- -->
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0" y="5" z="0"/>
+                <translation x="0" y="5" z="0"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leaf1"/>                                                           <!-- -->
@@ -1018,12 +1017,12 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->                                                                             <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf1">                                                                       <!-- -->
+        <node id="leaf1">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
-            <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <translation x="-0.2" y="0" z="0"/>                                                <!-- -->
-                <rotation axis="x" angle="30"/>                                                <!-- -->
+            <transformations>                                                                   <!-- -->
+                <translation x="-0.2" y="0" z="0"/>                                             <!-- -->
+                <rotation axis="x" angle="30"/>                                                 <!-- -->
                 <rotation axis="z" angle="110"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1031,12 +1030,12 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf2">                                                                       <!-- -->
+        <node id="leaf2">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="-0.2" y="0" z="0"/>                                              <!-- -->
-                <rotation axis="x" angle="-25"/>                                                 <!-- -->
+                <translation x="-0.2" y="0" z="0"/>                                             <!-- -->
+                <rotation axis="x" angle="-25"/>                                                <!-- -->
                 <rotation axis="z" angle="55"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1044,11 +1043,11 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf3">                                                                       <!-- -->
+        <node id="leaf3">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
-            <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <rotation axis="x" angle="5"/>                                                 <!-- -->
+            <transformations>                                                                   <!-- -->
+                <rotation axis="x" angle="5"/>                                                  <!-- -->
                 <rotation axis="z" angle="10"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1056,7 +1055,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf4">                                                                       <!-- -->
+        <node id="leaf4">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1068,12 +1067,12 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf5">                                                                       <!-- -->
+        <node id="leaf5">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                           <!-- TREE'S RELATED CODE -->
+            <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0" y="0" z="0"/>                                               <!-- -->
-                <rotation axis="x" angle="0"/>                                                <!-- -->
+                <translation x="0" y="0" z="0"/>                                                <!-- -->
+                <rotation axis="x" angle="0"/>                                                  <!-- -->
                 <rotation axis="z" angle="-70"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1081,11 +1080,11 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf6">                                                                       <!-- -->
+        <node id="leaf6">                                                   <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <rotation axis="x" angle="-30"/>                                               <!-- -->
+                <rotation axis="x" angle="-30"/>                                                <!-- -->
                 <rotation axis="z" angle="-110"/>                                               <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1093,8 +1092,8 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leaf">                                                                        <!-- -->
-            <material id="null" />                                          <!-- TREE'S RELATED CODE -->
+        <node id="leaf">                                                    <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
                 <scale sx="0.5" sy="0.5" sz="0.5"/>
@@ -1114,7 +1113,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPetiole">                                                                 <!-- -->
+        <node id="leafPetiole">                                             <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1124,24 +1123,12 @@
                 <leaf type="cylinder" height="5" topRadius="0.05" bottomRadius="0.05" stacks="1" slices="6"  />
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
-
-
-        <node id="leafPt">                                                                     <!-- -->
-            <material id="null" />                                          <!-- TREE'S RELATED CODE -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="triangle" x1="-0.1" y1="0" x2="0.1" y2="0" x3="0" y3="2.5"/>         <!-- -->
-                <leaf type="triangle" x1="0.1" y1="0" x2="-0.1" y2="0" x3="0" y3="2.5"/>         <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>   
                                                                                                 <!-- -->
-        <node id="leafPt1">                                                                     <!-- -->
-            <material id="null" />                                          <!-- TREE'S RELATED CODE -->
+        <node id="leafPt1">                                                 <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="0.07" z="0"/>                                             <!-- -->
+                <translation x="0.05" y="0.07" z="0"/>                                          <!-- -->
                 <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1149,7 +1136,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt2">                                                                     <!-- -->
+        <node id="leafPt2">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1160,12 +1147,12 @@
                 <noderef id="leafPt"/>
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
-                                                                            <!-- TREE'S RELATED CODE -->
-        <node id="leafPt3">                                                                     <!-- -->
+                                                                                                <!-- -->
+        <node id="leafPt3">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="1.07" z="0"/>                                             <!-- -->
+                <translation x="0.05" y="1.07" z="0"/>                                          <!-- -->
                 <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1173,7 +1160,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt4">                                                                     <!-- -->
+        <node id="leafPt4">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1189,7 +1176,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="2.07" z="0"/>                                             <!-- -->
+                <translation x="0.05" y="2.07" z="0"/>                                          <!-- -->
                 <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1197,7 +1184,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt6">                                                                     <!-- -->
+        <node id="leafPt6">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1209,11 +1196,11 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt7">                                                                     <!-- -->
+        <node id="leafPt7">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
-            <transformations>                                               <!-- TREE'S RELATED CODE -->
-                <translation x="0.05" y="3.07" z="0"/>                                             <!-- -->
+            <transformations>                                                                  <!--  -->
+                <translation x="0.05" y="3.07" z="0"/>                                          <!-- -->
                 <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1221,7 +1208,7 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt8">                                                                     <!-- -->
+        <node id="leafPt8">                                                 <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
@@ -1237,7 +1224,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="4.07" z="0"/>                                             <!-- -->
+                <translation x="0.05" y="4.07" z="0"/>                                          <!-- -->
                 <rotation axis="z" angle="45"/>                                                 <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
@@ -1245,17 +1232,28 @@
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
                                                                                                 <!-- -->
-        <node id="leafPt10">                                                                    <!-- -->
+        <node id="leafPt10">                                                <!-- TREE'S RELATED CODE -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="0" y="4.15" z="0"/>                         <!-- TREE'S RELATED CODE -->
+                <translation x="0" y="4.15" z="0"/>                                            <!--  -->
                 <rotation axis="z" angle="-45"/>                                                <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="leafPt"/>
             </descendants>                                                                      <!-- -->
         </node>                                                                                 <!-- -->
+
+        <node id="leafPt">                                                  <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                             <!--  -->
+            <texture id="null" />                                                               <!-- -->
+            <transformations>                                                                   <!-- -->
+            </transformations>                                                                  <!-- -->
+            <descendants>                                                                       <!-- -->
+                <leaf type="triangle" x1="-0.1" y1="0" x2="0.1" y2="0" x3="0" y3="2.5"/>        <!-- -->
+                <leaf type="triangle" x1="0.1" y1="0" x2="-0.1" y2="0" x3="0" y3="2.5"/>        <!-- -->
+            </descendants>                                                                      <!-- -->
+        </node>   
         <!--  END OF TREE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
