@@ -245,7 +245,75 @@ class MySceneGraph {
      * @param {view block element} viewsNode
      */
     parseViews(viewsNode) {
-        this.onXMLMinorError("To do: Parse views and create cameras.");
+        this.default_view = this.reader.getString(viewsNode, 'default');
+        this.views = [];
+
+        var children = viewsNode.children;
+       
+        if (this.default_view == null) {
+            this.onXMLError("Default view must be defined!");
+        }
+
+        if (children.length == 0){ 
+            this.onXMLError("No view defined!");
+        }
+
+        for (var i=0; i<children.length; i++) {
+            var grandChildren = children[i].children;
+
+            var view_id = this.reader.getString(children[i], 'id');
+            var cameraType = children[i].nodeName;
+
+            var near = this.reader.getFloat(children[i], 'near');
+            var far = this.reader.getFloat(children[i], 'far');
+
+            if(near == null || far == null) {
+                this.onXMLError("Invalid near/far value!");
+                continue;
+            }
+
+            var nodeNames = [];
+            for (let j=0; j<grandChildren.length; j++) {
+                nodeNames.push(grandChildren[j].nodeName);
+            }
+
+            var indexFrom = nodeNames.indexOf("from");
+            var from = this.parseCoordinates3D(grandChildren[indexFrom]);
+
+            var indexTo = nodeNames.indexOf("to");
+            var to = this.parseCoordinates3D(grandChildren[indexTo]);
+
+            if (cameraType == "ortho") {
+                var left = this.reader.getFloat(children[i], 'left');
+                var right = this.reader.getFloat(children[i], 'right');
+                var top = this.reader.getFloat(children[i], 'top');
+                var bottom = this.reader.getFloat(children[i], 'bottom');
+                
+                if(left==null || right==null || top==null || bottom == null){
+                    this.onXMLError("Invalid left / right / top / bottom value!");
+                    continue;
+                }
+
+                var indexUp = nodeNames.indexOf("up");
+                var up;
+                if(indexUp== -1){
+                    up = [0,1,0];
+                }
+                else up = this.parseCoordinates3D(grandChildren[indexUp]);
+
+                this.views[view_id] = new CGFcameraOrtho(left, right, bottom, top, near, far, from, to, up);
+            } 
+            else if(cameraType == "perspective") {
+                var angle = this.reader.getFloat(children[i], 'angle');
+                angle *= DEGREE_TO_RAD;
+                this.views[view_id] = new CGFcamera(angle, near, far, from, to);
+            }
+            else{
+                this.onXMLError("Invalid camera type!");
+            }
+        }
+
+        this.log("Parsed views.");
         return null;
     }
 
@@ -816,6 +884,14 @@ class MySceneGraph {
     }
 
     /**
+     * Change camera to the selected on interface
+     */
+    changeView(){
+        this.scene.camera = this.views[this.default_view];
+        this.scene.interface.setActiveCamera(this.scene.camera);
+    }    
+
+    /**
      * Displays the scene, processing each node, starting in the root node.
      */
     displayScene() {
@@ -851,18 +927,20 @@ class MySceneGraph {
       * }
       *
       */
+
+        var node = this.nodes[id];
         this.scene.pushMatrix();
 
-        if(this.nodes[id].transformations!=null){
-            this.scene.multMatrix(this.nodes[id].transformations);
+        if(node.transformations!=null){
+            this.scene.multMatrix(node.transformations);
         } 
 
-      for(let i=0; i<this.nodes[id].descendants.leaves.length; i++){
-        this.nodes[id].descendants.leaves[i].display();
+      for(let i=0; i<node.descendants.leaves.length; i++){
+        node.descendants.leaves[i].display();
       }
-      for(let i=0; i<this.nodes[id].descendants.nodes.length; i++){
+      for(let i=0; i<node.descendants.nodes.length; i++){
 
-        var child_id = this.nodes[id].descendants.nodes[i];
+        var child_id = node.descendants.nodes[i];
         //console.log(child_id);
         if (this.nodes[child_id] == null){
             this.onXMLError(child_id + " node used in " + id + " not found!");

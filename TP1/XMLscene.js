@@ -101,6 +101,8 @@ class XMLscene extends CGFscene {
 
         this.initLights();
 
+        this.interface.initViews(this.graph);
+
         this.sceneInited = true;
     }
 
@@ -137,6 +139,7 @@ class XMLscene extends CGFscene {
             // Displays the scene (MySceneGraph function).
             this.graph.displayScene();
 
+            /*
             // Draw primitives (just for testing)
             if(this.displayRectangle){
               this.pushMatrix();
@@ -161,7 +164,7 @@ class XMLscene extends CGFscene {
                 this.sphere.display();
                 this.popMatrix();
             }
-
+*/
         }
         else
         {
