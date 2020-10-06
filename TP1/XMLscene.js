@@ -39,15 +39,15 @@ class XMLscene extends CGFscene {
         this.defaultAppearance = new CGFappearance(this);
 
         //Primitives (just for testing)
-        this.displayRectangle = false;
-        this.displayTriangle = false;
-        this.displayCylinder = false;
-        this.displaySphere = false;
-        this.displayTorus = false;
-        this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
-        this.cylinder = new MyCylinder(this,2,2,5,8,5);
-        this.triangle = new MyTriangle(this, 0,0,4,0,2,2);
-        this.sphere = new MySphere(this, 3, 10,10);
+        // this.displayRectangle = false;
+        // this.displayTriangle = false;
+        // this.displayCylinder = false;
+        // this.displaySphere = false;
+        // this.displayTorus = false;
+        // this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
+        // this.cylinder = new MyCylinder(this,2,2,5,8,5);
+        // this.triangle = new MyTriangle(this, 0,0,4,0,2,2);
+        // this.sphere = new MySphere(this, 3, 10,10);
     }
 
     /**
@@ -101,6 +101,8 @@ class XMLscene extends CGFscene {
 
         this.initLights();
 
+        //Apply default view
+        this.graph.changeView();
         this.interface.initViews(this.graph);
 
         this.sceneInited = true;
