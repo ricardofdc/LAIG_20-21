@@ -43,33 +43,33 @@
         <light id="floorLight1">            <!-- light identifier -->
             <enable value="0" />
             <!-- enable/disable -->
-            <position x="4" y="0.5" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <position x="4" y="1" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
             <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
-            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <diffuse r="1" g="0.772" b="0.561" a="1" />             <!-- diffuse component -->
             <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->
         </light>
         <light id="floorLight2">            <!-- light identifier -->
             <enable value="0" />
             <!-- enable/disable -->
-            <position x="4" y="0.5" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
-            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
-            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <position x="4" y="1" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="0.5" />                   <!-- ambient component -->
+            <diffuse r="1" g="0.772" b="0.561" a="1" />             <!-- diffuse component -->
             <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->
         </light>
         <light id="floorLight3">            <!-- light identifier -->
             <enable value="0" />
             <!-- enable/disable -->
-            <position x="-4" y="0.5" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
-            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
-            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <position x="-4" y="1" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="0.8" />                   <!-- ambient component -->
+            <diffuse r="1" g="0.772" b="0.561" a="1" />             <!-- diffuse component -->
             <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->      <!-- specular component -->
         </light>
         <light id="floorLight4">            <!-- light identifier -->
             <enable value="0" />
             <!-- enable/disable -->
-            <position x="-4" y="0.5" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <position x="-4" y="1" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
             <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
-            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <diffuse r="1" g="0.772" b="0.561" a="1" />             <!-- diffuse component -->
             <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->           <!-- specular component -->
         </light>
     </lights>
@@ -260,7 +260,7 @@
             <transformations>
             </transformations>
             <descendants>
-                <leaf type="sphere" radius="1" slices="8" stacks="5" />
+                <leaf type="sphere" radius="0.5" slices="8" stacks="5" />
             </descendants>
         </node>
 
