@@ -35,13 +35,27 @@ class MyInterface extends CGFinterface {
         return true;
     }
 
+    addLights(graph){
+        var lights_folder = this.gui.addFolder("Lights");
+        lights_folder.open();
+
+        var i=0;
+        for(var key in graph.lights){
+            var light = graph.scene.lightValues;
+            lights_folder.add(graph.scene.lightValues, key);
+
+        }
+
+
+    }
+
     initViews(graph){
-        var folder = this.gui.addFolder("Views");
-        folder.open();
+        var views_folder = this.gui.addFolder("Views");
+        views_folder.open();
 
         let viewsID = Object.keys(graph.views);
-    
-        this.gui.add(graph, 'default_view', viewsID).name("Camera").onChange(graph.changeView.bind(graph));
+
+        views_folder.add(graph, 'default_view', viewsID).name("Camera").onChange(graph.changeView.bind(graph));
     }
 
     /**

@@ -9,31 +9,68 @@
     <views default="defaultCamera">
         <!-- at least one of the following type of cameras must be declared -->
         <perspective id="defaultCamera" near="0.3" far="500" angle="35">
-            <from x="30" y="15" z="50" />
-            <to x="0" y="-3" z="0" />
+            <from x="23" y="15" z="50" />
+            <to x="0" y="0" z="0" />
         </perspective>
-        <ortho id="demoOrtho" near="0.2" far="100" left="-0.2" right="0.2" top="0.2" bottom="-0.2">
-            <from x="5" y="0" z="10" />
-            <to x="5" y="0" z="0" />
+        <perspective id="frontCamera" near="0.3" far="500" angle="35">
+            <from x="0" y="10" z="30" />
+            <to x="0" y="0" z="0" />
+        </perspective>
+        <ortho id="demoOrtho" near="0.2" far="10" left="-1" right="1" top="1" bottom="-1">
+            <from x="0" y="10" z="0" />
+            <to x="0" y="0" z="0" />
             <up x="0" y="1" z="0" /><!-- optional, default 0,1,0 -->
         </ortho>
     </views>
 
     <illumination>
         <ambient r="0.1" g="0.1" b="0.1" a="1.0" />           <!-- global ambient -->
-        <background r="0.529" g="0.808" b="0.922" a="1.0" />     <!-- background color -->
+        <background r="0.133" g="0.301" b="0.78" a="1.0" />     <!-- background color -->
     </illumination>
 
 
     <lights>
         <!-- NOTE: this block "light" must be repeated as necessary with different "id". At least one light should be present, and a maximum of eight lights is accepted. -->
-        <light id="light1">            <!-- light identifier -->
+        <light id="sun">            <!-- light identifier -->
             <enable value="1" />
             <!-- enable/disable -->
-            <position x="10" y="12" z="9.5" w="1.0" /><!-- light position; w=1: point light; w=0: directional light -->
-            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
+            <position x="-30" y="30" z="30" w="0.2" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0.3" g="0.3" b="0.3" a="1.0" />                   <!-- ambient component -->
             <diffuse r="0.8" g="0.8" b="0.8" a="0.5" />             <!-- diffuse component -->
-            <specular r="0.8" g="0.8" b="0.8" a="1.0" />            <!-- specular component -->
+            <specular r="0.2" g="0.2" b="0.2" a="1.0" />            <!-- specular component -->
+        </light>
+
+        <light id="floorLight1">            <!-- light identifier -->
+            <enable value="0" />
+            <!-- enable/disable -->
+            <position x="4" y="0.5" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
+            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->
+        </light>
+        <light id="floorLight2">            <!-- light identifier -->
+            <enable value="0" />
+            <!-- enable/disable -->
+            <position x="4" y="0.5" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
+            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->
+        </light>
+        <light id="floorLight3">            <!-- light identifier -->
+            <enable value="0" />
+            <!-- enable/disable -->
+            <position x="-4" y="0.5" z="9" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
+            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->      <!-- specular component -->
+        </light>
+        <light id="floorLight4">            <!-- light identifier -->
+            <enable value="0" />
+            <!-- enable/disable -->
+            <position x="-4" y="0.5" z="5" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0" g="0" b="0" a="1.0" />                   <!-- ambient component -->
+            <diffuse r="0.1" g="0.0772" b="0.0561" a="1" />             <!-- diffuse component -->
+            <specular r="1.0" g="0.7725" b="0.5608" a="1" />            <!-- specular component -->           <!-- specular component -->
         </light>
     </lights>
 
@@ -58,7 +95,7 @@
             <shininess value="1" />
             <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
             <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
-            <specular r="0.0" g="0.0" b="0.0" a="1.0" />
+            <specular r="0.2" g="0.2" b="0.2" a="1.0" />
             <emissive r="0.0" g="0.0" b="0.0" a="1.0" />
         </material>
 
@@ -102,6 +139,14 @@
             <emissive r="0.0" g="0.0" b="0.0" a="1.0" />
         </material>
 
+        <material id="lampMaterial">
+            <shininess value="1" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="1.0" g="0.7725" b="0.5608" a="1.0" />
+            <specular r="0.0" g="0.0" b="0.0" a="1.0" />
+            <emissive r="1.0" g="0.7725" b="0.5608" a="1.0" />
+        </material>
+
 
     </materials>
 
@@ -138,6 +183,84 @@
             <descendants>
               <noderef id="islandBase" />
               <noderef id="someTrees" />
+              <noderef id="someFloorLights" />
+            </descendants>
+        </node>
+
+        <node id="someFloorLights">
+            <material id="lampMaterial" />
+            <texture id="clear">
+            </texture>
+            <transformations>
+            </transformations>
+            <descendants>
+                <noderef id="floorLight1" />
+                <noderef id="floorLight2" />
+                <noderef id="floorLight3" />
+                <noderef id="floorLight4" />
+            </descendants>
+        </node>
+
+        <node id="floorLight1">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+            <transformations>
+                <translation x="4" y="0.5" z="9" />
+                <scale sx="0.3" sy="0.3" sz="0.3" />
+            </transformations>
+            <descendants>
+                <noderef id="sphere" />
+            </descendants>
+        </node>
+
+        <node id="floorLight2">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+            <transformations>
+                <translation x="4" y="0.5" z="5" />
+                <scale sx="0.3" sy="0.3" sz="0.3" />
+            </transformations>
+            <descendants>
+                <noderef id="sphere" />
+            </descendants>
+        </node>
+
+        <node id="floorLight3">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+            <transformations>
+                <translation x="-4" y="0.5" z="9" />
+                <scale sx="0.3" sy="0.3" sz="0.3" />
+            </transformations>
+            <descendants>
+                <noderef id="sphere" />
+            </descendants>
+        </node>
+
+        <node id="floorLight4">
+            <material id="null" />
+            <texture id="null">
+            </texture>
+            <transformations>
+                <translation x="-4" y="0.5" z="5" />
+                <scale sx="0.3" sy="0.3" sz="0.3" />
+            </transformations>
+            <descendants>
+                <noderef id="sphere" />
+            </descendants>
+        </node>
+
+        <node id="sphere">
+            <material id="lampMaterial" />
+            <texture id="clear">
+            </texture>
+            <transformations>
+            </transformations>
+            <descendants>
+                <leaf type="sphere" radius="1" slices="8" stacks="5" />
             </descendants>
         </node>
 
@@ -865,6 +988,8 @@
                 <noderef id="tree3" />
                 <noderef id="tree4" />
                 <noderef id="tree5" />
+                <noderef id="tree6" />
+                <noderef id="tree7" />
             </descendants>
         </node>
 
@@ -875,7 +1000,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->                                                          <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="-15" y="0" z="-7"/>                                             <!-- -->
+                <translation x="-10" y="0" z="-5"/>                                             <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
@@ -886,7 +1011,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="15" y="0" z="4"/>                                               <!-- -->
+                <translation x="10" y="0" z="-5"/>                                               <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
@@ -897,7 +1022,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="6" y="0" z="14"/>                                               <!-- -->
+                <translation x="0" y="0" z="-10"/>                                             <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
@@ -908,7 +1033,8 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="-8" y="0" z="12"/>                                              <!-- -->
+                <translation x="-5" y="0" z="5"/>
+                <rotation axis="y" angle="30" />                                               <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
@@ -919,7 +1045,32 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="3" y="1" z="-6"/>                                               <!-- -->
+                <translation x="5" y="0" z="5"/>
+                <rotation axis="y" angle="-30" />                                               <!-- -->
+            </transformations>                                                                  <!-- -->
+            <descendants>                                                                       <!-- -->
+                <noderef id="tree"/>                                                            <!-- -->
+            </descendants>                                                                      <!-- -->
+        </node>
+
+        <node id="tree6">                                                   <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                              <!-- -->
+            <texture id="null" />                                                               <!-- -->
+            <transformations>                                                                   <!-- -->
+                <translation x="5" y="0" z="9"/>
+                <rotation axis="y" angle="-60" />                                                <!-- -->
+            </transformations>                                                                  <!-- -->
+            <descendants>                                                                       <!-- -->
+                <noderef id="tree"/>                                                            <!-- -->
+            </descendants>                                                                      <!-- -->
+        </node>                                                                                 <!-- -->
+                                                                                                <!-- -->
+        <node id="tree7">                                                   <!-- TREE'S RELATED CODE -->
+            <material id="null" />                                                              <!-- -->
+            <texture id="null" />                                                               <!-- -->
+            <transformations>                                                                   <!-- -->
+                <translation x="-5" y="0" z="9"/>
+                <rotation axis="y" angle="60" />                                              <!-- -->
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="tree"/>                                                            <!-- -->
@@ -1276,7 +1427,7 @@
 
             </texture>                                                                          <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="20" y="0" z="-20"/>
+                <translation x="-15" y="0" z="-20"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boat"/>                                                            <!-- -->
@@ -1286,9 +1437,9 @@
         <node id="boat2">                                                                       <!-- -->
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
-            <transformations>
-                <rotation axis="y" angle="35"/>                                                 <!-- -->
-                <translation x="-35" y="0" z="6"/>
+            <transformations>                                                 <!-- -->
+                <translation x="20" y="0" z="20"/>
+                <rotation axis="y" angle="35"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
                 <noderef id="boat"/>                                                            <!-- -->
@@ -1513,7 +1664,7 @@
         </node>
 
         <node id="boatMainSail">                                                               <!-- -->
-            <material id="null" />                                                              <!-- -->
+            <material id="darkGreyMaterial" />                                                              <!-- -->
             <texture id="mainSailsTexture">
                 <amplification afs="1.0" aft="1.0" />
             </texture>                                                                          <!-- -->

@@ -10,6 +10,7 @@ class XMLscene extends CGFscene {
         super();
 
         this.interface = myinterface;
+        this.lightValues = [];
     }
 
     /**
@@ -37,17 +38,6 @@ class XMLscene extends CGFscene {
         this.loadingProgress = 0;
 
         this.defaultAppearance = new CGFappearance(this);
-
-        //Primitives (just for testing)
-        // this.displayRectangle = false;
-        // this.displayTriangle = false;
-        // this.displayCylinder = false;
-        // this.displaySphere = false;
-        // this.displayTorus = false;
-        // this.rectangle = new MyRectangle(this,-1,-0.5,1,0.5);
-        // this.cylinder = new MyCylinder(this,2,2,5,8,5);
-        // this.triangle = new MyTriangle(this, 0,0,4,0,2,2);
-        // this.sphere = new MySphere(this, 3, 10,10);
     }
 
     /**
@@ -56,6 +46,7 @@ class XMLscene extends CGFscene {
     initCameras() {
         this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(15, 15, 15), vec3.fromValues(0, 0, 0));
     }
+
     /**
      * Initializes the scene lights with the values read from the XML file.
      */
@@ -77,13 +68,16 @@ class XMLscene extends CGFscene {
                 this.lights[i].setSpecular(...graphLight[4]);
 
                 this.lights[i].setVisible(true);
-                if (graphLight[0])
+                if (graphLight[0]){
                     this.lights[i].enable();
-                else
+                    this.lightValues[key]=true;
+                }
+                else{
                     this.lights[i].disable();
+                    this.lightValues[key]=false;
+                }
 
                 this.lights[i].update();
-
                 i++;
             }
         }
@@ -100,6 +94,7 @@ class XMLscene extends CGFscene {
         this.setGlobalAmbientLight(...this.graph.ambient);
 
         this.initLights();
+        this.interface.addLights(this.graph);
 
         //Apply default view
         this.graph.changeView();
@@ -127,10 +122,11 @@ class XMLscene extends CGFscene {
 
         this.pushMatrix();
 
+/*
         for (var i = 0; i < this.lights.length; i++) {
             this.lights[i].setVisible(true);
             this.lights[i].enable();
-        }
+        }*/
 
         if (this.sceneInited) {
             // Draw axis
@@ -138,35 +134,24 @@ class XMLscene extends CGFscene {
 
             this.defaultAppearance.apply();
 
+            var i=0;
+            for(var key in this.lightValues){
+                if(this.lightValues.hasOwnProperty(key)){
+                    if(this.lightValues[key]){
+                        this.lights[i].setVisible(true);
+                        this.lights[i].enable();
+                    }
+                    else {
+                        this.lights[i].setVisible(false);
+                        this.lights[i].disable();
+                    }
+                    this.lights[i].update();
+                    i++;
+                }
+            }
+
             // Displays the scene (MySceneGraph function).
             this.graph.displayScene();
-
-            /*
-            // Draw primitives (just for testing)
-            if(this.displayRectangle){
-              this.pushMatrix();
-              this.rectangle.display();
-              this.popMatrix();
-            }
-
-            if(this.displayCylinder){
-              this.pushMatrix();
-              this.cylinder.display();
-              this.popMatrix();
-            }
-
-            if(this.displayTriangle){
-                this.pushMatrix();
-                this.triangle.display();
-                this.popMatrix();
-            }
-
-            if(this.displaySphere){
-                this.pushMatrix();
-                this.sphere.display();
-                this.popMatrix();
-            }
-*/
         }
         else
         {
