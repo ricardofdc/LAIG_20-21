@@ -13,7 +13,7 @@ class MyNode {
         this.texture = null;
         this.texture_afs = null;
         this.texture_aft = null;
-        this.material = [];
+        this.material = null;
         this.descendants = {
             nodes:[],
             leaves:[]
@@ -56,15 +56,15 @@ class MyNode {
      * Sets the texture aft of a node
      * @param {float} texture_afs
      */
-    setTextureAfs(texture_aft){
+    setTextureAft(texture_aft){
         this.texture_aft = texture_aft;
     }
 
     /**
      * Defines new material of a node
-     * @param {string} material 
+     * @param {string} material
      */
-    createMaterial(material){
+    setMaterial(material){
         this.material = material;
     }
 }

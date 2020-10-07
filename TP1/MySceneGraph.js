@@ -1,4 +1,5 @@
 const DEGREE_TO_RAD = Math.PI / 180;
+const DEFAULT_MATERIAL = "defaultMaterial";
 
 // Order of the groups in the XML document.
 var INITIALS_INDEX = 0;
@@ -517,7 +518,7 @@ class MySceneGraph {
                     var color = this.parseColor(grandChildren[j],grandChildren[j].nodeName);
 
                     switch (grandChildren[j].nodeName) {
-                        case 'ambient':  
+                        case 'ambient':
                             this.materials[materialID].setAmbient(color[0],color[1],color[2],color[3]);
                             break;
                         case 'diffuse':
@@ -530,7 +531,7 @@ class MySceneGraph {
                             this.materials[materialID].setEmission(color[0],color[1],color[2],color[3]);
                             break;
                     }
-                }   
+                }
             }
         }
 
@@ -585,7 +586,7 @@ class MySceneGraph {
             this.nodes[nodeID] = new MyNode(nodeID);
 
             // TRANSFORMATIONS
-            if(transformationsIndex == null){
+            if(transformationsIndex == -1){
                 return this.onXMLError("No <transformations> tag in " + nodeID);
             }
 
@@ -634,26 +635,22 @@ class MySceneGraph {
             }
 
             // MATERIAL
-            if(materialIndex == null){
+            if(materialIndex == -1){
                 return this.onXMLError("No <material> tag in " + nodeID);
             }
 
             var material = grandChildren[materialIndex];
             var material_id = this.reader.getString(material, 'id');
-            var materials = [];
 
             if(this.materials[material_id] == null && material_id != 'null' && material_id!="clear"){
-                return this.onXMLError("Material " + material_id + " not defined!");
+                this.onXMLMinorError("Material of node \"" + nodeID + "\" with id=\"" + material_id + "\" not defined in <materials>. Assuming material=\"" + this.materials[DEFAULT_MATERIAL] + "\"");
+                material_id = this.materials[DEFAULT_MATERIAL];
             }
-            else{
-                materials.push(material_id);
-            }
-
-            this.nodes[nodeID].createMaterial(materials);
+            this.nodes[nodeID].setMaterial(material_id);
 
             // TEXTURE
             var textureNode = grandChildren[textureIndex];
-            if(textureIndex == null){
+            if(textureIndex == -1){
                 return this.onXMLError("No <texture> tag in " + nodeID);
             }
 
@@ -685,6 +682,8 @@ class MySceneGraph {
                         this.onXMLMinorError("Unable to parse aft in texture of node " + nodeID + ". Assuming aft=1.");
                         texture_aft = 1;
                     }
+                    this.nodes[nodeID].setTextureAfs(texture_afs);
+                    this.nodes[nodeID].setTextureAft(texture_aft);
                 }
                 else{
                     this.onXMLMinorError("Tag <" + nodeName + "> is not recognized in " + nodeID);
@@ -692,7 +691,7 @@ class MySceneGraph {
             }
 
             // DESCENDANTS
-            if(descendantsIndex == null){
+            if(descendantsIndex == -1){
                 return this.onXMLError("No <descendants> tag in " + nodeID);
             }
 
@@ -1049,9 +1048,9 @@ class MySceneGraph {
 
         //Materials
 
-        //maintains material from parent node 
-        if(node.material[0] != "null"){
-            mat_id = node.material[0];
+        //maintains material from parent node
+        if(node.material != "null" && node.material != null){
+            mat_id = node.material;
         }
 
         node_material = this.materials[mat_id];
