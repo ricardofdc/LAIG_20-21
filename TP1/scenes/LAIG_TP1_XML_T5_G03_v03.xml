@@ -23,8 +23,8 @@
             <up x="0" y="1" z="0" />
         </ortho>
         <perspective id="insideCabanPerspective" near="0.3" far="20" angle="75">
-            <from x="1.8" y="3.4" z="1.8" />
-            <to x="-1.5" y="0" z="-1.5" />
+            <from x="1.8" y="3.2" z="1.5" />
+            <to x="-1.5" y="0" z="-1" />
         </perspective>
         <ortho id="insideCabanOrtho" near="-0.1" far="5" left="-4" right="4" top="4" bottom="-4">
             <from x="0" y="3.4" z="0" />
@@ -194,6 +194,7 @@
               <noderef id="someTrees" />
               <noderef id="someFloorLights" />
               <noderef id="table"/>
+              <noderef id="chairs"/>
             </descendants>
         </node>
 
@@ -264,7 +265,7 @@
           <material id="woodMaterial" />
           <texture id="trunkTexture" />
           <transformations>
-              <translation x="0" y="0.5" z="0"/>
+                <translation x="0" y="0.5" z="0"/>
           </transformations>
           <descendants>
               <noderef id="parede_esquerda"/>
@@ -959,7 +960,12 @@
                 <leaf type="cylinder" height="1" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
             </descendants>
         </node>
+        <!-- END OF CABAN'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- TABLE'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!--Table dimensions: width - 1.5 ; heigth - 1 -->
         <node id="table">
             <material id="woodMaterial"/>
             <texture id="tableTexture">
@@ -978,8 +984,8 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0" y="0.5" z="0"/> 
-                <scale sx="1" sy="0.15" sz="0.75"/>
+                <translation x="0" y="0.9" z="0"/> 
+                <scale sx="1.5" sy="0.1" sz="0.75"/>
             </transformations>
             <descendants>
                 <noderef id="unitCube"/>
@@ -1003,7 +1009,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.25" y="0" z="0.15"/>
+                <translation x="-0.5" y="0" z="0.25"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1014,7 +1020,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.25" y="0" z="0.15"/>
+                <translation x="0.5" y="0" z="0.25"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1025,7 +1031,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.25" y="0" z="-0.15"/>
+                <translation x="0.5" y="0" z="-0.25"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1036,7 +1042,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.25" y="0" z="-0.15"/>
+                <translation x="-0.5" y="0" z="-0.25"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1047,15 +1053,221 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <scale sx="0.1" sy="0.5" sz="0.1"/>
+                <scale sx="0.1" sy="0.9" sz="0.1"/>
             </transformations>
             <descendants>
                 <noderef id="unitCube"/>
             </descendants>
         </node>
-                                                                                                <!-- -->
-                                                                                                <!-- -->
-        <!-- END OF CABAN'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- END OF TABLE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- CHAIR'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <node id="chairs">
+            <material id="woodMaterial"/>
+            <texture id="tableTexture">
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations>
+            </transformations>
+            <descendants>
+                <noderef id="chair1"/>
+                <noderef id="chair2"/>
+                <noderef id="chair3"/>
+                <noderef id="chair4"/>
+            </descendants>
+        </node>
+
+        <node id="chair1">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="-1" y="0.5" z="0"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+            <descendants>
+                <noderef id="chair"/>
+            </descendants>
+        </node>
+
+        <node id="chair2">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="1" y="0.5" z="0"/>
+                <rotation axis="y" angle="-90"/>
+            </transformations>
+            <descendants>
+                <noderef id="chair"/>
+            </descendants>
+        </node>
+
+        <node id="chair3">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0.5" z="-0.5"/>
+            </transformations>
+            <descendants>
+                <noderef id="chair"/>
+            </descendants>
+        </node>
+
+        <node id="chair4">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0.5" z="0.5"/>
+                <rotation axis="y" angle="180"/>
+            </transformations>
+            <descendants>
+                <noderef id="chair"/>
+            </descendants>
+        </node>
+
+        <!--Chair dimensions: width - 0.5 ; heigth - 1.35 -->
+        <node id="chair">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+            </transformations>
+            <descendants>
+                <noderef id="chairBase"/>
+                <noderef id="chairLegs"/>
+                <noderef id="chairBackSupport"/>
+            </descendants>
+        </node>
+
+        <node id="chairBase">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0.6" z="0"/>
+                <scale sx="0.5" sy="0.05" sz="0.5"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node>
+
+        <node id="chairLegs">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+            </transformations>
+            <descendants>
+                <noderef id="chairLeg1"/>
+                <noderef id="chairLeg2"/>
+                <noderef id="chairLeg3"/>
+                <noderef id="chairLeg4"/>
+            </descendants>
+        </node>
+
+        <node id="chairLeg1">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="-0.2" y="0" z="0.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="chairLeg"/>
+            </descendants>
+        </node>
+
+        <node id="chairLeg2">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0.2" y="0" z="0.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="chairLeg"/>
+            </descendants>
+        </node>
+
+        <node id="chairLeg3">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0.2" y="0" z="-0.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="chairLeg"/>
+            </descendants>
+        </node>
+
+        <node id="chairLeg4">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="-0.2" y="0" z="-0.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="chairLeg"/>
+            </descendants>
+        </node>
+
+        <node id="chairLeg">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <scale sx="0.05" sy="0.6" sz="0.05"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node>
+
+        <node id="chairBackSupport">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0.65" z="0"/>
+            </transformations>
+            <descendants>
+                <noderef id="backSupportLeft"/>
+                <noderef id="backSupportRight"/>
+                <noderef id="backBoardSupport"/>
+            </descendants>
+        </node>  
+
+        <node id="backSupportLeft">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="-0.2" y="0" z="-0.2"/> 
+                <scale sx="0.05" sy="0.7" sz="0.05"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node> 
+
+        <node id="backSupportRight">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0.2" y="0" z="-0.2"/> 
+                <scale sx="0.05" sy="0.7" sz="0.05"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node> 
+
+        <node id="backBoardSupport">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0.4" z="-0.2"/>
+                <scale sx="0.4" sy="0.2" sz="0.05"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node> 
+        <!-- END OF CHAIR'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
         <node id="someTrees">
