@@ -74,6 +74,13 @@
             <diffuse  r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
+        <light id="cabanLight">
+            <enable value="1" />
+            <position x="0" y="1.6" z="0" w="0" />
+            <ambient r="0.5" g="0.25" b="0.25" a="0" />
+            <diffuse  r="0.15" g="0.05" b="0.05" a="0" />
+            <specular r="0" g="0" b="0" a="0" />
+        </light>
     </lights>
 
 
@@ -193,8 +200,6 @@
               <noderef id="islandBase" />
               <noderef id="someTrees" />
               <noderef id="someFloorLights" />
-              <noderef id="table"/>
-              <noderef id="chairs"/>
             </descendants>
         </node>
 
@@ -273,6 +278,8 @@
               <noderef id="parede_tras" />
               <noderef id="parede_frente"/>
               <noderef id="telhado_cabana"/>
+              <noderef id="table"/>
+              <noderef id="chairs"/>
           </descendants>
         </node>
 
@@ -972,11 +979,11 @@
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
-                <translation x="0" y="0.5" z="0"/>
             </transformations>
             <descendants>
                 <noderef id="tableTop"/>
                 <noderef id="tableLegs"/>
+                <noderef id="tableLamp"/>
             </descendants>
         </node>
 
@@ -1059,6 +1066,43 @@
                 <noderef id="unitCube"/>
             </descendants>
         </node>
+
+        <node id="tableLamp">
+            <material id="lampMaterial"/>
+            <texture id="glassTexture">
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="1.15" z="0"/>
+            </transformations>
+            <descendants>
+                <noderef id="tableLampTop"/>
+                <!--<noderef id="tableLampBase"/>-->
+            </descendants>
+        </node>        
+
+        <node id="tableLampTop">
+            <material id="null"/>
+            <texture id="null"/>
+            <transformations>
+            </transformations>
+            <descendants>
+                <leaf type="sphere" radius="0.15" slices="12" stacks="8" />                      
+            </descendants>
+        </node>        
+
+        <node id="tableLampBase">
+            <material id="null"/>
+            <texture id="mainSailsTexture"/>
+            <transformations>
+                <translation x="0" y="-0.05" z="0"/> 
+                <rotation axis="x" angle="90"/>
+            </transformations>
+            <descendants>
+                <leaf type="torus" inner="0.25" outer="0.1" slices="4" loops="15" />
+            </descendants>
+        </node>        
+
         <!-- END OF TABLE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -1083,7 +1127,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-1" y="0.5" z="0"/>
+                <translation x="-1" y="0" z="0"/>
                 <rotation axis="y" angle="90"/>
             </transformations>
             <descendants>
@@ -1095,7 +1139,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="1" y="0.5" z="0"/>
+                <translation x="1" y="0" z="0"/>
                 <rotation axis="y" angle="-90"/>
             </transformations>
             <descendants>
@@ -1107,7 +1151,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0" y="0.5" z="-0.5"/>
+                <translation x="0" y="0" z="-0.5"/>
             </transformations>
             <descendants>
                 <noderef id="chair"/>
@@ -1118,7 +1162,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0" y="0.5" z="0.5"/>
+                <translation x="0" y="0" z="0.5"/>
                 <rotation axis="y" angle="180"/>
             </transformations>
             <descendants>
@@ -2194,8 +2238,6 @@
                      :
         -->
 
-        <!-- ===> Prisma triangular não é utilizado até ao momento <===
-
         <node id="triangularPrism">
             <material id="null" />
             <texture id="null" />
@@ -2274,6 +2316,6 @@
             </descendants>
         </node>
 
-    -->
+    
     </nodes>
 </lsf>
