@@ -4,7 +4,7 @@
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="insideCabanPerspective">
+    <views default="defaultCamera">
         <perspective id="defaultCamera" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="0" y="0" z="0" />
@@ -45,7 +45,7 @@
 
     <lights>
         <light id="sun">            <!-- light identifier -->
-            <enable value="1" />
+            <enable value="0" />
             <!-- enable/disable -->
             <position x="0" y="30" z="0" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
             <ambient r="0.3" g="0.3" b="0.3" a="1.0" />                   <!-- ambient component -->
@@ -76,10 +76,10 @@
         </light>
         <light id="cabanLight">
             <enable value="1" />
-            <position x="0" y="1.4" z="0" w="0" />
-            <ambient r="0.5" g="0.25" b="0.25" a="0" />
-            <diffuse  r="0.15" g="0.05" b="0.05" a="0" />
-            <specular r="0" g="0" b="0" a="0" />
+            <position x="0" y="1.45" z="0" w="0" />
+            <ambient r="0.1" g="0.1" b="0.1" a="0.1" />
+            <diffuse  r="0.3" g="0.25" b="0.25" a="0.3" />
+            <specular r="0.3" g="0.2" b="0.2" a="0.3" />
         </light>
     </lights>
 
