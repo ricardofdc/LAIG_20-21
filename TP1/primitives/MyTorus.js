@@ -5,7 +5,7 @@
  * @param inner - inner radius of the torus
  * @param outer - outer radius of the torus
  * @param slices - number of meridians
- * @param stacks - number of paralels
+ * @param loops - number of loops
  */
 class MyTorus extends CGFobject {
     constructor(scene, inner, outer, slices, loops) {
@@ -45,7 +45,7 @@ class MyTorus extends CGFobject {
                 var nz = Math.sin(j*theta);
 
                 this.normals.push(nx, ny, nz);
-                this.texCoords.push(i / this.slices, j / this.loops);
+                this.texCoords.push(1-(i / this.slices), 1-(j / this.loops));
             }
         }
 
@@ -80,7 +80,7 @@ class MyTorus extends CGFobject {
     }
 
     updateTexCoords(afs, aft) {
-        // TODO: 
-  	}
+      this.updateTexCoordsGLBuffers();
+    }
 
 }
