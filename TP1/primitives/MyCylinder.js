@@ -42,7 +42,7 @@ class MyCylinder extends CGFobject {
 		}
 
 		for(let i=0; i<=this.slices; i++){
-			this.vertices.push(radius * Math.cos(-i * delta_angle), radius * Math.sin(-i * delta_angle), 0);
+			this.vertices.push(radius * Math.cos(i * delta_angle), radius * Math.sin(i * delta_angle), -0.001);
 			this.normals.push(0,0,-1);
 		}
 
@@ -68,7 +68,7 @@ class MyCylinder extends CGFobject {
 
 		radius -= delta_radius;
 		for(let i=0; i<=this.slices; i++){
-			this.vertices.push(radius * Math.cos(-i * delta_angle), radius * Math.sin(-i * delta_angle), this.height+0.01);
+			this.vertices.push(radius * Math.cos(-i * delta_angle), radius * Math.sin(-i * delta_angle), this.height+0.001);
 			this.normals.push(0,0,1);
 		}
 
@@ -112,23 +112,17 @@ class MyCylinder extends CGFobject {
 			let t=aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
+
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
-			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let s=-aft/(2 * Math.PI * maxRadius)/2 * Math.cos(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let t=-aft/(2 * Math.PI * maxRadius)/2 * Math.sin(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<=this.stacks; i++){
 			for(let j=0; j<=this.slices; j++){
-				/*if(i==0){
-					this.texCoords.push((aft/2*Math.PI) * Math.cos(j * delta_angle) + (aft/2*Math.PI) , (aft/2*Math.PI) * Math.sin(j * delta_angle) + (aft/2*Math.PI) );
-				}
-				else if(i==this.slacks){
-					this.texCoords.push((aft/2*Math.PI) * Math.cos(j * delta_angle) + (aft/2*Math.PI), (aft/2*Math.PI) * Math.sin(j * delta_angle) + (aft/2*Math.PI));
-				}
-				else{*/
-					this.texCoords.push(1 - incS * i, incT * j);
-				//}
+				this.texCoords.push(1 - incS * i, incT * j);
+
 			}
 		}
 
@@ -139,8 +133,8 @@ class MyCylinder extends CGFobject {
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
-			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 

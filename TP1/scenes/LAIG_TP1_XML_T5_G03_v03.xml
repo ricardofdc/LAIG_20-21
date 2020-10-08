@@ -39,6 +39,13 @@
             <diffuse r="0.8" g="0.8" b="0.8" a="0.5" />             <!-- diffuse component -->
             <specular r="0.4" g="0.4" b="0.4" a="1.0" />            <!-- specular component -->
         </light>
+        <light id="backLight">
+            <enable value="0" />
+            <position x="0" y="-30" z="00" w="1" />
+            <ambient r="0.3" g="0.3" b="0.3" a="1.0" />
+            <diffuse  r="0.8" g="0.8" b="0.8" a="0.5" />
+            <specular r="0.4" g="0.4" b="0.4" a="1.0" />
+        </light>
 
         <light id="floorLight1">
             <enable value="0" />
@@ -264,13 +271,13 @@
         <node id="islandBase">
             <material id="sandMaterial" />
             <texture id="sandTexture">
-                <amplification afs="0.5" aft="300" />
+                <amplification afs="0.5" aft="500" />
             </texture>
             <transformations>
                 <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" stacks="3" slices="40"/>
+                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" stacks="1" slices="30"/>
             </descendants>
         </node>
 
