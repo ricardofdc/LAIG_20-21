@@ -1011,7 +1011,9 @@ class MySceneGraph {
             this.scene.sceneInited = false;
             return;
         }
-        this.processNode(this.idRoot, this.nodes[this.idRoot].material[0]);
+        let rootMaterial = this.nodes[this.idRoot].material;
+        let rootTexture = this.nodes[this.idRoot].texture;
+        this.processNode(this.idRoot, rootMaterial, rootTexture, 1, 1);
 
         //To do: Create display loop for transversing the scene graph, calling the root node's display function
     }
@@ -1020,7 +1022,7 @@ class MySceneGraph {
      * Recursive process of each node.
      * @param {string} id - id of the node to process
      */
-    processNode(id, mat){
+    processNode(id, mat, text, afs, aft){
         /**
         *
         * ProcessNode(id, tg, mat, text, afs, aft){
@@ -1042,6 +1044,7 @@ class MySceneGraph {
         var node = this.nodes[id];
         var node_material;
         var mat_id = mat;
+        var texture = text;
 
         this.scene.pushMatrix();
 
@@ -1055,11 +1058,30 @@ class MySceneGraph {
 
         node_material = this.materials[mat_id];
 
-        //Texturas -> TODO
+        //Texturas
+        if(node.texture == "clear"){
+            node.clearTexture();
+        }
+        else if(node.texture != "null"){
+            texture = node.texture;
+        }
 
-        node_material.setTexture(null);
+        if(texture == null){
+            node_material.setTexture(null);
+        }
+        else{
+            node_material.setTexture(this.textures[texture]);
+        }
         node_material.setTextureWrap('REPEAT', 'REPEAT');
         node_material.apply();
+
+        //afs and aft
+        if(node.texture_afs != null){
+            afs = node.texture_afs;
+        }
+        if(node.texture_aft != null){
+            aft = node.texture_aft;
+        }
 
 
         //ajustar matriz de transformação
@@ -1069,6 +1091,7 @@ class MySceneGraph {
 
         //correr os descendentes
         for(let i=0; i<node.descendants.leaves.length; i++){
+            node.descendants.leaves[i].updateTexCoords(afs, aft);
             node.descendants.leaves[i].display();
         }
         for(let i=0; i<node.descendants.nodes.length; i++){
@@ -1079,7 +1102,7 @@ class MySceneGraph {
                 this.scene.sceneInited = false;
                 return;
             }
-            this.processNode(child_id,mat_id);
+            this.processNode(child_id, mat_id, texture, afs, aft);
         }
         this.scene.popMatrix();
     }

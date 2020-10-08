@@ -26,9 +26,8 @@ class MySphere extends CGFobject {
       this.scene.popMatrix();
     }
 
-    updateTexCoords(coords) {
-  		this.texCoords = [...coords];
-  		this.updateTexCoordsGLBuffers();
+    updateTexCoords(afs, aft) {
+        // TODO: 
   	}
 
 }

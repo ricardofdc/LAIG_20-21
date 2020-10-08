@@ -21,133 +21,68 @@ class MyCylinder extends CGFobject {
 	}
 
 	initBuffers() {
-    this.vertices = [];
-    this.indices = [];
-    this.normals = [];
-    this.texCoords = [];
+	    this.vertices = [];
+	    this.indices = [];
+	    this.normals = [];
+	    this.texCoords = [];
 
-    var radius = this.bottomRadius;
-    const delta_radius = (this.topRadius - this.bottomRadius) / this.stacks;
-    const delta_angle = 2 * Math.PI / this.slices;
-    var z = 0;
-    const delta_z = this.height / this.stacks;
-    const diff_radius = this.bottomRadius - this.topRadius;
-
-    //body of the cylinder
-    for(var i=0; i<=this.stacks; i++){
-      for(var j=0; j<this.slices; j++){
-        this.vertices.push(
-          radius * Math.cos(j * delta_angle),
-          radius * Math.sin(j * delta_angle),
-          z
-        );
-
-        //cálculo e normalização das normais
-        var normal = [
-          radius * Math.cos(j * delta_angle),
-          radius * Math.sin(j * delta_angle),
-          ( diff_radius * radius ) / this.height  // height/diff_radius = radius/z_normal
-        ]
-        var normal_size = Math.sqrt(normal[0]*normal[0]+normal[1]*normal[1]+normal[2]*normal[2]);
-        normal[0] /= normal_size;
-        normal[1] /= normal_size;
-        normal[2] /= normal_size;
-        this.normals.push(...normal);
-
-        this.texCoords.push(j / this.slices, i / this.stacks);
+	    var radius = this.bottomRadius;
+	    const delta_radius = (this.topRadius - this.bottomRadius) / this.stacks;
+	    const delta_angle = 2 * Math.PI / this.slices;
+	    var z = 0;
+	    const delta_z = this.height / this.stacks;
+	    const diff_radius = this.bottomRadius - this.topRadius;
 
 
-      }
-
-      z += delta_z;
-      radius += delta_radius;
-    }
 
 
-    for(var i=0; i<this.stacks; i++){
-      for(var j=0; j<this.slices; j++){
-        if(j == this.slices - 1){   //neste caso ao fazer 'j+1' iriamos para o stack seguinte
-          this.indices.push(        //por isso retiramos 1 ao i sempre que temos 'j+1'
-            i * this.slices + j,
-            (i - 1) * this.slices + j + 1,
-            i * this.slices + j + 1
-          );
-          this.indices.push(
-            i * this.slices + j + 1,
-            (i + 1) * this.slices + j,
-            i * this.slices + j
-          );
-        }
-        else{   //caso geral
-          this.indices.push(
-            i * this.slices + j,
-            i * this.slices + j + 1,
-            (i + 1) * this.slices + j + 1
-          );
-          this.indices.push(
-            (i + 1) * this.slices + j + 1,
-            (i + 1) * this.slices + j,
-            i * this.slices + j
-          );
-        }
-      }
-    }
+		for(let i=0; i<=this.slices; i++){
+			this.vertices.push(0,0,0);
+			this.normals.push(0,0,-1);
+		}
 
-    //bottom base of the Cylinder
-    ////until this point we have 'this.slices * (this.stacks+1)' vertices
-    const origin_vertice_number = this.slices * (this.stacks+1);
-    this.vertices.push(0,0,0);
-    this.normals.push(0,0,-1);
-    for(var i=0; i<this.slices; i++){
-      this.vertices.push(
-        this.bottomRadius * Math.cos(i * delta_angle),
-        this.bottomRadius * Math.sin(i * delta_angle),
-        0
-      );
-      this.normals.push(0,0,-1);
-      this.texCoords.push(j / this.slices, 0);
-    }
-    for(var i=1; i<this.slices; i++){
-      this.indices.push(
-        origin_vertice_number, // (0,0,0)
-        origin_vertice_number + i + 1,
-        origin_vertice_number + i
-      );
-    }
-    this.indices.push(
-      origin_vertice_number, // (0,0,0)
-      origin_vertice_number + 1,
-      origin_vertice_number + this.slices
-    );
+		for(let i=0; i<=this.slices; i++){
+			this.vertices.push(radius * Math.cos(-i * delta_angle), radius * Math.sin(-i * delta_angle), 0);
+			this.normals.push(0,0,-1);
+		}
 
-    //top base of the Cylinder
-    ////until this point we have 'this.slices * (this.stacks+2) + 1' vertices
-    const top_center_vertice_number = this.slices * (this.stacks+2) + 1;
-    this.vertices.push(0,0,this.height);
-    this.normals.push(0,0,1);
-    for(var i=0; i<this.slices; i++){
-      this.vertices.push(
-        this.topRadius * Math.cos(i * delta_angle),
-        this.topRadius * Math.sin(i * delta_angle),
-        this.height
-      );
-      this.normals.push(0,0,1);
-      this.texCoords.push(j / this.slices, 1);
-    }
-    for(var i=1; i<this.slices; i++){
-      this.indices.push(
-        top_center_vertice_number, // (0,0,height)
-        top_center_vertice_number + i,
-        top_center_vertice_number + i + 1
-      );
-    }
-    this.indices.push(
-      top_center_vertice_number, // (0,0,height)
-      top_center_vertice_number + this.slices,
-      top_center_vertice_number + 1
-    );
+		for(let i=0; i<=this.stacks; i++){
+			for(let j=0; j<=this.slices; j++){
+				this.vertices.push(radius * Math.cos(j * delta_angle), radius * Math.sin(j * delta_angle), z);
+				var normal = [radius * Math.cos(j * delta_angle), radius * Math.sin(j * delta_angle), ( diff_radius * radius ) / this.height];
+		        var normal_size = Math.sqrt(normal[0]*normal[0]+normal[1]*normal[1]+normal[2]*normal[2]);
+		        normal[0] /= normal_size;
+		        normal[1] /= normal_size;
+		        normal[2] /= normal_size;
+		        this.normals.push(...normal);
+			}
 
+			z += delta_z;
+			radius += delta_radius;
+		}
 
+		for(let i=0; i<=this.slices; i++){
+			this.vertices.push(0,0,this.height);
+			this.normals.push(0,0,1);
+		}
+
+		radius -= delta_radius;
+		for(let i=0; i<=this.slices; i++){
+			this.vertices.push(radius * Math.cos(-i * delta_angle), radius * Math.sin(-i * delta_angle), this.height+0.01);
+			this.normals.push(0,0,1);
+		}
+
+		var ind = 0;
+		for (let i = 0; i < this.stacks + 4; i++) {
+			for (let j = 0; j <= this.slices; j++) {
+				if (j != this.slices) {
+					this.indices.push(ind, ind + 1, ind + this.slices + 1);
+					this.indices.push(ind + this.slices + 1, ind + 1, ind + this.slices + 2);
+				}
+				ind++;
+			}
+		}
+		this.updateTexCoords(1,1);
 		this.primitiveType = this.scene.gl.TRIANGLES;
 		this.initGLBuffers();
 	}
@@ -157,8 +92,58 @@ class MyCylinder extends CGFobject {
 	 * Updates the list of texture coordinates of the rectangle
 	 * @param {Array} coords - Array of texture coordinates
 	 */
-	updateTexCoords(coords) {
-		this.texCoords = [...coords];
+	updateTexCoords(afs, aft) {
+		this.texCoords = [];
+
+		var maxRadius = (this.topRadius > this.bottomRadius) ? this.topRadius : this.bottomRadius;
+
+		//afs -> altura do cilindro
+		//aft -> 2.pi.r = circunferencia
+
+
+		const delta_angle = 2 * Math.PI / this.slices;
+		//var radius = this.bottomRadius;
+		var incS = afs / (this.height * this.stacks);
+		var incT = aft / maxRadius / this.slices;
+
+
+		for(let i=0; i<= this.slices; i++){
+			let s=aft/maxRadius/2;
+			let t=aft/maxRadius/2;
+			this.texCoords.push(s,t);
+		}
+		for(let i=0; i<= this.slices; i++){
+			let s=aft/maxRadius/2 * Math.cos(-i * delta_angle) + aft/maxRadius/2;
+			let t=aft/maxRadius/2 * Math.sin(-i * delta_angle) + aft/maxRadius/2;
+			this.texCoords.push(s,t);
+		}
+
+		for(let i=0; i<=this.stacks; i++){
+			for(let j=0; j<=this.slices; j++){
+				/*if(i==0){
+					this.texCoords.push((aft/2*Math.PI) * Math.cos(j * delta_angle) + (aft/2*Math.PI) , (aft/2*Math.PI) * Math.sin(j * delta_angle) + (aft/2*Math.PI) );
+				}
+				else if(i==this.slacks){
+					this.texCoords.push((aft/2*Math.PI) * Math.cos(j * delta_angle) + (aft/2*Math.PI), (aft/2*Math.PI) * Math.sin(j * delta_angle) + (aft/2*Math.PI));
+				}
+				else{*/
+					this.texCoords.push(1 - incS * i, incT * j);
+				//}
+			}
+		}
+
+		for(let i=0; i<=this.slices; i++){
+			let s=aft/maxRadius/2;
+			let t=aft/maxRadius/2;
+			this.texCoords.push(s,t);
+		}
+
+		for(let i=0; i<= this.slices; i++){
+			let s=aft/maxRadius/2 * Math.cos(-i * delta_angle) + aft/maxRadius/2;
+			let t=aft/maxRadius/2 * Math.sin(-i * delta_angle) + aft/maxRadius/2;
+			this.texCoords.push(s,t);
+		}
+
 		this.updateTexCoordsGLBuffers();
 	}
 }

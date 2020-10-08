@@ -45,6 +45,13 @@ class MyNode {
     }
 
     /*
+     * Clears the texture of a node
+     */
+    clearTexture(){
+        this.texture = null;
+    }
+
+    /*
      * Sets the texture afs of a node
      * @param {float} texture_afs
      */
