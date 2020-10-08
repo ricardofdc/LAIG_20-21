@@ -104,17 +104,17 @@ class MyCylinder extends CGFobject {
 		const delta_angle = 2 * Math.PI / this.slices;
 		//var radius = this.bottomRadius;
 		var incS = afs / (this.height * this.stacks);
-		var incT = aft / maxRadius / this.slices;
+		var incT = aft / (2 * Math.PI * maxRadius) / this.slices;
 
 
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/maxRadius/2;
-			let t=aft/maxRadius/2;
+			let s=aft/(2 * Math.PI * maxRadius)/2;
+			let t=aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/maxRadius/2 * Math.cos(-i * delta_angle) + aft/maxRadius/2;
-			let t=aft/maxRadius/2 * Math.sin(-i * delta_angle) + aft/maxRadius/2;
+			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 
@@ -133,14 +133,14 @@ class MyCylinder extends CGFobject {
 		}
 
 		for(let i=0; i<=this.slices; i++){
-			let s=aft/maxRadius/2;
-			let t=aft/maxRadius/2;
+			let s=aft/(2 * Math.PI * maxRadius)/2;
+			let t=aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/maxRadius/2 * Math.cos(-i * delta_angle) + aft/maxRadius/2;
-			let t=aft/maxRadius/2 * Math.sin(-i * delta_angle) + aft/maxRadius/2;
+			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(-i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
 			this.texCoords.push(s,t);
 		}
 

@@ -13,7 +13,7 @@
 ### [TP1 - Scene Graph](TP1)
 
 - Use of textures:
-  - Cylinder: for unitary texture coordinatres `afs` must be equal to `height` and `aft` must be equal to the `biggest radius` of the bases.
+  - Cylinder: for unitary texture coordinatres `afs` must be equal to `height` and `aft` must be equal to the `perimeter` of the biggest base of the cylinder.
 - Scene
   - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban, some trees and a couple boats.
   - Island scene: [LAIG_TP1_XML_T5_G03_v03.xml](TP1/scenes/LAIG_TP1_XML_T5_G03_v03.xml).
