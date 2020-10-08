@@ -96,6 +96,7 @@ class MyCylinder extends CGFobject {
 		this.texCoords = [];
 
 		var maxRadius = (this.topRadius > this.bottomRadius) ? this.topRadius : this.bottomRadius;
+		var perimeter = 2 * Math.PI * maxRadius;
 
 		//afs -> altura do cilindro
 		//aft -> 2.pi.r = circunferencia
@@ -103,19 +104,19 @@ class MyCylinder extends CGFobject {
 
 		const delta_angle = 2 * Math.PI / this.slices;
 		//var radius = this.bottomRadius;
-		var incS = afs / (this.height * this.stacks);
-		var incT = aft / (2 * Math.PI * maxRadius) / this.slices;
+		var incS = (this.height * this.stacks) / afs;
+		var incT = perimeter / (aft * this.slices) ;
 
 
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/(2 * Math.PI * maxRadius)/2;
-			let t=aft/(2 * Math.PI * maxRadius)/2;
+			let s = perimeter / (aft*2);
+			let t = perimeter / (aft*2);
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s=-aft/(2 * Math.PI * maxRadius)/2 * Math.cos(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
-			let t=-aft/(2 * Math.PI * maxRadius)/2 * Math.sin(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let s = -perimeter / (aft*2) * Math.cos(i * delta_angle) + perimeter / (aft*2);
+			let t = -perimeter / (aft*2) * Math.sin(i * delta_angle) + perimeter / (aft*2);
 			this.texCoords.push(s,t);
 		}
 
@@ -127,14 +128,14 @@ class MyCylinder extends CGFobject {
 		}
 
 		for(let i=0; i<=this.slices; i++){
-			let s=aft/(2 * Math.PI * maxRadius)/2;
-			let t=aft/(2 * Math.PI * maxRadius)/2;
+			let s = perimeter / (aft*2);
+			let t = perimeter / (aft*2);
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s=aft/(2 * Math.PI * maxRadius)/2 * Math.cos(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
-			let t=aft/(2 * Math.PI * maxRadius)/2 * Math.sin(i * delta_angle) + aft/(2 * Math.PI * maxRadius)/2;
+			let s = perimeter / (aft*2) * Math.cos(i * delta_angle) + perimeter / (aft*2);
+			let t = perimeter / (aft*2) * Math.sin(i * delta_angle) + perimeter / (aft*2);
 			this.texCoords.push(s,t);
 		}
 
