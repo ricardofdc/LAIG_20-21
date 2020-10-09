@@ -6,7 +6,7 @@
         <!-- identifier of root node of the scene graph; this node -->
         <!-- must be defined in one of the following node declarations -->
     </initials>
-    <views default="boatPerspective">
+    <views default="defaultCamera">
         <!-- at least one of the following type of cameras must be declared -->
         <perspective id="defaultCamera" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />

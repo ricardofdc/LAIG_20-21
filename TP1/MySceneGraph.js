@@ -1,5 +1,4 @@
 const DEGREE_TO_RAD = Math.PI / 180;
-const DEFAULT_MATERIAL = "defaultMaterial";
 
 // Order of the groups in the XML document.
 var INITIALS_INDEX = 0;
@@ -469,8 +468,18 @@ class MySceneGraph {
                 continue;
             }
 
+            if(!texturePath.includes("./scenes/images/")){
+                texturePath = "./scenes/images/" + texturePath;
+            }
+            else if(!texturePath.includes("./scenes/")){
+                texturePath = "./scenes/" + texturePath;
+            }
+
             this.textures[textureID] = new CGFtexture(this.scene, texturePath);
         }
+
+        this.log("Parsed textures");
+        return null;
     }
 
     /**
@@ -503,6 +512,10 @@ class MySceneGraph {
                 return "ID must be unique for each light (conflict: ID = " + materialID + ")";
 
             this.materials[materialID]= new CGFappearance(this.scene);
+
+            if(i==0){
+                this.defaultMaterialID = materialID;
+            }
 
             grandChildren = children[i].children;
 
@@ -626,7 +639,7 @@ class MySceneGraph {
                             mat4.rotate(transformationMatrix, transformationMatrix, angle * DEGREE_TO_RAD, [0, 0, 1]);
                         }
                         else {
-                            this.onXMLMinorError("Invalid rotation axis");
+                            this.onXMLMinorError("Invalid rotation axis in node \"" + nodeID + "\"");
                             continue;
                         }
                         break;
@@ -642,9 +655,9 @@ class MySceneGraph {
             var material = grandChildren[materialIndex];
             var material_id = this.reader.getString(material, 'id');
 
-            if(this.materials[material_id] == null && material_id != 'null' && material_id!="clear"){
-                this.onXMLMinorError("Material of node \"" + nodeID + "\" with id=\"" + material_id + "\" not defined in <materials>. Assuming material=\"" + this.materials[DEFAULT_MATERIAL] + "\"");
-                material_id = this.materials[DEFAULT_MATERIAL];
+            if(this.materials[material_id] == null && material_id != "null"){
+                this.onXMLMinorError("Material of node \"" + nodeID + "\" with id=\"" + material_id + "\" not defined in <materials>. Assuming material=\"" + this.defaultMaterialID + "\"");
+                material_id = this.defaultMaterialID;
             }
             this.nodes[nodeID].setMaterial(material_id);
 
@@ -1012,6 +1025,9 @@ class MySceneGraph {
             return;
         }
         let rootMaterial = this.nodes[this.idRoot].material;
+        if(rootMaterial == "null"){
+            rootMaterial = this.defaultMaterialID;
+        }
         let rootTexture = this.nodes[this.idRoot].texture;
         this.processNode(this.idRoot, rootMaterial, rootTexture, 1, 1);
 
