@@ -20,15 +20,7 @@ class MyInterface extends CGFinterface {
 
         this.gui = new dat.GUI();
 
-        // add a group of controls (and open/expand by defult)
-
-        // var primitives = this.gui.addFolder("Primitives (just for testing)");
-        // primitives.open();
-        // primitives.add(this.scene, 'displayRectangle').name("Display Rectangle");
-        // primitives.add(this.scene, 'displayTriangle').name("Display Triangle");
-        // primitives.add(this.scene, 'displayCylinder').name("Display Cylinder");
-        // primitives.add(this.scene, 'displaySphere').name("Display Sphere");
-        // primitives.add(this.scene, 'displayTorus').name("Display Torus");
+        // add a group of controls (and open/expand by defult
 
         this.initKeys();
 
@@ -39,14 +31,10 @@ class MyInterface extends CGFinterface {
         var lights_folder = this.gui.addFolder("Lights");
         lights_folder.open();
 
-        var i=0;
         for(var key in graph.lights){
-            var light = graph.scene.lightValues;
             lights_folder.add(graph.scene.lightValues, key);
 
         }
-
-
     }
 
     initViews(graph){

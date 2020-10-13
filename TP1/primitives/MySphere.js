@@ -27,7 +27,7 @@ class MySphere extends CGFobject {
     }
 
     updateTexCoords(afs, aft) {
-        // TODO: 
+      this.updateTexCoordsGLBuffers();
   	}
 
 }

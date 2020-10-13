@@ -1064,9 +1064,7 @@ class MySceneGraph {
 
         this.scene.pushMatrix();
 
-
         //Materials
-
         //maintains material from parent node
         if(node.material != "null" && node.material != null){
             mat_id = node.material;
