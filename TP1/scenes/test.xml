@@ -88,10 +88,10 @@
             </transformations>
             <descendants>
                 <!--<leaf type="cylinder" height="5" topRadius="10" bottomRadius="10" stacks="1" slices="30"/>-->
-                <!--<leaf type="torus" inner="1" outer="3" slices="15" loops="18" />-->
+                <leaf type="torus" inner="1" outer="3" slices="35" loops="38" />
                <!-- <leaf type="rectangle" x1="0" y1="0" x2="8" y2="8" />-->
-                <!--<leaf type="triangle" x1="1.5" y1="0" x2="1.5" y2="1.5" x3="0" y3="1.5"/>-->
-                <leaf type="sphere" radius="7" slices="100" stacks="100" />
+              <!--  <leaf type="triangle" x1="0" y1="0" x2="10" y2="0" x3="5" y3="5"/>-->
+               <!-- <leaf type="sphere" radius="7" slices="100" stacks="100" />-->
             </descendants>
         </node>
     </nodes>

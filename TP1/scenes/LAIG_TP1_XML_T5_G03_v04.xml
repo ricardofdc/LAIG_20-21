@@ -4,7 +4,7 @@
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="islandView">
+    <views default="insideCabanPerspective">
         <perspective id="islandView" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="0" y="0" z="0" />
@@ -996,7 +996,7 @@
             <texture id="null"/>
             <transformations>
                 <translation x="0" y="0.9" z="0"/>
-                <scale sx="1.5" sy="0.1" sz="0.75"/>
+                <scale sx="1.5" sy="0.1" sz="1"/>
             </transformations>
             <descendants>
                 <noderef id="unitCube"/>
@@ -1020,7 +1020,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.5" y="0" z="0.25"/>
+                <translation x="-0.5" y="0" z="0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1031,7 +1031,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.5" y="0" z="0.25"/>
+                <translation x="0.5" y="0" z="0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1042,7 +1042,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.5" y="0" z="-0.25"/>
+                <translation x="0.5" y="0" z="-0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1053,7 +1053,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.5" y="0" z="-0.25"/>
+                <translation x="-0.5" y="0" z="-0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1131,7 +1131,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-1" y="0" z="0"/>
+                <translation x="-0.75" y="0" z="0"/>
                 <rotation axis="y" angle="90"/>
             </transformations>
             <descendants>
@@ -1143,7 +1143,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="1" y="0" z="0"/>
+                <translation x="0.75" y="0" z="0"/>
                 <rotation axis="y" angle="-90"/>
             </transformations>
             <descendants>
