@@ -20,6 +20,7 @@ class MySemiSphere extends CGFobject {
         this.vertices = [];
         this.normals = [];
         this.indices = [];
+        this.origTexCoords = [];
         this.texCoords=[];
 
         var nr_vertices=0;
@@ -44,7 +45,8 @@ class MySemiSphere extends CGFobject {
                 var nz=z/this.radius;
 
                 this.normals.push(nx, ny, nz);
-                this.texCoords.push(i / this.slices, j / this.stacks);
+                this.origTexCoords.push(0.5*(nx+1), 0.5*(1-ny));
+                this.texCoords=this.origTexCoords.slice();
             }
         }
 
