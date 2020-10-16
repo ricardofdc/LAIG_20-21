@@ -7,7 +7,7 @@
     <views default="islandView">
         <perspective id="islandView" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
-            <to x="0" y="0" z="0" />
+            <to x="8" y="0" z="0" />
         </perspective>
         <perspective id="frontCamera" near="0.3" far="500" angle="35">
             <from x="0" y="10" z="30" />
@@ -65,22 +65,22 @@
         </light>
 
         <light id="floorLight1">
-            <enable value="0" />
+            <enable value="1" />
             <position x="2.1" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="1.0" />
             <diffuse  r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
         <light id="floorLight2">
-            <enable value="1" />
+            <enable value="0" />
             <position x="-2.1" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="0.5" />
             <diffuse  r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
         <light id="cabanLight">
-            <enable value="0" />
-            <position x="0" y="4.5" z="0" w="0.6" />
+            <enable value="1" />
+            <position x="0" y="4.5" z="0" w="0" />
             <ambient r="0" g="0" b="0" a="0.1" />
             <diffuse  r="0.6" g="0.6" b="0.6" a="0.3" />
             <specular r="0.6" g="0.6" b="0.6" a="0.3" />
@@ -99,6 +99,7 @@
         <texture id="glassTexture" path="./scenes/images/glass.jpg" />
         <texture id="boatTexture" path="./scenes/images/wooden_boat.jpg" />
         <texture id="tableTexture" path="./scenes/images/table.jpg" />
+        <texture id="skyTexture" path="./scenes/images/sky.jpg" />
     </textures>
 
 
@@ -166,8 +167,13 @@
             <specular r="0.3" g="0.3" b="0.3" a="1.0" />
             <emissive r="0.0" g="0.0" b="0.0" a="1.0" />
         </material>
-
-
+        <material id="skyMaterial">
+            <shininess value="1" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.2" g="0.3" b="0.5" a="1.0" />
+            <specular r="0.2" g="0.3" b="0.5" a="1.0" />
+            <emissive r="0.0" g="0.3" b="0.3" a="1.0" />
+        </material>
     </materials>
 
     <nodes>
@@ -176,6 +182,7 @@
             <texture id="null" />
             <transformations></transformations>
             <descendants>
+                <noderef id="skyCube"/>
                 <noderef id="ocean" />
                 <noderef id="island" />
                 <noderef id="caban" />
@@ -183,16 +190,65 @@
             </descendants>
         </node>
 
+        <node id="skyCube">
+            <material id="skyMaterial" />
+            <texture id="skyTexture">
+                <amplification afs="160" aft="30" /><!-- for primitives = dx/afs, dy/aft -->
+            </texture>
+            <transformations>
+            </transformations>
+            <descendants>
+                <noderef id="leftSky"/>
+                <noderef id="backSky"/>
+                <noderef id="rightSky"/>
+            </descendants>
+        </node>
+
+        <node id="leftSky">
+            <material id="null" />
+            <texture id="null"/>
+            <transformations>
+                <translation x="-80" y="0" z="0"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-80" y1="0" x2="80" y2="30" />
+            </descendants>
+        </node>
+
+        <node id="backSky">
+            <material id="null" />
+            <texture id="null"/>
+            <transformations>
+                <translation x="0" y="0" z="-30"/>
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-80" y1="0" x2="80" y2="30" />
+            </descendants>
+        </node>
+
+        <node id="rightSky">
+            <material id="null" />
+            <texture id="null"/>
+            <transformations>
+                <translation x="80" y="0" z="0"/>
+                <rotation axis="y" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-80" y1="0" x2="80" y2="30" />
+            </descendants>
+        </node>
+
         <node id="ocean">
             <material id="oceanBlueMaterial" />
             <texture id="oceanTexture">
-                <amplification afs="60.0" aft="60.0" /><!-- for primitives = dx/afs, dy/aft -->
+                <amplification afs="160.0" aft="70.0" /><!-- for primitives = dx/afs, dy/aft -->
             </texture>
             <transformations>
                 <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="rectangle" x1="-30" y1="-30" x2="30" y2="30" />
+                <leaf type="rectangle" x1="-80" y1="-40" x2="80" y2="30" />
             </descendants>
         </node>
 
@@ -996,7 +1052,7 @@
             <texture id="null"/>
             <transformations>
                 <translation x="0" y="0.9" z="0"/>
-                <scale sx="1.5" sy="0.1" sz="0.75"/>
+                <scale sx="1.5" sy="0.1" sz="1"/>
             </transformations>
             <descendants>
                 <noderef id="unitCube"/>
@@ -1020,7 +1076,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.5" y="0" z="0.25"/>
+                <translation x="-0.5" y="0" z="0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1031,7 +1087,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.5" y="0" z="0.25"/>
+                <translation x="0.5" y="0" z="0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1042,7 +1098,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="0.5" y="0" z="-0.25"/>
+                <translation x="0.5" y="0" z="-0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1053,7 +1109,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-0.5" y="0" z="-0.25"/>
+                <translation x="-0.5" y="0" z="-0.35"/>
             </transformations>
             <descendants>
                 <noderef id="tableLeg"/>
@@ -1131,7 +1187,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="-1" y="0" z="0"/>
+                <translation x="-0.75" y="0" z="0"/>
                 <rotation axis="y" angle="90"/>
             </transformations>
             <descendants>
@@ -1143,7 +1199,7 @@
             <material id="null"/>
             <texture id="null"/>
             <transformations>
-                <translation x="1" y="0" z="0"/>
+                <translation x="0.75" y="0" z="0"/>
                 <rotation axis="y" angle="-90"/>
             </transformations>
             <descendants>
@@ -1780,7 +1836,7 @@
             <material id="null" />                                                              <!-- -->
             <texture id="null" />                                                               <!-- -->
             <transformations>                                                                   <!-- -->
-                <translation x="20" y="0" z="20"/>
+                <translation x="25" y="0" z="20"/>
                 <rotation axis="y" angle="35"/>
             </transformations>                                                                  <!-- -->
             <descendants>                                                                       <!-- -->
