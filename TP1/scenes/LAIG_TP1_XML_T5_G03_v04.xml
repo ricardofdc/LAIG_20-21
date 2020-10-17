@@ -104,6 +104,7 @@
     <textures>
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
         <texture id="trunkTexture" path="./scenes/images/trunk.jpg"/>
+        <texture id="cabanTexture" path="./scenes/images/caban.jpg"/>
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
@@ -360,7 +361,7 @@
 
         <node id="caban">
           <material id="woodMaterial" />
-          <texture id="trunkTexture" />
+          <texture id="cabanTexture" />
           <transformations>
                 <translation x="0" y="0.5" z="0"/>
           </transformations>
@@ -371,7 +372,8 @@
               <noderef id="parede_frente"/>
               <noderef id="telhado_cabana"/>
               <noderef id="table"/>
-              <noderef id="chairs"/>
+              <noderef id="chairs"/> 
+             <noderef id="cabanPorch"/>
           </descendants>
         </node>
 
@@ -442,7 +444,6 @@
           </descendants>
         </node>
                                                                             <!-- CABAN'S RELATED CODE -->
-
         <node id="parede_esquerda">
           <material id="null" />
           <texture id="null" />
@@ -1059,6 +1060,309 @@
                 <leaf type="cylinder" height="1" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
             </descendants>
         </node>
+
+        <node id="cabanPorch">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="-2.1" y="0.2" z="2.5"/>
+            </transformations>
+            <descendants>
+                <noderef id="porchVerticalColumns"/>
+                <noderef id="porchFrontFencing"/>
+                <noderef id="porchLeftFencing"/>
+                <noderef id="porchRightFencing"/>
+                <noderef id="porchRoof"/>
+            </descendants>
+        </node>  
+
+        <node id="porchVerticalColumns">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+            </transformations>
+            <descendants>
+                <noderef id="porchLeftVerticalTrunk"/>
+                <noderef id="porchRightVerticalTrunk"/>
+                <noderef id="porchRightVerticalTrunk2"/>
+            </descendants>
+        </node>       
+        <node id="porchFrontFencing">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+            </transformations>
+            <descendants>
+                <noderef id="porchFrontBottomTrunk"/>
+                <noderef id="porchFrontTopTrunk"/>
+                <noderef id="smallVerticalFront"/>
+                <noderef id="smallVerticalFront2"/>
+                <noderef id="smallVerticalFront3"/>
+            </descendants>
+        </node>    
+        <node id="porchLeftFencing">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+            </transformations>
+            <descendants>
+                <noderef id="porchLeftBottomTrunk"/>
+                <noderef id="porchLeftTopTrunk"/>
+                <noderef id="porchLeftRoofTrunk"/>
+                <noderef id="smallVerticalLeft1"/>
+                <noderef id="smallVerticalLeft2"/>
+                <noderef id="smallVerticalLeft3"/>
+            </descendants>
+        </node>  
+        <node id="porchRightFencing">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+            </transformations>
+            <descendants>
+                <noderef id="porchRightBottomTrunk"/>
+                <noderef id="porchRightTopTrunk"/>
+                <noderef id="porchRightRoofTrunk"/>
+                <noderef id="smallVerticalRight1"/>
+                <noderef id="smallVerticalRight2"/>
+                <noderef id="smallVerticalRight3"/>
+            </descendants>
+        </node> 
+
+        <node id="porchLeftVerticalTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="0" y="-0.2" z="2.2"/>
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+            </descendants>
+        </node>  
+        <node id="porchRightVerticalTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="2.2" y="-0.2" z="2.2"/>
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+            </descendants>
+        </node>  
+        <node id="porchRightVerticalTrunk2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="4.2" y="-0.2" z="2.2"/>
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+            </descendants>
+        </node> 
+
+        <node id="porchFrontBottomTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="0" y="0" z="2.2"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node>       
+        <node id="porchFrontTopTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="0" y="0.8" z="2.2"/>
+                <rotation axis="y" angle="90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node>   
+        <node id="smallVerticalFront">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.5" y="0" z="2.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalFront2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="1.1" y="0" z="2.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalFront3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="1.7" y="0" z="2.2"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+
+        <node id="porchLeftBottomTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="0" y="-0.1" z="0"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node>  
+        <node id="porchLeftTopTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0.8" z="0"/> 
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node>  
+        <node id="porchLeftRoofTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="0" y="2.35" z="0"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalLeft1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0" z="0.4"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalLeft2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0" z="1"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalLeft3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0" z="1.6"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+
+        <node id="porchRightBottomTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="4.2" y="-0.1" z="0"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node>   
+        <node id="porchRightTopTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="4.2" y="0.8" z="0"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node> 
+        <node id="porchRightRoofTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <translation x="4.2" y="2.35" z="0"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+            </descendants>
+        </node> 
+         <node id="smallVerticalRight1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="4.2" y="0" z="0.4"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalRight2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="4.2" y="0" z="1"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+        <node id="smallVerticalRight3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="4.2" y="0" z="1.6"/> 
+            </transformations>
+            <descendants>
+                <noderef id="porchSmallVerticalTrunk"/>
+            </descendants>
+        </node> 
+
+        <node id="porchRoof">
+            <material id="null" />
+            <texture id="cabanTexture">
+                <amplification afs="4.2" aft="2.2"/>
+            </texture>
+            <transformations> 
+                <translation x="2.2" y="2.4" z="1.2"/>
+                <scale sx="4.2" sy="0.05" sz="2.2"/>
+            </transformations>
+            <descendants>
+                <noderef id="unitCube"/>
+            </descendants>
+        </node>
+
+        <node id="porchSmallVerticalTrunk">
+            <material id="null" />
+            <texture id="null" />
+            <transformations> 
+                <rotation axis="x" angle="-90"/>
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="0.7" topRadius="0.1" bottomRadius="0.1" stacks="1" slices="15"/>
+            </descendants>
+        </node> 
+
         <!-- END OF CABAN'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
