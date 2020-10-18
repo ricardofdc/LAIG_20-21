@@ -10,10 +10,8 @@
 ----
 ## Project information
 
-- Use of textures:
-  - Cylinder: for unitary texture coordinatres `afs` must be equal to `height` and `aft` must be equal to the `perimeter` of the biggest base of the cylinder.
 - Scene
-  - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban with a table and some chairs inside, some trees and a couple boats.
+  - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban with a porch, some trees and a couple boats. Inside the caban there are four chairs and a table.
   - Island scene: [LAIG_TP1_XML_T5_G03_v03.xml](TP1/scenes/LAIG_TP1_XML_T5_G03_v03.xml).
 
 <img src="photos/island_day.png" alt="Island" width="500"/>
@@ -22,4 +20,4 @@
 ----
 ## Issues/Problems
 
-- The function updateTexCoords of [Torus](primitives/MyTorus.js) is not complete yet.
+- The `amplification` tag is not defined for all the nodes yet.
