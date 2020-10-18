@@ -302,8 +302,7 @@
 
         <node id="someFloorLights">
             <material id="lampMaterial" />
-            <texture id="clear">
-            </texture>
+            <texture id="clear"/>
             <transformations>
                 <translation x="0" y="0.45" z="0" />
             </transformations>
@@ -316,6 +315,7 @@
         <node id="floorLight1">
             <material id="null" />
             <texture id="null">
+                <amplification afs="1" aft="1" />
             </texture>
             <transformations>
                 <translation x="1.7" y="0" z="2.9" />
@@ -329,6 +329,7 @@
         <node id="floorLight2">
             <material id="null" />
             <texture id="null">
+                <amplification afs="1" aft="1" />
             </texture>
             <transformations>
                 <translation x="-1.6" y="0" z="2.9" />
@@ -342,6 +343,7 @@
         <node id="sphere">
             <material id="null" />
             <texture id="null">
+                <amplification afs="1" aft="1" />
             </texture>
             <transformations>
             </transformations>
@@ -353,7 +355,7 @@
         <node id="islandBase">
             <material id="sandMaterial" />
             <texture id="sandTexture">
-                <amplification afs="0.5" aft="50" />
+                <amplification afs="1" aft="1" />
             </texture>
             <transformations>
                 <rotation axis="x" angle="-90" />

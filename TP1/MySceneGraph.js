@@ -684,25 +684,27 @@ class MySceneGraph {
             var texture_afs = 1;
             var texture_aft = 1;
             var textureChildren = textureNode.children;
-            if(textureChildren.length != 1 && textureID != "clear"){
-                this.onXMLMinorError("Texture in " + nodeID + " must have one (and just one) <amplification> tag. Assuming afs=1 and aft=1.");
-            }
-            else{
-                var nodeName = textureChildren[0].nodeName;
-                if(nodeName == "amplification"){
-                    texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
-                    texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
-                    if (texture_afs == null || isNaN(texture_afs)){
-                        this.onXMLMinorError("Unable to parse afs in texture of node " + nodeID + ". Assuming afs=1.");
-                        texture_afs = 1;
-                    }
-                    if (texture_aft == null || isNaN(texture_aft)){
-                        this.onXMLMinorError("Unable to parse aft in texture of node " + nodeID + ". Assuming aft=1.");
-                        texture_aft = 1;
-                    }
+            if(textureID != "clear"){ //only parses amplification if texture != "clear"
+                if(textureChildren.length != 1){
+                    this.onXMLMinorError("Texture in " + nodeID + " must have one (and just one) <amplification> tag. Assuming afs=1 and aft=1.");
                 }
                 else{
-                    this.onXMLMinorError("Tag <amplification> is not recognized in " + nodeID + ". Assuming afs=1 and aft=1.");
+                    var nodeName = textureChildren[0].nodeName;
+                    if(nodeName == "amplification"){
+                        texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
+                        texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
+                        if (texture_afs == null || isNaN(texture_afs)){
+                            this.onXMLMinorError("Unable to parse afs in texture of node " + nodeID + ". Assuming afs=1.");
+                            texture_afs = 1;
+                        }
+                        if (texture_aft == null || isNaN(texture_aft)){
+                            this.onXMLMinorError("Unable to parse aft in texture of node " + nodeID + ". Assuming aft=1.");
+                            texture_aft = 1;
+                        }
+                    }
+                    else{
+                        this.onXMLMinorError("Tag <amplification> is not recognized in " + nodeID + ". Assuming afs=1 and aft=1.");
+                    }
                 }
             }
 
