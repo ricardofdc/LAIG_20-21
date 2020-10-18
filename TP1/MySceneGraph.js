@@ -684,7 +684,7 @@ class MySceneGraph {
             var texture_afs = 1;
             var texture_aft = 1;
             var textureChildren = textureNode.children;
-            if(textureChildren.length != 1){
+            if(textureChildren.length != 1 && textureID != "clear"){
                 this.onXMLMinorError("Texture in " + nodeID + " must have one (and just one) <amplification> tag. Assuming afs=1 and aft=1.");
             }
             else{
