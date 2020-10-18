@@ -681,12 +681,17 @@ class MySceneGraph {
             this.nodes[nodeID].setTexture(textureID);
 
             //reads amplification
+            var texture_afs = 1;
+            var texture_aft = 1;
             var textureChildren = textureNode.children;
-            for(let j=0; j<textureChildren.length; j++){
-                var nodeName = textureChildren[j].nodeName;
+            if(textureChildren.length != 1){
+                this.onXMLMinorError("Texture in " + nodeID + " must have one (and just one) <amplification> tag. Assuming afs=1 and aft=1.");
+            }
+            else{
+                var nodeName = textureChildren[0].nodeName;
                 if(nodeName == "amplification"){
-                    var texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
-                    var texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
+                    texture_afs = this.reader.getFloat(textureChildren[0], 'afs');
+                    texture_aft = this.reader.getFloat(textureChildren[0], 'aft');
                     if (texture_afs == null || isNaN(texture_afs)){
                         this.onXMLMinorError("Unable to parse afs in texture of node " + nodeID + ". Assuming afs=1.");
                         texture_afs = 1;
@@ -695,11 +700,9 @@ class MySceneGraph {
                         this.onXMLMinorError("Unable to parse aft in texture of node " + nodeID + ". Assuming aft=1.");
                         texture_aft = 1;
                     }
-                    this.nodes[nodeID].setTextureAfs(texture_afs);
-                    this.nodes[nodeID].setTextureAft(texture_aft);
                 }
                 else{
-                    this.onXMLMinorError("Tag <" + nodeName + "> is not recognized in " + nodeID);
+                    this.onXMLMinorError("Tag <amplification> is not recognized in " + nodeID + ". Assuming afs=1 and aft=1.");
                 }
             }
 
@@ -740,7 +743,10 @@ class MySceneGraph {
                             if (y2 == null || isNaN(y2))
                                 return this.onXMLMinorError("Unable to parse y2 of the " + leaf_type + " coordinates on node " + nodeID);
 
-                            this.nodes[nodeID].addLeaf(new MyRectangle(this.scene, x1, y1, x2, y2));
+                            let rectangle = new MyRectangle(this.scene, x1, y1, x2, y2);
+                            rectangle.updateTexCoords(texture_afs, texture_aft);
+
+                            this.nodes[nodeID].addLeaf(rectangle);
                             break;
 
                         case "triangle":
@@ -768,7 +774,10 @@ class MySceneGraph {
                             var y3 = this.reader.getFloat(descendants[j], 'y3');
                             if (y3 == null || isNaN(y3))
                                 return this.onXMLMinorError("Unable to parse y3 of the " + leaf_type + " coordinates on node " + nodeID);
-                            this.nodes[nodeID].addLeaf(new MyTriangle(this.scene, x1, y1, x2, y2, x3, y3));
+
+                            let triangle = new MyTriangle(this.scene, x1, y1, x2, y2, x3, y3);
+                            triangle.updateTexCoords(texture_afs, texture_aft);
+                            this.nodes[nodeID].addLeaf(triangle);
                             break;
 
                         case "sphere":
@@ -1037,11 +1046,13 @@ class MySceneGraph {
     /**
      * Recursive process of each node.
      * @param {string} id - id of the node to process
+     * @param {string} mat - id of the material from parent node
+     * @param {string} text - id of the texture from parent node
      */
-    processNode(id, mat, text, afs, aft){
+    processNode(id, mat, text){
         /**
         *
-        * ProcessNode(id, tg, mat, text, afs, aft){
+        * ProcessNode(id, tg, mat, text){
         *   ajustar tg->tg1(matriz transformação Ma*Mn);
         *   ajustar mat->mat1 (material);
         *   ajustar text->text1 (textura);
@@ -1052,7 +1063,7 @@ class MySceneGraph {
         *           push(t1);
         *           push(mat1);
         *           push(text1);
-        *           ProcessNode(child, tg1, mat1, text1, afs, aft);
+        *           ProcessNode(child, tg1, mat1, text1);
         * }
         *
         */
@@ -1089,15 +1100,6 @@ class MySceneGraph {
         node_material.setTextureWrap('REPEAT', 'REPEAT');
         node_material.apply();
 
-        //afs and aft
-        if(node.texture_afs != null){
-            afs = node.texture_afs;
-        }
-        if(node.texture_aft != null){
-            aft = node.texture_aft;
-        }
-
-
         //ajustar matriz de transformação
         if(node.transformations!=null){
             this.scene.multMatrix(node.transformations);
@@ -1105,7 +1107,6 @@ class MySceneGraph {
 
         //correr os descendentes
         for(let i=0; i<node.descendants.leaves.length; i++){
-            node.descendants.leaves[i].updateTexCoords(afs, aft);
             node.descendants.leaves[i].display();
         }
         for(let i=0; i<node.descendants.nodes.length; i++){
@@ -1116,7 +1117,7 @@ class MySceneGraph {
                 this.scene.sceneInited = false;
                 return;
             }
-            this.processNode(child_id, mat_id, texture, afs, aft);
+            this.processNode(child_id, mat_id, texture);
         }
         this.scene.popMatrix();
     }
