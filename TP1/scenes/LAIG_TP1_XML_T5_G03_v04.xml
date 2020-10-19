@@ -42,46 +42,47 @@
     </views>
 
     <illumination>
-        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />           <!-- global ambient -->
-        <background r="0.529" g="0.808" b="0.922" a="1.0" />     <!-- background color -->
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" /> <!-- global ambient -->
+        <background r="0.529" g="0.808" b="0.922" a="1.0" /> <!-- background color -->
     </illumination>
 
 
     <lights>
-        <light id="sun">            <!-- light identifier -->
+        <light id="sun">
+            <!-- light identifier -->
             <enable value="1" />
             <!-- enable/disable -->
-            <position x="0" y="30" z="0" w="1" /><!-- light position; w=1: point light; w=0: directional light -->
-            <ambient r="0.8" g="0.8" b="0.8" a="1.0" />                   <!-- ambient component -->
-            <diffuse r="0.8" g="0.8" b="0.8" a="0.5" />             <!-- diffuse component -->
-            <specular r="0.4" g="0.4" b="0.4" a="1.0" />            <!-- specular component -->
+            <position x="0" y="30" z="0" w="1" /> <!-- light position; w=1: point light; w=0: directional light -->
+            <ambient r="0.8" g="0.8" b="0.8" a="1.0" /> <!-- ambient component -->
+            <diffuse r="0.8" g="0.8" b="0.8" a="0.5" /> <!-- diffuse component -->
+            <specular r="0.4" g="0.4" b="0.4" a="1.0" /> <!-- specular component -->
         </light>
         <light id="moon">
             <enable value="0" />
             <position x="0" y="-30" z="0" w="1" />
             <ambient r="0.251" g="0.612" b="1" a="1.0" />
-            <diffuse  r="0.251" g="0.612" b="1" a="1.0" />
+            <diffuse r="0.251" g="0.612" b="1" a="1.0" />
             <specular r="0.0" g="0.0" b="0.0" a="1.0" />
         </light>
         <light id="floorLight1">
             <enable value="0" />
             <position x="1.7" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="1.0" />
-            <diffuse  r="1.0" g="0.7725" b="0.5608" a="0.1" />
+            <diffuse r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
         <light id="floorLight2">
             <enable value="0" />
             <position x="-1.6" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="0.5" />
-            <diffuse  r="1.0" g="0.7725" b="0.5608" a="0.1" />
+            <diffuse r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
         <light id="cabanLight">
             <enable value="0" />
             <position x="0" y="4.5" z="0" w="0" />
             <ambient r="0" g="0" b="0" a="0.1" />
-            <diffuse  r="0.6" g="0.6" b="0.6" a="0.3" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="0.3" />
             <specular r="0.6" g="0.6" b="0.6" a="0.3" />
         </light>
         <light id="ambientFrontLight">
@@ -103,8 +104,8 @@
 
     <textures>
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
-        <texture id="trunkTexture" path="./scenes/images/trunk.jpg"/>
-        <texture id="cabanTexture" path="./scenes/images/caban.jpg"/>
+        <texture id="trunkTexture" path="./scenes/images/trunk.jpg" />
+        <texture id="cabanTexture" path="./scenes/images/caban.jpg" />
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
@@ -127,11 +128,11 @@
         </material>
 
         <material id="oceanBlueMaterial">
-          <shininess value="1"/>
-          <ambient r="0.0" g="0.0" b="0.0" a="1"/>
-          <diffuse r="0.0" g="0.412" b="0.58" a="1"/>
-          <specular r="0.6" g="0.6" b="0.6" a="1"/>
-          <emissive r="0.0" g="0.0" b="0.0" a="1"/>
+            <shininess value="1" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1" />
+            <diffuse r="0.0" g="0.412" b="0.58" a="1" />
+            <specular r="0.6" g="0.6" b="0.6" a="1" />
+            <emissive r="0.0" g="0.0" b="0.0" a="1" />
         </material>
 
         <material id="sandMaterial">
@@ -198,7 +199,7 @@
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="skyCube"/>
+                <noderef id="skyCube" />
                 <noderef id="ocean" />
                 <noderef id="island" />
                 <noderef id="caban" />
@@ -211,13 +212,12 @@
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="leftSky"/>
-                <noderef id="rightSky"/>
-                <noderef id="backSky"/>
-                <!--noderef id="topSky"/-->
+                <noderef id="leftSky" />
+                <noderef id="rightSky" />
+                <noderef id="backSky" />
+                <noderef id="topSky" />
             </descendants>
         </node>
 
@@ -227,8 +227,8 @@
                 <amplification afs="70" aft="30" />
             </texture>
             <transformations>
-                <translation x="-80" y="0" z="40"/>
-                <rotation axis="y" angle="90"/>
+                <translation x="-80" y="0" z="40" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="70" y2="30" />
@@ -241,7 +241,7 @@
                 <amplification afs="70" aft="30" />
             </texture>
             <transformations>
-                <translation x="80" y="0" z="-30"/>
+                <translation x="80" y="0" z="-30" />
                 <rotation axis="y" angle="-90" />
             </transformations>
             <descendants>
@@ -255,7 +255,7 @@
                 <amplification afs="160" aft="30" />
             </texture>
             <transformations>
-                <translation x="0" y="0" z="-30"/>
+                <translation x="0" y="0" z="-30" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-80" y1="0" x2="80" y2="30" />
@@ -268,7 +268,7 @@
                 <amplification afs="160" aft="70" />
             </texture>
             <transformations>
-                <translation x="0" y="30" z="10"/>
+                <translation x="0" y="30" z="10" />
                 <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
@@ -291,18 +291,18 @@
 
         <node id="island">
             <material id="null" />
-            <texture id="clear"/>
-            <transformations> </transformations>
+            <texture id="clear" />
+            <transformations></transformations>
             <descendants>
-              <noderef id="islandBase" />
-              <noderef id="someTrees" />
-              <noderef id="someFloorLights" />
+                <noderef id="islandBase" />
+                <noderef id="someTrees" />
+                <noderef id="someFloorLights" />
             </descendants>
         </node>
 
         <node id="someFloorLights">
             <material id="lampMaterial" />
-            <texture id="clear"/>
+            <texture id="clear" />
             <transformations>
                 <translation x="0" y="0.45" z="0" />
             </transformations>
@@ -345,8 +345,7 @@
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
                 <leaf type="sphere" radius="0.5" slices="8" stacks="3" />
             </descendants>
@@ -361,192 +360,192 @@
                 <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" stacks="1" slices="30"/>
+                <leaf type="cylinder" height="0.5" topRadius="15" bottomRadius="20" stacks="1" slices="30" />
             </descendants>
         </node>
 
         <node id="caban">
-          <material id="woodMaterial" />
-          <texture id="cabanTexture" />
-          <transformations>
-                <translation x="0" y="0.5" z="0"/>
-          </transformations>
-          <descendants>
-              <noderef id="parede_esquerda"/>
-              <noderef id="parede_direita"/>
-              <noderef id="parede_tras" />
-              <noderef id="parede_frente"/>
-              <noderef id="telhado_cabana"/>
-              <noderef id="table"/>
-              <noderef id="chairs"/>
-             <noderef id="cabanPorch"/>
-          </descendants>
+            <material id="woodMaterial" />
+            <texture id="cabanTexture" />
+            <transformations>
+                <translation x="0" y="0.5" z="0" />
+            </transformations>
+            <descendants>
+                <noderef id="parede_esquerda" />
+                <noderef id="parede_direita" />
+                <noderef id="parede_tras" />
+                <noderef id="parede_frente" />
+                <noderef id="telhado_cabana" />
+                <noderef id="table" />
+                <noderef id="chairs" />
+                <noderef id="cabanPorch" />
+            </descendants>
         </node>
 
 
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- CABAN'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-                                                                                                <!-- -->
-        <node id="telhado_cabana">                                                              <!-- -->
-          <material id="null" />
-          <texture id="null" >
-              <amplification afs="1" aft="3.5" />
-          </texture>
-          <transformations> </transformations>
-          <descendants>
-            <noderef id="telhado_esquerda"/>
-            <noderef id="telhado_direita"/>
-          </descendants>
+
+        <node id="telhado_cabana">
+            <material id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="3.5" />
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <noderef id="telhado_esquerda" />
+                <noderef id="telhado_direita" />
+            </descendants>
         </node>
 
         <node id="telhado_esquerda">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="0.05" y="4.1" z="-2.3"/>
-              <rotation axis="z" angle="-60"/>
-              <rotation axis="x" angle="90"/>
-          </transformations>
-          <descendants>
-              <noderef id="telhado_metade"/>
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="4.1" z="-2.3" />
+                <rotation axis="z" angle="-60" />
+                <rotation axis="x" angle="90" />
+            </transformations>
+            <descendants>
+                <noderef id="telhado_metade" />
+            </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="telhado_direita">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="-0.05" y="4.1" z="-2.3"/>
-              <rotation axis="z" angle="60"/>
-              <rotation axis="x" angle="90"/>
-          </transformations>
-          <descendants>
-              <noderef id="telhado_metade"/>
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-0.05" y="4.1" z="-2.3" />
+                <rotation axis="z" angle="60" />
+                <rotation axis="x" angle="90" />
+            </transformations>
+            <descendants>
+                <noderef id="telhado_metade" />
+            </descendants>
         </node>
 
         <node id="telhado_metade">
-          <material id="null" />
-          <texture id="null" />
-          <transformations> </transformations>
-          <descendants>
-            <noderef id="tronco0_telhado"/>
-            <noderef id="tronco1_telhado"/>
-            <noderef id="tronco2_telhado"/>
-            <noderef id="tronco3_telhado"/>
-            <noderef id="tronco4_telhado"/>
-            <noderef id="tronco5_telhado"/>
-            <noderef id="tronco6_telhado"/>
-            <noderef id="tronco7_telhado"/>
-            <noderef id="tronco8_telhado"/>
-            <noderef id="tronco9_telhado"/>
-            <noderef id="tronco10_telhado"/>
-            <noderef id="tronco11_telhado"/>
-            <noderef id="tronco12_telhado"/>
-            <noderef id="tronco13_telhado"/>
-            <noderef id="tronco14_telhado"/>
-            <noderef id="tronco15_telhado"/>
-            <noderef id="tronco16_telhado"/>
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="tronco0_telhado" />
+                <noderef id="tronco1_telhado" />
+                <noderef id="tronco2_telhado" />
+                <noderef id="tronco3_telhado" />
+                <noderef id="tronco4_telhado" />
+                <noderef id="tronco5_telhado" />
+                <noderef id="tronco6_telhado" />
+                <noderef id="tronco7_telhado" />
+                <noderef id="tronco8_telhado" />
+                <noderef id="tronco9_telhado" />
+                <noderef id="tronco10_telhado" />
+                <noderef id="tronco11_telhado" />
+                <noderef id="tronco12_telhado" />
+                <noderef id="tronco13_telhado" />
+                <noderef id="tronco14_telhado" />
+                <noderef id="tronco15_telhado" />
+                <noderef id="tronco16_telhado" />
+            </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="parede_esquerda">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="-2.1" y="0.15" z="-2.5"/>
-          </transformations>
-          <descendants>
-              <noderef id="parede_lateral"/>
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-2.1" y="0.15" z="-2.5" />
+            </transformations>
+            <descendants>
+                <noderef id="parede_lateral" />
+            </descendants>
         </node>
 
         <node id="parede_direita">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="2.1" y="0.15" z="-2.5"/>
-          </transformations>
-          <descendants>
-              <noderef id="parede_lateral"/>
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="2.1" y="0.15" z="-2.5" />
+            </transformations>
+            <descendants>
+                <noderef id="parede_lateral" />
+            </descendants>
         </node>
 
         <node id="parede_tras">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="-2.5" y="0" z="-2.1"/>
-              <rotation axis="y" angle="90"/>
-          </transformations>
-          <descendants>
-              <noderef id="parede_lateral"/>
-              <noderef id="parede_triangulo_superior" />
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-2.5" y="0" z="-2.1" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <noderef id="parede_lateral" />
+                <noderef id="parede_triangulo_superior" />
+            </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="parede_frente">
-          <material id="null" />
-          <texture id="null" />
-          <transformations>
-              <translation x="-2.5" y="0" z="2.1"/>
-              <rotation axis="y" angle="90"/>
-          </transformations>
-          <descendants>
-              <noderef id="parede_porta"/>
-              <noderef id="parede_triangulo_superior" />
-          </descendants>
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-2.5" y="0" z="2.1" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <noderef id="parede_porta" />
+                <noderef id="parede_triangulo_superior" />
+            </descendants>
         </node>
 
         <node id="parede_lateral">
             <material id="null" />
             <texture id="null" />
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_parede_lateral"/>
-                <noderef id="tronco1_parede_lateral"/>
-                <noderef id="tronco2_parede_lateral"/>
-                <noderef id="tronco3_parede_lateral"/>
-                <noderef id="tronco4_parede_lateral"/>
-                <noderef id="tronco5_parede_lateral"/>
-                <noderef id="tronco6_parede_lateral"/>
-                <noderef id="tronco7_parede_lateral"/>
-                <noderef id="tronco8_parede_lateral"/>
+                <noderef id="tronco0_parede_lateral" />
+                <noderef id="tronco1_parede_lateral" />
+                <noderef id="tronco2_parede_lateral" />
+                <noderef id="tronco3_parede_lateral" />
+                <noderef id="tronco4_parede_lateral" />
+                <noderef id="tronco5_parede_lateral" />
+                <noderef id="tronco6_parede_lateral" />
+                <noderef id="tronco7_parede_lateral" />
+                <noderef id="tronco8_parede_lateral" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="parede_porta">
             <material id="null" />
             <texture id="null" />
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_esq_parede_porta"/>
-                <noderef id="tronco1_esq_parede_porta"/>
-                <noderef id="tronco2_esq_parede_porta"/>
-                <noderef id="tronco3_esq_parede_porta"/>
-                <noderef id="tronco4_esq_parede_porta"/>
-                <noderef id="tronco5_esq_parede_porta"/>
-                <noderef id="tronco0_dir_parede_porta"/>
-                <noderef id="tronco1_dir_parede_porta"/>
-                <noderef id="tronco2_dir_parede_porta"/>
-                <noderef id="tronco3_dir_parede_porta"/>
-                <noderef id="tronco4_dir_parede_porta"/>
-                <noderef id="tronco5_dir_parede_porta"/>
-                <noderef id="tronco6_parede_lateral"/>
-                <noderef id="tronco7_parede_lateral"/>
-                <noderef id="tronco8_parede_lateral"/>
+                <noderef id="tronco0_esq_parede_porta" />
+                <noderef id="tronco1_esq_parede_porta" />
+                <noderef id="tronco2_esq_parede_porta" />
+                <noderef id="tronco3_esq_parede_porta" />
+                <noderef id="tronco4_esq_parede_porta" />
+                <noderef id="tronco5_esq_parede_porta" />
+                <noderef id="tronco0_dir_parede_porta" />
+                <noderef id="tronco1_dir_parede_porta" />
+                <noderef id="tronco2_dir_parede_porta" />
+                <noderef id="tronco3_dir_parede_porta" />
+                <noderef id="tronco4_dir_parede_porta" />
+                <noderef id="tronco5_dir_parede_porta" />
+                <noderef id="tronco6_parede_lateral" />
+                <noderef id="tronco7_parede_lateral" />
+                <noderef id="tronco8_parede_lateral" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="parede_triangulo_superior">
             <material id="null" />
             <texture id="null" />
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_parede_triangulo"/>
-                <noderef id="tronco1_parede_triangulo"/>
-                <noderef id="tronco2_parede_triangulo"/>
-                <noderef id="tronco3_parede_triangulo"/>
+                <noderef id="tronco0_parede_triangulo" />
+                <noderef id="tronco1_parede_triangulo" />
+                <noderef id="tronco2_parede_triangulo" />
+                <noderef id="tronco3_parede_triangulo" />
             </descendants>
         </node>
 
@@ -554,10 +553,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="0"/>
+                <translation x="0" y="0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
 
@@ -565,21 +564,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.3" z="0"/>
+                <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco2_parede_lateral">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.6" z="0"/>
+                <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
 
@@ -587,21 +586,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="0"/>
+                <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco4_parede_lateral">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.2" z="0"/>
+                <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
 
@@ -609,21 +608,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.5" z="0"/>
+                <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco6_parede_lateral">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.8" z="0"/>
+                <translation x="0" y="1.8" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
 
@@ -631,21 +630,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.1" z="0"/>
+                <translation x="0" y="2.1" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco8_parede_lateral">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.4" z="0"/>
+                <translation x="0" y="2.4" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros"/>
+                <noderef id="tronco_5metros" />
             </descendants>
         </node>
 
@@ -653,21 +652,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.7" z="0.5"/>
+                <translation x="0" y="2.7" z="0.5" />
             </transformations>
             <descendants>
-                <noderef id="tronco_4metros"/>
+                <noderef id="tronco_4metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco1_parede_triangulo">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.0" z="1.0"/>
+                <translation x="0" y="3.0" z="1.0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
 
@@ -675,10 +674,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.3" z="1.5"/>
+                <translation x="0" y="3.3" z="1.5" />
             </transformations>
             <descendants>
-                <noderef id="tronco_2metros"/>
+                <noderef id="tronco_2metros" />
             </descendants>
         </node>
 
@@ -686,21 +685,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.6" z="2.0"/>
+                <translation x="0" y="3.6" z="2.0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco0_esq_parede_porta">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.0" z="0"/>
+                <translation x="0" y="0.0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
 
@@ -708,21 +707,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.3" z="0"/>
+                <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco2_esq_parede_porta">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.6" z="0"/>
+                <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
 
@@ -730,10 +729,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="0"/>
+                <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
 
@@ -741,21 +740,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.2" z="0"/>
+                <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco5_esq_parede_porta">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.5" z="0"/>
+                <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros"/>
+                <noderef id="tronco_3metros" />
             </descendants>
         </node>
 
@@ -766,18 +765,18 @@
                 <translation x="0" y="0.0" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco1_dir_parede_porta">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.3" z="4"/>
+                <translation x="0" y="0.3" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
 
@@ -785,10 +784,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.6" z="4"/>
+                <translation x="0" y="0.6" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
 
@@ -796,21 +795,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="4"/>
+                <translation x="0" y="0.9" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco4_dir_parede_porta">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.2" z="4"/>
+                <translation x="0" y="1.2" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
 
@@ -818,10 +817,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.5" z="4"/>
+                <translation x="0" y="1.5" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros"/>
+                <noderef id="tronco_1metros" />
             </descendants>
         </node>
 
@@ -829,21 +828,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="0"/>
+                <translation x="0" y="0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco1_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.3" z="0"/>
+                <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -851,21 +850,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.6" z="0"/>
+                <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco3_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="0"/>
+                <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -873,21 +872,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.2" z="0"/>
+                <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco5_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.5" z="0"/>
+                <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -895,21 +894,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.8" z="0"/>
+                <translation x="0" y="1.8" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco7_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.1" z="0"/>
+                <translation x="0" y="2.1" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -917,21 +916,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.4" z="0"/>
+                <translation x="0" y="2.4" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco9_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="2.7" z="0"/>
+                <translation x="0" y="2.7" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -939,10 +938,10 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1.2" z="0"/>
+                <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -950,21 +949,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.0" z="0"/>
+                <translation x="0" y="3.0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco12_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.3" z="0"/>
+                <translation x="0" y="3.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -972,21 +971,21 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.6" z="0"/>
+                <translation x="0" y="3.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco14_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="3.9" z="0"/>
+                <translation x="0" y="3.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
@@ -994,378 +993,411 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="4.2" z="0"/>
+                <translation x="0" y="4.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco16_telhado">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="4.5" z="0"/>
+                <translation x="0" y="4.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros"/>
+                <noderef id="tronco_3.5metros" />
             </descendants>
         </node>
 
         <node id="tronco_5metros">
             <material id="null" />
-            <texture id="null" />
-            <transformations> </transformations>
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="5" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="5" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
 
         <node id="tronco_4metros">
             <material id="null" />
-            <texture id="null" />
-            <transformations> </transformations>
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="4" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="4" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
 
         <node id="tronco_3.5metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
+                <amplification afs="1" aft="1" />
             </texture>
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="3.5" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="3.5" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
-                                                                            <!-- CABAN'S RELATED CODE -->
+
         <node id="tronco_3metros">
             <material id="null" />
-            <texture id="null" />
-            <transformations> </transformations>
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="3" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="3" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
 
         <node id="tronco_2metros">
             <material id="null" />
-            <texture id="null" />
-            <transformations> </transformations>
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="2" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="2" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
 
         <node id="tronco_1metros">
             <material id="null" />
-            <texture id="null" />
-            <transformations> </transformations>
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations></transformations>
             <descendants>
-                <leaf type="cylinder" height="1" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7"/>
+                <leaf type="cylinder" height="1" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="7" />
             </descendants>
         </node>
 
         <node id="cabanPorch">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="-2.1" y="0.2" z="2.5"/>
+                <translation x="-2.1" y="0.2" z="2.5" />
             </transformations>
             <descendants>
-                <noderef id="porchVerticalColumns"/>
-                <noderef id="porchFrontFencing"/>
-                <noderef id="porchLeftFencing"/>
-                <noderef id="porchRightFencing"/>
-                <noderef id="porchRoof"/>
+                <noderef id="porchVerticalColumns" />
+                <noderef id="porchFrontFencing" />
+                <noderef id="porchLeftFencing" />
+                <noderef id="porchRightFencing" />
+                <noderef id="porchRoof" />
             </descendants>
         </node>
 
         <node id="porchVerticalColumns">
             <material id="null" />
             <texture id="null" />
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="porchLeftVerticalTrunk"/>
-                <noderef id="porchRightVerticalTrunk"/>
-                <noderef id="porchRightVerticalTrunk2"/>
+                <noderef id="porchLeftVerticalTrunk" />
+                <noderef id="porchRightVerticalTrunk" />
+                <noderef id="porchRightVerticalTrunk2" />
             </descendants>
         </node>
         <node id="porchFrontFencing">
             <material id="null" />
             <texture id="null" />
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="porchFrontBottomTrunk"/>
-                <noderef id="porchFrontTopTrunk"/>
-                <noderef id="smallVerticalFront"/>
-                <noderef id="smallVerticalFront2"/>
-                <noderef id="smallVerticalFront3"/>
+                <noderef id="porchFrontBottomTrunk" />
+                <noderef id="porchFrontTopTrunk" />
+                <noderef id="smallVerticalFront" />
+                <noderef id="smallVerticalFront2" />
+                <noderef id="smallVerticalFront3" />
             </descendants>
         </node>
         <node id="porchLeftFencing">
             <material id="null" />
             <texture id="null" />
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="porchLeftBottomTrunk"/>
-                <noderef id="porchLeftTopTrunk"/>
-                <noderef id="porchLeftRoofTrunk"/>
-                <noderef id="smallVerticalLeft1"/>
-                <noderef id="smallVerticalLeft2"/>
-                <noderef id="smallVerticalLeft3"/>
+                <noderef id="porchLeftBottomTrunk" />
+                <noderef id="porchLeftTopTrunk" />
+                <noderef id="porchLeftRoofTrunk" />
+                <noderef id="smallVerticalLeft1" />
+                <noderef id="smallVerticalLeft2" />
+                <noderef id="smallVerticalLeft3" />
             </descendants>
         </node>
         <node id="porchRightFencing">
             <material id="null" />
             <texture id="null" />
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="porchRightBottomTrunk"/>
-                <noderef id="porchRightTopTrunk"/>
-                <noderef id="porchRightRoofTrunk"/>
-                <noderef id="smallVerticalRight1"/>
-                <noderef id="smallVerticalRight2"/>
-                <noderef id="smallVerticalRight3"/>
+                <noderef id="porchRightBottomTrunk" />
+                <noderef id="porchRightTopTrunk" />
+                <noderef id="porchRightRoofTrunk" />
+                <noderef id="smallVerticalRight1" />
+                <noderef id="smallVerticalRight2" />
+                <noderef id="smallVerticalRight3" />
             </descendants>
         </node>
 
         <node id="porchLeftVerticalTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="-0.2" z="2.2"/>
-                <rotation axis="x" angle="-90"/>
+                <translation x="0" y="-0.2" z="2.2" />
+                <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchRightVerticalTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="2.2" y="-0.2" z="2.2"/>
-                <rotation axis="x" angle="-90"/>
+                <translation x="2.2" y="-0.2" z="2.2" />
+                <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchRightVerticalTrunk2">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="4.2" y="-0.2" z="2.2"/>
-                <rotation axis="x" angle="-90"/>
+                <translation x="4.2" y="-0.2" z="2.2" />
+                <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15" />
             </descendants>
         </node>
 
         <node id="porchFrontBottomTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="0" z="2.2"/>
-                <rotation axis="y" angle="90"/>
+                <translation x="0" y="0" z="2.2" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchFrontTopTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="0.8" z="2.2"/>
-                <rotation axis="y" angle="90"/>
+                <translation x="0" y="0.8" z="2.2" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="smallVerticalFront">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0.5" y="0" z="2.2"/>
+                <translation x="0.5" y="0" z="2.2" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalFront2">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="1.1" y="0" z="2.2"/>
+                <translation x="1.1" y="0" z="2.2" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalFront3">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="1.7" y="0" z="2.2"/>
+                <translation x="1.7" y="0" z="2.2" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
 
         <node id="porchLeftBottomTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="-0.1" z="0"/>
+                <translation x="0" y="-0.1" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchLeftTopTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="0.8" z="0"/>
+                <translation x="0" y="0.8" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchLeftRoofTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="0" y="2.35" z="0"/>
+                <translation x="0" y="2.35" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="smallVerticalLeft1">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="0.4"/>
+                <translation x="0" y="0" z="0.4" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalLeft2">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="1"/>
+                <translation x="0" y="0" z="1" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalLeft3">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="1.6"/>
+                <translation x="0" y="0" z="1.6" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
 
         <node id="porchRightBottomTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="4.2" y="-0.1" z="0"/>
+                <translation x="4.2" y="-0.1" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchRightTopTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="4.2" y="0.8" z="0"/>
+                <translation x="4.2" y="0.8" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
         <node id="porchRightRoofTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <translation x="4.2" y="2.35" z="0"/>
+                <translation x="4.2" y="2.35" z="0" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
-         <node id="smallVerticalRight1">
+        <node id="smallVerticalRight1">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="4.2" y="0" z="0.4"/>
+                <translation x="4.2" y="0" z="0.4" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalRight2">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="4.2" y="0" z="1"/>
+                <translation x="4.2" y="0" z="1" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
         <node id="smallVerticalRight3">
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="4.2" y="0" z="1.6"/>
+                <translation x="4.2" y="0" z="1.6" />
             </transformations>
             <descendants>
-                <noderef id="porchSmallVerticalTrunk"/>
+                <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
 
         <node id="porchRoof">
             <material id="null" />
             <texture id="cabanTexture">
-                <amplification afs="4.2" aft="2.2"/>
+                <amplification afs="4.2" aft="2.2" />
             </texture>
             <transformations>
-                <translation x="2.2" y="2.4" z="1.2"/>
-                <scale sx="4.2" sy="0.05" sz="2.2"/>
+                <translation x="2.2" y="2.4" z="1.2" />
+                <scale sx="4.2" sy="0.05" sz="2.2" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="porchSmallVerticalTrunk">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
-                <rotation axis="x" angle="-90"/>
+                <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
-                <leaf type="cylinder" height="0.7" topRadius="0.1" bottomRadius="0.1" stacks="1" slices="15"/>
+                <leaf type="cylinder" height="0.7" topRadius="0.1" bottomRadius="0.1" stacks="1" slices="15" />
             </descendants>
         </node>
 
@@ -1376,134 +1408,118 @@
         <!-- TABLE'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!--Table dimensions: width - 1.5 ; heigth - 1 -->
         <node id="table">
-            <material id="woodMaterial"/>
+            <material id="woodMaterial" />
             <texture id="tableTexture">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="tableTop"/>
-                <noderef id="tableLegs"/>
-                <noderef id="tableLamp"/>
+                <noderef id="tableTop" />
+                <noderef id="tableLegs" />
+                <noderef id="tableLamp" />
             </descendants>
         </node>
 
         <node id="tableTop">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="0"/>
-                <scale sx="1.5" sy="0.1" sz="1"/>
+                <translation x="0" y="0.9" z="0" />
+                <scale sx="1.5" sy="0.1" sz="1" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="tableLegs">
-            <material id="null"/>
-            <texture id="null"/>
-            <transformations>
-            </transformations>
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
             <descendants>
-                <noderef id="tableLeg1"/>
-                <noderef id="tableLeg2"/>
-                <noderef id="tableLeg3"/>
-                <noderef id="tableLeg4"/>
+                <noderef id="tableLeg1" />
+                <noderef id="tableLeg2" />
+                <noderef id="tableLeg3" />
+                <noderef id="tableLeg4" />
             </descendants>
         </node>
 
         <node id="tableLeg1">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.5" y="0" z="0.35"/>
+                <translation x="-0.5" y="0" z="0.35" />
             </transformations>
             <descendants>
-                <noderef id="tableLeg"/>
+                <noderef id="tableLeg" />
             </descendants>
         </node>
 
         <node id="tableLeg2">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.5" y="0" z="0.35"/>
+                <translation x="0.5" y="0" z="0.35" />
             </transformations>
             <descendants>
-                <noderef id="tableLeg"/>
+                <noderef id="tableLeg" />
             </descendants>
         </node>
 
         <node id="tableLeg3">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.5" y="0" z="-0.35"/>
+                <translation x="0.5" y="0" z="-0.35" />
             </transformations>
             <descendants>
-                <noderef id="tableLeg"/>
+                <noderef id="tableLeg" />
             </descendants>
         </node>
 
         <node id="tableLeg4">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.5" y="0" z="-0.35"/>
+                <translation x="-0.5" y="0" z="-0.35" />
             </transformations>
             <descendants>
-                <noderef id="tableLeg"/>
+                <noderef id="tableLeg" />
             </descendants>
         </node>
 
         <node id="tableLeg">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <scale sx="0.1" sy="0.9" sz="0.1"/>
+                <scale sx="0.1" sy="0.9" sz="0.1" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="tableLamp">
-            <material id="lampMaterial"/>
+            <material id="lampMaterial" />
             <texture id="glassTexture">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
-                <translation x="0" y="1" z="0"/>
+                <translation x="0" y="1" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tableLampTop"/>
-                <!--<noderef id="tableLampBase"/>-->
+                <noderef id="tableLampTop" />
             </descendants>
         </node>
 
         <node id="tableLampTop">
-            <material id="null"/>
-            <texture id="null"/>
-            <transformations>
-            </transformations>
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
             <descendants>
                 <leaf type="sphere" radius="0.1" slices="12" stacks="8" />
             </descendants>
         </node>
-
-<!--        <node id="tableLampBase">
-            <material id="null"/>
-            <texture id="mainSailsTexture"/>
-            <transformations>
-                <translation x="0" y="-0.05" z="0"/>
-                <rotation axis="x" angle="90"/>
-            </transformations>
-            <descendants>
-                <leaf type="torus" inner="0.25" outer="0.1" slices="4" loops="15" />
-            </descendants>
-        </node>        -->
 
         <!-- END OF TABLE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1511,206 +1527,203 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- CHAIR'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <node id="chairs">
-            <material id="woodMaterial"/>
+            <material id="woodMaterial" />
             <texture id="tableTexture">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="chair1"/>
-                <noderef id="chair2"/>
-                <noderef id="chair3"/>
-                <noderef id="chair4"/>
+                <noderef id="chair1" />
+                <noderef id="chair2" />
+                <noderef id="chair3" />
+                <noderef id="chair4" />
             </descendants>
         </node>
 
         <node id="chair1">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.75" y="0" z="0"/>
-                <rotation axis="y" angle="90"/>
+                <translation x="-0.75" y="0" z="0" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="chair"/>
+                <noderef id="chair" />
             </descendants>
         </node>
 
         <node id="chair2">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.75" y="0" z="0"/>
-                <rotation axis="y" angle="-90"/>
+                <translation x="0.75" y="0" z="0" />
+                <rotation axis="y" angle="-90" />
             </transformations>
             <descendants>
-                <noderef id="chair"/>
+                <noderef id="chair" />
             </descendants>
         </node>
 
         <node id="chair3">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="-0.5"/>
+                <translation x="0" y="0" z="-0.5" />
             </transformations>
             <descendants>
-                <noderef id="chair"/>
+                <noderef id="chair" />
             </descendants>
         </node>
 
         <node id="chair4">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0" z="0.5"/>
-                <rotation axis="y" angle="180"/>
+                <translation x="0" y="0" z="0.5" />
+                <rotation axis="y" angle="180" />
             </transformations>
             <descendants>
-                <noderef id="chair"/>
+                <noderef id="chair" />
             </descendants>
         </node>
 
         <!--Chair dimensions: width - 0.5 ; heigth - 1.35 -->
         <node id="chair">
-            <material id="null"/>
-            <texture id="null"/>
-            <transformations>
-            </transformations>
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
             <descendants>
-                <noderef id="chairBase"/>
-                <noderef id="chairLegs"/>
-                <noderef id="chairBackSupport"/>
+                <noderef id="chairBase" />
+                <noderef id="chairLegs" />
+                <noderef id="chairBackSupport" />
             </descendants>
         </node>
 
         <node id="chairBase">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.6" z="0"/>
-                <scale sx="0.5" sy="0.05" sz="0.5"/>
+                <translation x="0" y="0.6" z="0" />
+                <scale sx="0.5" sy="0.05" sz="0.5" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="chairLegs">
-            <material id="null"/>
-            <texture id="null"/>
-            <transformations>
-            </transformations>
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
             <descendants>
-                <noderef id="chairLeg1"/>
-                <noderef id="chairLeg2"/>
-                <noderef id="chairLeg3"/>
-                <noderef id="chairLeg4"/>
+                <noderef id="chairLeg1" />
+                <noderef id="chairLeg2" />
+                <noderef id="chairLeg3" />
+                <noderef id="chairLeg4" />
             </descendants>
         </node>
 
         <node id="chairLeg1">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.2" y="0" z="0.2"/>
+                <translation x="-0.2" y="0" z="0.2" />
             </transformations>
             <descendants>
-                <noderef id="chairLeg"/>
+                <noderef id="chairLeg" />
             </descendants>
         </node>
 
         <node id="chairLeg2">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.2" y="0" z="0.2"/>
+                <translation x="0.2" y="0" z="0.2" />
             </transformations>
             <descendants>
-                <noderef id="chairLeg"/>
+                <noderef id="chairLeg" />
             </descendants>
         </node>
 
         <node id="chairLeg3">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.2" y="0" z="-0.2"/>
+                <translation x="0.2" y="0" z="-0.2" />
             </transformations>
             <descendants>
-                <noderef id="chairLeg"/>
+                <noderef id="chairLeg" />
             </descendants>
         </node>
 
         <node id="chairLeg4">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.2" y="0" z="-0.2"/>
+                <translation x="-0.2" y="0" z="-0.2" />
             </transformations>
             <descendants>
-                <noderef id="chairLeg"/>
+                <noderef id="chairLeg" />
             </descendants>
         </node>
 
         <node id="chairLeg">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <scale sx="0.05" sy="0.6" sz="0.05"/>
+                <scale sx="0.05" sy="0.6" sz="0.05" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="chairBackSupport">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.65" z="0"/>
+                <translation x="0" y="0.65" z="0" />
             </transformations>
             <descendants>
-                <noderef id="backSupportLeft"/>
-                <noderef id="backSupportRight"/>
-                <noderef id="backBoardSupport"/>
+                <noderef id="backSupportLeft" />
+                <noderef id="backSupportRight" />
+                <noderef id="backBoardSupport" />
             </descendants>
         </node>
 
         <node id="backSupportLeft">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.2" y="0" z="-0.2"/>
-                <scale sx="0.05" sy="0.7" sz="0.05"/>
+                <translation x="-0.2" y="0" z="-0.2" />
+                <scale sx="0.05" sy="0.7" sz="0.05" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="backSupportRight">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.2" y="0" z="-0.2"/>
-                <scale sx="0.05" sy="0.7" sz="0.05"/>
+                <translation x="0.2" y="0" z="-0.2" />
+                <scale sx="0.05" sy="0.7" sz="0.05" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
 
         <node id="backBoardSupport">
-            <material id="null"/>
-            <texture id="null"/>
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.4" z="-0.2"/>
-                <scale sx="0.4" sy="0.2" sz="0.05"/>
+                <translation x="0" y="0.4" z="-0.2" />
+                <scale sx="0.4" sy="0.2" sz="0.05" />
             </transformations>
             <descendants>
-                <noderef id="unitCube"/>
+                <noderef id="unitCube" />
             </descendants>
         </node>
         <!-- END OF CHAIR'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1719,7 +1732,7 @@
         <node id="someTrees">
             <material id="null" />
             <texture id="null" />
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
                 <noderef id="tree1" />
                 <noderef id="tree2" />
@@ -1733,417 +1746,415 @@
 
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- TREE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-                                                                                                <!-- -->
-        <node id="tree1">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->                                                          <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-10" y="0" z="-5"/>                                             <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree2">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="10" y="0" z="-5"/>                                               <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree3">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="0" z="-10"/>                                             <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree4">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-5" y="0" z="5"/>
-                <rotation axis="y" angle="30" />                                               <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree5">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="5" y="0" z="5"/>
-                <rotation axis="y" angle="-30" />                                               <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
+
+        <node id="tree1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-10" y="0" z="-5" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
         </node>
 
-        <node id="tree6">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="5" y="0" z="9"/>
-                <rotation axis="y" angle="-60" />                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree7">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-5" y="0" z="9"/>
-                <rotation axis="y" angle="60" />                                              <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="tree"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="tree">                                                    <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="clear" />                                                              <!-- -->
-            <transformations>                                                                   <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="treeBase"/>                                                        <!-- -->
-                <noderef id="coconuts"/>                                                        <!-- -->
-                <noderef id="treeTop"/>                                                         <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="treeBase">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="trunkTexture">                                                         <!-- -->
-                <amplification afs="2.5" aft="1.0" />                                           <!-- -->
-            </texture>                                                                          <!-- -->
-            <transformations>                                                                   <!-- -->
-                <scale sx="0.25" sy="1" sz="0.25"/>                                             <!-- -->
-                <rotation axis="x" angle="-90" />                                               <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="cylinder" height="5" topRadius="0.7" bottomRadius="1.3" stacks="2" slices="8"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="coconuts">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="coconutTexture">                                                       <!-- -->
-                <amplification afs="1.0" aft="1.0" />                                           <!-- -->
-            </texture>                                                                          <!-- -->
-            <transformations>                                                                   <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="coconut1"/>                                                        <!-- -->
-                <noderef id="coconut2"/>                                                        <!-- -->
-                <noderef id="coconut3"/>                                                        <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="coconut1">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0.3" y="5" z="0"/>                                              <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />                      <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="coconut2">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-0.25" y="5" z="0"/>                                            <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />                      <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="coconut3">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="5.2" z="0"/>                                              <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />                      <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="treeTop">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="leavesTexture">                                                        <!-- -->
-                <amplification afs="1.0" aft="1.0" />                                           <!-- -->
-            </texture>                                                                          <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="5" z="0"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf1"/>                                                           <!-- -->
-                <noderef id="leaf2"/>                                                           <!-- -->
-                <noderef id="leaf3"/>                                                           <!-- -->
-                <noderef id="leaf4"/>                                                           <!-- -->
-                <noderef id="leaf5"/>                                                           <!-- -->
-                <noderef id="leaf6"/>                                                           <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->                                                                             <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf1">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-0.2" y="0" z="0"/>                                             <!-- -->
-                <rotation axis="x" angle="30"/>                                                 <!-- -->
-                <rotation axis="z" angle="110"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf2">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-0.2" y="0" z="0"/>                                             <!-- -->
-                <rotation axis="x" angle="-25"/>                                                <!-- -->
-                <rotation axis="z" angle="55"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf3">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <rotation axis="x" angle="5"/>                                                  <!-- -->
-                <rotation axis="z" angle="10"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf4">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <rotation axis="x" angle="-10"/>                                                <!-- -->
-                <rotation axis="z" angle="-30"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf5">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="0" z="0"/>                                                <!-- -->
-                <rotation axis="x" angle="0"/>                                                  <!-- -->
-                <rotation axis="z" angle="-70"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf6">                                                   <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <rotation axis="x" angle="-30"/>                                                <!-- -->
-                <rotation axis="z" angle="-110"/>                                               <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leaf"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leaf">                                                    <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <scale sx="0.5" sy="0.5" sz="0.5"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPetiole"/>                                                     <!-- -->
-                <noderef id="leafPt1"/>                                                         <!-- -->
-                <noderef id="leafPt2"/>                                                         <!-- -->
-                <noderef id="leafPt3"/>                                                         <!-- -->
-                <noderef id="leafPt4"/>                                                         <!-- -->
-                <noderef id="leafPt5"/>                                                         <!-- -->
-                <noderef id="leafPt6"/>                                                         <!-- -->
-                <noderef id="leafPt7"/>                                                         <!-- -->
-                <noderef id="leafPt8"/>                                                         <!-- -->
-                <noderef id="leafPt9"/>                                                         <!-- -->
-                <noderef id="leafPt10"/>                                                        <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPetiole">                                             <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <rotation axis="x" angle="-90"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="cylinder" height="5" topRadius="0.05" bottomRadius="0.05" stacks="1" slices="6"  />
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt1">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="0.07" z="0"/>                                          <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt2">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="0.15" z="0"/>                                             <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt3">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="1.07" z="0"/>                                          <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt4">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="1.15" z="0"/>                                             <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt5">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="2.07" z="0"/>                                          <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt6">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="2.15" z="0"/>                                             <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt7">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                  <!--  -->
-                <translation x="0.05" y="3.07" z="0"/>                                          <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt8">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="3.15" z="0"/>                                             <!-- -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt9">                                                 <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0.05" y="4.07" z="0"/>                                          <!-- -->
-                <rotation axis="z" angle="45"/>                                                 <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
-                                                                                                <!-- -->
-        <node id="leafPt10">                                                <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="0" y="4.15" z="0"/>                                            <!--  -->
-                <rotation axis="z" angle="-45"/>                                                <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="leafPt"/>
-            </descendants>                                                                      <!-- -->
-        </node>                                                                                 <!-- -->
+        <node id="tree2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="10" y="0" z="-5" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
 
-        <node id="leafPt">                                                  <!-- TREE'S RELATED CODE -->
-            <material id="null" />                                                             <!--  -->
+        <node id="tree3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0" z="-10" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
+
+        <node id="tree4">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-5" y="0" z="5" />
+                <rotation axis="y" angle="30" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
+
+        <node id="tree5">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="5" y="0" z="5" />
+                <rotation axis="y" angle="-30" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
+
+        <node id="tree6">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="5" y="0" z="9" />
+                <rotation axis="y" angle="-60" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
+
+        <node id="tree7">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-5" y="0" z="9" />
+                <rotation axis="y" angle="60" />
+            </transformations>
+            <descendants>
+                <noderef id="tree" />
+            </descendants>
+        </node>
+
+        <node id="tree">
+            <material id="null" />
+            <texture id="clear" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="treeBase" />
+                <noderef id="coconuts" />
+                <noderef id="treeTop" />
+            </descendants>
+        </node>
+
+        <node id="treeBase">
+            <material id="null" />
+            <texture id="trunkTexture">
+                <amplification afs="2.5" aft="1.0" />
+            </texture>
+            <transformations>
+                <scale sx="0.25" sy="1" sz="0.25" />
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="5" topRadius="0.7" bottomRadius="1.3" stacks="2" slices="8" />
+            </descendants>
+        </node>
+
+        <node id="coconuts">
+            <material id="null" />
+            <texture id="coconutTexture">
+                <amplification afs="1.0" aft="1.0" />
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <noderef id="coconut1" />
+                <noderef id="coconut2" />
+                <noderef id="coconut3" />
+            </descendants>
+        </node>
+
+        <node id="coconut1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.3" y="5" z="0" />
+            </transformations>
+            <descendants>
+                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />
+            </descendants>
+        </node>
+
+        <node id="coconut2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-0.25" y="5" z="0" />
+            </transformations>
+            <descendants>
+                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />
+            </descendants>
+        </node>
+
+        <node id="coconut3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="5.2" z="0" />
+            </transformations>
+            <descendants>
+                <leaf type="sphere" radius="0.2" slices="12" stacks="4" />
+            </descendants>
+        </node>
+
+        <node id="treeTop">
+            <material id="null" />
+            <texture id="leavesTexture">
+                <amplification afs="1.0" aft="1.0" />
+            </texture>
+            <transformations>
+                <translation x="0" y="5" z="0" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf1" />
+                <noderef id="leaf2" />
+                <noderef id="leaf3" />
+                <noderef id="leaf4" />
+                <noderef id="leaf5" />
+                <noderef id="leaf6" />
+            </descendants>
+        </node>
+
+        <node id="leaf1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-0.2" y="0" z="0" />
+                <rotation axis="x" angle="30" />
+                <rotation axis="z" angle="110" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+
+        <node id="leaf2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-0.2" y="0" z="0" />
+                <rotation axis="x" angle="-25" />
+                <rotation axis="z" angle="55" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+
+        <node id="leaf3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <rotation axis="x" angle="5" />
+                <rotation axis="z" angle="10" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+
+        <node id="leaf4">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <rotation axis="x" angle="-10" />
+                <rotation axis="z" angle="-30" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+
+        <node id="leaf5">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0" z="0" />
+                <rotation axis="x" angle="0" />
+                <rotation axis="z" angle="-70" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+
+        <node id="leaf6">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <rotation axis="x" angle="-30" />
+                <rotation axis="z" angle="-110" />
+            </transformations>
+            <descendants>
+                <noderef id="leaf" />
+            </descendants>
+        </node>
+        <node id="leaf">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <scale sx="0.5" sy="0.5" sz="0.5" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPetiole" />
+                <noderef id="leafPt1" />
+                <noderef id="leafPt2" />
+                <noderef id="leafPt3" />
+                <noderef id="leafPt4" />
+                <noderef id="leafPt5" />
+                <noderef id="leafPt6" />
+                <noderef id="leafPt7" />
+                <noderef id="leafPt8" />
+                <noderef id="leafPt9" />
+                <noderef id="leafPt10" />
+            </descendants>
+        </node>
+
+        <node id="leafPetiole">
+            <material id="null" />
             <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations>
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="5" topRadius="0.05" bottomRadius="0.05" stacks="1" slices="6" />
+            </descendants>
+        </node>
+
+        <node id="leafPt1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="0.07" z="0" />
+                <rotation axis="z" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="0.15" z="0" />
+                <rotation axis="z" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt3">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="1.07" z="0" />
+                <rotation axis="z" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt4">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="1.15" z="0" />
+                <rotation axis="z" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt5">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="2.07" z="0" />
+                <rotation axis="z" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt6">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="2.15" z="0" />
+                <rotation axis="z" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt7">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="3.07" z="0" />
+                <rotation axis="z" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt8">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="3.15" z="0" />
+                <rotation axis="z" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt9">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0.05" y="4.07" z="0" />
+                <rotation axis="z" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt10">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="0" y="4.15" z="0" />
+                <rotation axis="z" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="leafPt" />
+            </descendants>
+        </node>
+
+        <node id="leafPt">
+            <material id="null" />
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
-            </texture>                                                           <!-- -->
-            <transformations>                                                                   <!-- -->
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="triangle" x1="-0.1" y1="0" x2="0.1" y2="0" x3="0" y3="2.5"/>        <!-- -->
-                <leaf type="triangle" x1="0.1" y1="0" x2="-0.1" y2="0" x3="0" y3="2.5"/>        <!-- -->
-            </descendants>                                                                      <!-- -->
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <leaf type="triangle" x1="-0.1" y1="0" x2="0.1" y2="0" x3="0" y3="2.5" />
+                <leaf type="triangle" x1="0.1" y1="0" x2="-0.1" y2="0" x3="0" y3="2.5" />
+            </descendants>
         </node>
         <!--  END OF TREE'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -2151,7 +2162,7 @@
         <node id="boats">
             <material id="woodMaterial" />
             <texture id="clear" />
-            <transformations> </transformations>
+            <transformations></transformations>
             <descendants>
                 <noderef id="boat1" />
                 <noderef id="boat2" />
@@ -2161,368 +2172,354 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- BOATS RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-        <node id="boat1">                                                                       <!-- -->
-            <material id="null" />                                                              <!-- -->
+        <node id="boat1">
+            <material id="null" />
+            <texture id="null"></texture>
+            <transformations>
+                <translation x="-15" y="0" z="-20" />
+            </transformations>
+            <descendants>
+                <noderef id="boat" />
+            </descendants>
+        </node>
+
+        <node id="boat2">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="25" y="0" z="20" />
+                <rotation axis="y" angle="35" />
+            </transformations>
+            <descendants>
+                <noderef id="boat" />
+            </descendants>
+        </node>
+
+        <node id="boat">
+            <material id="woodMaterial" />
+            <texture id="boatTexture" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatStructure" />
+                <noderef id="boatMast" />
+                <noderef id="boatSmallFlag" />
+                <noderef id="boatMainSail" />
+                <noderef id="boatWindows" />
+            </descendants>
+        </node>
+
+        <node id="boatStructure">
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatStructureLeft" />
+                <noderef id="boatStructureRight" />
+                <noderef id="boatStructureBase" />
+                <noderef id="boatStructureFront" />
+                <noderef id="boatStructureBack" />
+            </descendants>
+        </node>
+
+        <node id="boatStructureLeft">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-2.25" y="0" z="-1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureSide" />
+            </descendants>
+        </node>
+
+        <node id="boatStructureRight">
+            <material id="null" />
+            <texture id="null" />
+            <transformations>
+                <translation x="-2.25" y="0" z="1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureSide" />
+            </descendants>
+        </node>
+
+        <node id="boatStructureSide">
+            <material id="null" />
             <texture id="null">
-
-            </texture>                                                                          <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="-15" y="0" z="-20"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boat"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boat2">                                                                       <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>                                                                   <!-- -->
-                <translation x="25" y="0" z="20"/>
-                <rotation axis="y" angle="35"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boat"/>                                                            <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boat">                                                                        <!-- -->
-            <material id="woodMaterial" />                                                      <!-- -->
-            <texture id="boatTexture" />                                                        <!-- -->
-            <transformations></transformations>                                                 <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructure"/>                                                   <!-- -->
-                <noderef id="boatMast"/>                                                        <!-- -->
-                <noderef id="boatSmallFlag"/>                                                   <!-- -->
-                <noderef id="boatMainSail"/>                                                    <!-- -->
-                <noderef id="boatWindows"/>                                                     <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boatStructure">                                                               <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureLeft"/>                                               <!-- -->
-                <noderef id="boatStructureRight"/>                                              <!-- -->
-                <noderef id="boatStructureBase"/>                                               <!-- -->
-                <noderef id="boatStructureFront"/>                                              <!-- -->
-                <noderef id="boatStructureBack"/>                                               <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boatStructureLeft">                                                           <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-                <translation x="-2.25" y="0" z="-1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureSide"/>                                               <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boatStructureRight">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-                <translation x="-2.25" y="0" z="1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureSide"/>                                               <!-- -->
-            </descendants>                                                                      <!-- -->
-        </node>
-
-        <node id="boatStructureSide">                                                           <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" >
                 <amplification afs="1" aft="2" />
-            </texture>                                                                          <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureSide1"/>                                              <!-- -->
-                <noderef id="boatStructureSide2"/>                                              <!-- -->
-            </descendants>                                                                      <!-- -->
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatStructureSide1" />
+                <noderef id="boatStructureSide2" />
+            </descendants>
         </node>
 
-        <node id="boatStructureSide1">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="triangle" x1="1.5" y1="0" x2="1.5" y2="1.5" x3="0" y3="1.5"/>
-                <leaf type="triangle" x1="3" y1="0" x2="4.5" y2="1.5" x3="3" y3="1.5"/>
+        <node id="boatStructureSide1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
+            <descendants>
+                <leaf type="triangle" x1="1.5" y1="0" x2="1.5" y2="1.5" x3="0" y3="1.5" />
+                <leaf type="triangle" x1="3" y1="0" x2="4.5" y2="1.5" x3="3" y3="1.5" />
                 <leaf type="rectangle" x1="1.5" y1="0" x2="3" y2="1.5" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatStructureSide2">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatStructureSide2">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="4.5" y="0" z="0"/>
-                <rotation axis="y" angle="180"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureSide1"/>                                              <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="4.5" y="0" z="0" />
+                <rotation axis="y" angle="180" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureSide1" />
+            </descendants>
         </node>
 
-        <node id="boatStructureBase">                                                           <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" >
+        <node id="boatStructureBase">
+            <material id="null" />
+            <texture id="null">
                 <amplification afs="1" aft="2" />
-            </texture>                                                                          <!-- -->
+            </texture>
             <transformations>
-                <translation x="-0.75" y="0" z="-1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureBase1"/>                                              <!-- -->
-                <noderef id="boatStructureBase2"/>                                              <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="-0.75" y="0" z="-1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureBase1" />
+                <noderef id="boatStructureBase2" />
+            </descendants>
         </node>
 
-        <node id="boatStructureBase1">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatStructureBase1">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="90"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+                <rotation axis="x" angle="90" />
+            </transformations>
+            <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="1.5" y2="2" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatStructureBase2">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatStructureBase2">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.001" z="2"/>
-                <rotation axis="x" angle="-90"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+                <translation x="0" y="0.001" z="2" />
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="1.5" y2="2" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatStructureFront">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatStructureFront">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.75" y="0" z="1"/>
-                <rotation axis="y" angle="90"/>
-                <rotation axis="x" angle="45"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureFront1"/>                                             <!-- -->
-                <noderef id="boatStructureFront2"/>                                             <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="0.75" y="0" z="1" />
+                <rotation axis="y" angle="90" />
+                <rotation axis="x" angle="45" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureFront1" />
+                <noderef id="boatStructureFront2" />
+            </descendants>
         </node>
 
-        <node id="boatStructureFront1">                                                         <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" >
+        <node id="boatStructureFront1">
+            <material id="null" />
+            <texture id="null">
                 <amplification afs="1" aft="2" />
-            </texture>                                                                          <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+            </texture>
+            <transformations></transformations>
+            <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="2" y2="2.13" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatStructureFront2">                                                         <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" >
+        <node id="boatStructureFront2">
+            <material id="null" />
+            <texture id="null">
                 <amplification afs="1" aft="2" />
-            </texture>                                                                          <!-- -->
+            </texture>
             <transformations>
-                <translation x="0" y="2.13" z="0"/>
-                <rotation axis="x" angle="180"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureFront1"/>
-            </descendants>                                                                      <!-- -->
+                <translation x="0" y="2.13" z="0" />
+                <rotation axis="x" angle="180" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureFront1" />
+            </descendants>
         </node>
 
-        <node id="boatStructureBack">                                                           <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatStructureBack">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.75" y="0" z="1"/>
-                <rotation axis="y" angle="90"/>
-                <rotation axis="x" angle="-45"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatStructureFront1"/>                                             <!-- -->
-                <noderef id="boatStructureFront2"/>                                             <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="-0.75" y="0" z="1" />
+                <rotation axis="y" angle="90" />
+                <rotation axis="x" angle="-45" />
+            </transformations>
+            <descendants>
+                <noderef id="boatStructureFront1" />
+                <noderef id="boatStructureFront2" />
+            </descendants>
         </node>
 
-        <node id="boatMast">                                                                    <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" >
+        <node id="boatMast">
+            <material id="null" />
+            <texture id="null">
                 <amplification afs="3" aft="0.3" />
-            </texture>                                                                          <!-- -->
+            </texture>
             <transformations>
-                <rotation axis="x" angle="-90"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="cylinder" height="6" topRadius="0.1" bottomRadius="0.1" stacks="1" slices="6"/>
-            </descendants>                                                                      <!-- -->
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="cylinder" height="6" topRadius="0.1" bottomRadius="0.1" stacks="1" slices="6" />
+            </descendants>
         </node>
 
-        <node id="boatSmallFlag">                                                               <!-- -->
-            <material id="whiteMaterial" />                                                     <!-- -->
-            <texture id="boatFlagTexture">                                                      <!-- -->
+        <node id="boatSmallFlag">
+            <material id="whiteMaterial" />
+            <texture id="boatFlagTexture">
                 <amplification afs="1.0" aft="0.7" />
             </texture>
             <transformations>
-                <translation x="0" y="5" z="0"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatSmallFlag1"/>                                                  <!-- -->
-                <noderef id="boatSmallFlag2"/>                                                  <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="0" y="5" z="0" />
+            </transformations>
+            <descendants>
+                <noderef id="boatSmallFlag1" />
+                <noderef id="boatSmallFlag2" />
+            </descendants>
         </node>
 
-        <node id="boatSmallFlag1">                                                              <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+        <node id="boatSmallFlag1">
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
+            <descendants>
                 <leaf type="rectangle" x1="0" y1="0" x2="1" y2="0.7" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatSmallFlag2">                                                              <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatSmallFlag2">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="1" y="0" z="0"/>
-                <rotation axis="y" angle="-180"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatSmallFlag1"/>
-            </descendants>                                                                      <!-- -->
+                <translation x="1" y="0" z="0" />
+                <rotation axis="y" angle="-180" />
+            </transformations>
+            <descendants>
+                <noderef id="boatSmallFlag1" />
+            </descendants>
         </node>
 
-        <node id="boatMainSail">                                                                <!-- -->
-            <material id="whiteMaterial" />                                                     <!-- -->
+        <node id="boatMainSail">
+            <material id="whiteMaterial" />
             <texture id="mainSailsTexture">
                 <amplification afs="4" aft="1.0" />
-            </texture>                                                                          <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatFrontMainSails"/>                                              <!-- -->
-                <noderef id="boatBackMainSails"/>                                               <!-- -->
-            </descendants>                                                                      <!-- -->
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatFrontMainSails" />
+                <noderef id="boatBackMainSails" />
+            </descendants>
         </node>
 
-        <node id="boatFrontMainSails">                                                          <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="mainSailsTexture" />                                                   <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <leaf type="triangle" x1="-1.9" y1="1.6" x2="1.9" y2="1.6" x3="0" y3="5"/>
-            </descendants>                                                                      <!-- -->
+        <node id="boatFrontMainSails">
+            <material id="null" />
+            <texture id="mainSailsTexture" />
+            <transformations></transformations>
+            <descendants>
+                <leaf type="triangle" x1="-1.9" y1="1.6" x2="1.9" y2="1.6" x3="0" y3="5" />
+            </descendants>
         </node>
 
-        <node id="boatBackMainSails">                                                           <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatBackMainSails">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <rotation axis="y" angle="180"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatFrontMainSails"/>                                              <!-- -->
-            </descendants>                                                                      <!-- -->
+                <rotation axis="y" angle="180" />
+            </transformations>
+            <descendants>
+                <noderef id="boatFrontMainSails" />
+            </descendants>
         </node>
 
-        <node id="boatWindows">                                                                 <!-- -->
-            <material id="whiteMaterial" />                                                     <!-- -->
-            <texture id="clear" />                                                              <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatWindow1"/>                                                     <!-- -->
-                <noderef id="boatWindow2"/>                                                     <!-- -->
-                <noderef id="boatWindow3"/>                                                     <!-- -->
-            </descendants>                                                                      <!-- -->
+        <node id="boatWindows">
+            <material id="whiteMaterial" />
+            <texture id="clear" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatWindow1" />
+                <noderef id="boatWindow2" />
+                <noderef id="boatWindow3" />
+            </descendants>
         </node>
 
-        <node id="boatWindow1">                                                                 <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatWindow1">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="-0.6" y="0.9" z="1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatWindow"/>                                                      <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="-0.6" y="0.9" z="1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatWindow" />
+            </descendants>
         </node>
 
-        <node id="boatWindow2">                                                                 <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatWindow2">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0.6" y="0.9" z="1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatWindow"/>                                                      <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="0.6" y="0.9" z="1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatWindow" />
+            </descendants>
         </node>
 
-        <node id="boatWindow3">                                                                 <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
+        <node id="boatWindow3">
+            <material id="null" />
+            <texture id="null" />
             <transformations>
-                <translation x="0" y="0.9" z="-1"/>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatWindow"/>                                                      <!-- -->
-            </descendants>                                                                      <!-- -->
+                <translation x="0" y="0.9" z="-1" />
+            </transformations>
+            <descendants>
+                <noderef id="boatWindow" />
+            </descendants>
         </node>
 
-        <node id="boatWindow">                                                                  <!-- -->
-            <material id="null" />                                                              <!-- -->
-            <texture id="null" />                                                               <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
-                <noderef id="boatWindowBorder"/>                                                <!-- -->
-                <noderef id="boatWindowGlass"/>                                                 <!-- -->
-            </descendants>                                                                      <!-- -->
+        <node id="boatWindow">
+            <material id="null" />
+            <texture id="null" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatWindowBorder" />
+                <noderef id="boatWindowGlass" />
+            </descendants>
         </node>
 
-        <node id="boatWindowBorder">                                                            <!-- -->
-            <material id="darkGreyMaterial" />                                                  <!-- -->
-            <texture id="boatTexture" />                                                        <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+        <node id="boatWindowBorder">
+            <material id="darkGreyMaterial" />
+            <texture id="boatTexture" />
+            <transformations></transformations>
+            <descendants>
                 <leaf type="torus" inner="0.1" outer="0.3" slices="6" loops="15" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
-        <node id="boatWindowGlass">                                                             <!-- -->
-            <material id="specularMaterial" />                                                  <!-- -->
+        <node id="boatWindowGlass">
+            <material id="specularMaterial" />
             <texture id="glassTexture">
                 <amplification afs="1.0" aft="1.0" />
-            </texture>                                                                          <!-- -->
-            <transformations>
-            </transformations>                                                                  <!-- -->
-            <descendants>                                                                       <!-- -->
+            </texture>
+            <transformations></transformations>
+            <descendants>
                 <leaf type="sphere" radius="0.22" slices="8" stacks="5" />
-            </descendants>                                                                      <!-- -->
+            </descendants>
         </node>
 
         <!-- ___________________________________________________________________________ -->
@@ -2542,15 +2539,14 @@
         <node id="unitCube">
             <material id="null" />
             <texture id="null" />
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
-                <noderef id="unitCubeBase"/>
-                <noderef id="unitCubeTop"/>
-                <noderef id="unitCubeFrontFace"/>
-                <noderef id="unitCubeBackFace"/>
-                <noderef id="unitCubeLeftFace"/>
-                <noderef id="unitCubeRightFace"/>
+                <noderef id="unitCubeBase" />
+                <noderef id="unitCubeTop" />
+                <noderef id="unitCubeFrontFace" />
+                <noderef id="unitCubeBackFace" />
+                <noderef id="unitCubeLeftFace" />
+                <noderef id="unitCubeRightFace" />
             </descendants>
         </node>
 
@@ -2558,7 +2554,7 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <rotation axis="x" angle="90"/>
+                <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2569,8 +2565,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="1" z="0"/>
-                <rotation axis="x" angle="-90"/>
+                <translation x="0" y="1" z="0" />
+                <rotation axis="x" angle="-90" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2581,7 +2577,7 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.5" z="0.5"/>
+                <translation x="0" y="0.5" z="0.5" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2592,8 +2588,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0" y="0.5" z="-0.5"/>
-                <rotation axis="x" angle="180"/>
+                <translation x="0" y="0.5" z="-0.5" />
+                <rotation axis="x" angle="180" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2604,8 +2600,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="-0.5" y="0.5" z="0"/>
-                <rotation axis="y" angle="-90"/>
+                <translation x="-0.5" y="0.5" z="0" />
+                <rotation axis="y" angle="-90" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2616,8 +2612,8 @@
             <material id="null" />
             <texture id="null" />
             <transformations>
-                <translation x="0.5" y="0.5" z="0"/>
-                <rotation axis="y" angle="90"/>
+                <translation x="0.5" y="0.5" z="0" />
+                <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" />
@@ -2640,7 +2636,7 @@
                      :
         -->
 
-<!--
+        <!--
         <node id="triangularPrism">
             <material id="null" />
             <texture id="null" />
