@@ -1898,7 +1898,7 @@
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
-                <translation x="-0.025" y="0.45" z="0" />
+                <translation x="-0.05" y="0.45" z="0" />
                 <rotation axis="y" angle="-90" />
             </transformations>
             <descendants>
@@ -1912,7 +1912,7 @@
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
-                <translation x="0.025" y="0.45" z="0" />
+                <translation x="0.05" y="0.45" z="0" />
                 <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
