@@ -3023,7 +3023,11 @@
                 <translation x="-15" y="0" z="-20" />
             </transformations>
             <descendants>
-                <noderef id="boat" />
+                <noderef id="boatStructure" />
+                <noderef id="boatMast" />
+                <noderef id="boatSmallFlag" />
+                <noderef id="boatMainSail1" />
+                <noderef id="boatWindows" />
             </descendants>
         </node>
 
@@ -3037,21 +3041,10 @@
                 <rotation axis="y" angle="35" />
             </transformations>
             <descendants>
-                <noderef id="boat" />
-            </descendants>
-        </node>
-
-        <node id="boat">
-            <material id="woodMaterial" />
-            <texture id="boatTexture" >
-                <amplification afs="1" aft="1" />
-            </texture>
-            <transformations></transformations>
-            <descendants>
                 <noderef id="boatStructure" />
                 <noderef id="boatMast" />
                 <noderef id="boatSmallFlag" />
-                <noderef id="boatMainSail" />
+                <noderef id="boatMainSail2" />
                 <noderef id="boatWindows" />
             </descendants>
         </node>
@@ -3286,19 +3279,19 @@
             </descendants>
         </node>
 
-        <node id="boatMainSail">
+        <node id="boatMainSail1">
             <material id="whiteMaterial" />
             <texture id="mainSailsTexture">
-                <amplification afs="4" aft="1.0" />
+                <amplification afs="1.0" aft="1.0" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="boatFrontMainSails" />
-                <noderef id="boatBackMainSails" />
+                <noderef id="boatFrontMainSail1" />
+                <noderef id="boatBackMainSail1" />
             </descendants>
         </node>
 
-        <node id="boatFrontMainSails">
+        <node id="boatFrontMainSail1">
             <material id="null" />
             <texture id="mainSailsTexture" >
                 <amplification afs="3.8" aft="3.4" />
@@ -3309,7 +3302,7 @@
             </descendants>
         </node>
 
-        <node id="boatBackMainSails">
+        <node id="boatBackMainSail1">
             <material id="null" />
             <texture id="null" >
                 <amplification afs="1" aft="1" />
@@ -3318,7 +3311,43 @@
                 <rotation axis="y" angle="180" />
             </transformations>
             <descendants>
-                <noderef id="boatFrontMainSails" />
+                <noderef id="boatFrontMainSail2" />
+            </descendants>
+        </node>
+
+        <node id="boatMainSail2">
+            <material id="whiteMaterial" />
+            <texture id="mainSailsTexture">
+                <amplification afs="1.0" aft="1.0" />
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <noderef id="boatFrontMainSail2" />
+                <noderef id="boatBackMainSail2" />
+            </descendants>
+        </node>
+
+        <node id="boatFrontMainSail2">
+            <material id="null" />
+            <texture id="mainSailsTexture" >
+                <amplification afs="1.9" aft="1.7" />
+            </texture>
+            <transformations></transformations>
+            <descendants>
+                <leaf type="triangle" x1="-1.9" y1="1.6" x2="1.9" y2="1.6" x3="0" y3="5" />
+            </descendants>
+        </node>
+
+        <node id="boatBackMainSail2">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations>
+                <rotation axis="y" angle="180" />
+            </transformations>
+            <descendants>
+                <noderef id="boatFrontMainSail2" />
             </descendants>
         </node>
 
