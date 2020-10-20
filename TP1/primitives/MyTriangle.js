@@ -51,9 +51,9 @@ class MyTriangle extends CGFobject {
 		var v = a * Math.sin(alpha);
 
 		this.texCoords = [
-			0, 0,
-			a/afs, 0,
-			c*Math.cos(alpha)/afs, c*Math.sin(alpha)/aft
+			0, 1,
+			a/afs, 1,
+			c*Math.cos(alpha)/afs, 1-c*Math.sin(alpha)/aft
 		];
 
 		this.updateTexCoordsGLBuffers();

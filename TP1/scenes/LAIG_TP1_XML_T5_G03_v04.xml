@@ -109,7 +109,7 @@
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
-        <texture id="mainSailsTexture" path="./scenes/images/plastic_sail.jpg" />
+        <texture id="mainSailsTexture" path="./scenes/images/geometric_sail.jpg" />
         <texture id="boatFlagTexture" path="./scenes/images/flag.jpg" />
         <texture id="glassTexture" path="./scenes/images/glass.jpg" />
         <texture id="boatTexture" path="./scenes/images/wooden_boat.jpg" />
@@ -1669,7 +1669,7 @@
                 <noderef id="tableTopFrontFace" />
                 <noderef id="tableTopBackFace" />
                 <noderef id="tableTopLeftFace" />
-                <noderef id="tableTopRightFace" />            
+                <noderef id="tableTopRightFace" />
             </descendants>
         </node>
 
@@ -2324,7 +2324,7 @@
                 <noderef id="backSupportColumn" />
             </descendants>
         </node>
-        
+
         <node id="backSupportRight">
             <material id="null" />
             <texture id="null" >
@@ -2336,14 +2336,14 @@
             <descendants>
                 <noderef id="backSupportColumn" />
             </descendants>
-        </node>        
+        </node>
 
         <node id="backSupportColumn">
             <material id="null" />
             <texture id="null" >
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>                
+            <transformations>
             </transformations>
             <descendants>
                 <noderef id="backSupportColumnBase" />
@@ -2451,7 +2451,7 @@
                 <noderef id="backBoardSupportFrontFace" />
                 <noderef id="backBoardSupportBackFace" />
                 <noderef id="backBoardSupportLeftFace" />
-                <noderef id="backBoardSupportRightFace" />            
+                <noderef id="backBoardSupportRightFace" />
             </descendants>
         </node>
 
