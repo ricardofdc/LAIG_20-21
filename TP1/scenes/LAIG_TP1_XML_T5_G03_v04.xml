@@ -4,7 +4,7 @@
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="boat2Perspective">
+    <views default="islandView">
         <perspective id="islandView" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="8" y="0" z="0" />
