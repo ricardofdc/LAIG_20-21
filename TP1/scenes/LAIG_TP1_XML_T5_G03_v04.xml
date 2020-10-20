@@ -396,14 +396,13 @@
             </transformations>
             <descendants>
                 <noderef id="paint1" />
-                <noderef id="paint2" />
             </descendants>
         </node>
 
         <node id="paint1">
             <material id="null" />
-            <texture id="null">
-                <amplification afs="2" aft="1" />
+            <texture id="drawTexture">
+                <amplification afs="2.2" aft="1.2" />
             </texture>
             <transformations></transformations>
             <descendants>
@@ -420,7 +419,6 @@
             <transformations></transformations>
             <descendants>
                 <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
-                <noderef id="draw1" />
             </descendants>
         </node>
 
@@ -3089,7 +3087,7 @@
 
         <node id="boatStructure">
             <material id="null" />
-            <texture id="null" >
+            <texture id="boatTexture" >
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
