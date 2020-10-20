@@ -209,9 +209,7 @@
 
         <node id="skyCube">
             <material id="skyMaterial" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
+            <texture id="clear" />
             <transformations></transformations>
             <descendants>
                 <noderef id="leftSky" />
@@ -366,7 +364,9 @@
 
         <node id="caban">
             <material id="woodMaterial" />
-            <texture id="cabanTexture" />
+            <texture id="cabanTexture">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.5" z="0" />
             </transformations>
@@ -400,7 +400,9 @@
 
         <node id="telhado_esquerda">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0.05" y="4.1" z="-2.3" />
                 <rotation axis="z" angle="-60" />
@@ -413,7 +415,9 @@
 
         <node id="telhado_direita">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="-0.05" y="4.1" z="-2.3" />
                 <rotation axis="z" angle="60" />
@@ -426,7 +430,9 @@
 
         <node id="telhado_metade">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="tronco0_telhado" />
@@ -451,7 +457,9 @@
 
         <node id="parede_esquerda">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="-2.1" y="0.15" z="-2.5" />
             </transformations>
@@ -462,7 +470,9 @@
 
         <node id="parede_direita">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="2.1" y="0.15" z="-2.5" />
             </transformations>
@@ -473,7 +483,9 @@
 
         <node id="parede_tras">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="-2.5" y="0" z="-2.1" />
                 <rotation axis="y" angle="90" />
@@ -486,7 +498,9 @@
 
         <node id="parede_frente">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="-2.5" y="0" z="2.1" />
                 <rotation axis="y" angle="90" />
@@ -499,7 +513,9 @@
 
         <node id="parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="tronco0_parede_lateral" />
@@ -516,7 +532,9 @@
 
         <node id="parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="tronco0_esq_parede_porta" />
@@ -539,7 +557,9 @@
 
         <node id="parede_triangulo_superior">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="tronco0_parede_triangulo" />
@@ -551,7 +571,9 @@
 
         <node id="tronco0_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0" z="0" />
             </transformations>
@@ -562,7 +584,9 @@
 
         <node id="tronco1_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.3" z="0" />
             </transformations>
@@ -573,7 +597,9 @@
 
         <node id="tronco2_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.6" z="0" />
             </transformations>
@@ -584,7 +610,9 @@
 
         <node id="tronco3_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.9" z="0" />
             </transformations>
@@ -595,7 +623,9 @@
 
         <node id="tronco4_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.2" z="0" />
             </transformations>
@@ -606,7 +636,9 @@
 
         <node id="tronco5_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.5" z="0" />
             </transformations>
@@ -617,7 +649,9 @@
 
         <node id="tronco6_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.8" z="0" />
             </transformations>
@@ -628,7 +662,9 @@
 
         <node id="tronco7_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.1" z="0" />
             </transformations>
@@ -639,7 +675,9 @@
 
         <node id="tronco8_parede_lateral">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.4" z="0" />
             </transformations>
@@ -650,7 +688,9 @@
 
         <node id="tronco0_parede_triangulo">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.7" z="0.5" />
             </transformations>
@@ -661,7 +701,9 @@
 
         <node id="tronco1_parede_triangulo">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.0" z="1.0" />
             </transformations>
@@ -672,7 +714,9 @@
 
         <node id="tronco2_parede_triangulo">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.3" z="1.5" />
             </transformations>
@@ -683,7 +727,9 @@
 
         <node id="tronco3_parede_triangulo">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.6" z="2.0" />
             </transformations>
@@ -694,7 +740,9 @@
 
         <node id="tronco0_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.0" z="0" />
             </transformations>
@@ -705,7 +753,9 @@
 
         <node id="tronco1_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.3" z="0" />
             </transformations>
@@ -716,7 +766,9 @@
 
         <node id="tronco2_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.6" z="0" />
             </transformations>
@@ -727,7 +779,9 @@
 
         <node id="tronco3_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.9" z="0" />
             </transformations>
@@ -738,7 +792,9 @@
 
         <node id="tronco4_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.2" z="0" />
             </transformations>
@@ -749,7 +805,9 @@
 
         <node id="tronco5_esq_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.5" z="0" />
             </transformations>
@@ -760,7 +818,9 @@
 
         <node id="tronco0_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.0" z="4" />
             </transformations>
@@ -771,7 +831,9 @@
 
         <node id="tronco1_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.3" z="4" />
             </transformations>
@@ -782,7 +844,9 @@
 
         <node id="tronco2_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.6" z="4" />
             </transformations>
@@ -793,7 +857,9 @@
 
         <node id="tronco3_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.9" z="4" />
             </transformations>
@@ -804,7 +870,9 @@
 
         <node id="tronco4_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.2" z="4" />
             </transformations>
@@ -815,7 +883,9 @@
 
         <node id="tronco5_dir_parede_porta">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.5" z="4" />
             </transformations>
@@ -826,7 +896,9 @@
 
         <node id="tronco0_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0" z="0" />
             </transformations>
@@ -837,7 +909,9 @@
 
         <node id="tronco1_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.3" z="0" />
             </transformations>
@@ -848,7 +922,9 @@
 
         <node id="tronco2_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.6" z="0" />
             </transformations>
@@ -859,7 +935,9 @@
 
         <node id="tronco3_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.9" z="0" />
             </transformations>
@@ -870,7 +948,9 @@
 
         <node id="tronco4_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.2" z="0" />
             </transformations>
@@ -881,7 +961,9 @@
 
         <node id="tronco5_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.5" z="0" />
             </transformations>
@@ -892,7 +974,9 @@
 
         <node id="tronco6_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.8" z="0" />
             </transformations>
@@ -903,7 +987,9 @@
 
         <node id="tronco7_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.1" z="0" />
             </transformations>
@@ -914,7 +1000,9 @@
 
         <node id="tronco8_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.4" z="0" />
             </transformations>
@@ -925,7 +1013,9 @@
 
         <node id="tronco9_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="2.7" z="0" />
             </transformations>
@@ -936,7 +1026,9 @@
 
         <node id="tronco10_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="1.2" z="0" />
             </transformations>
@@ -947,7 +1039,9 @@
 
         <node id="tronco11_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.0" z="0" />
             </transformations>
@@ -958,7 +1052,9 @@
 
         <node id="tronco12_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.3" z="0" />
             </transformations>
@@ -969,7 +1065,9 @@
 
         <node id="tronco13_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.6" z="0" />
             </transformations>
@@ -980,7 +1078,9 @@
 
         <node id="tronco14_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="3.9" z="0" />
             </transformations>
@@ -991,7 +1091,9 @@
 
         <node id="tronco15_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="4.2" z="0" />
             </transformations>
@@ -1002,7 +1104,9 @@
 
         <node id="tronco16_telhado">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="4.5" z="0" />
             </transformations>
@@ -1013,7 +1117,7 @@
 
         <node id="tronco_5metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1024,7 +1128,7 @@
 
         <node id="tronco_4metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1046,7 +1150,7 @@
 
         <node id="tronco_3metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1057,7 +1161,7 @@
 
         <node id="tronco_2metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1068,7 +1172,7 @@
 
         <node id="tronco_1metros">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1079,7 +1183,7 @@
 
         <node id="cabanPorch">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1096,7 +1200,9 @@
 
         <node id="porchVerticalColumns">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="porchLeftVerticalTrunk" />
@@ -1104,9 +1210,12 @@
                 <noderef id="porchRightVerticalTrunk2" />
             </descendants>
         </node>
+
         <node id="porchFrontFencing">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="porchFrontBottomTrunk" />
@@ -1116,9 +1225,12 @@
                 <noderef id="smallVerticalFront3" />
             </descendants>
         </node>
+
         <node id="porchLeftFencing">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="porchLeftBottomTrunk" />
@@ -1129,9 +1241,12 @@
                 <noderef id="smallVerticalLeft3" />
             </descendants>
         </node>
+
         <node id="porchRightFencing">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <noderef id="porchRightBottomTrunk" />
@@ -1145,7 +1260,7 @@
 
         <node id="porchLeftVerticalTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1156,9 +1271,10 @@
                 <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchRightVerticalTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1169,9 +1285,10 @@
                 <leaf type="cylinder" height="2.7" topRadius="0.2" bottomRadius="0.2" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchRightVerticalTrunk2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1185,7 +1302,7 @@
 
         <node id="porchFrontBottomTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1196,9 +1313,10 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchFrontTopTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1209,9 +1327,12 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="smallVerticalFront">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0.5" y="0" z="2.2" />
             </transformations>
@@ -1219,9 +1340,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalFront2">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="1.1" y="0" z="2.2" />
             </transformations>
@@ -1229,9 +1353,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalFront3">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="1.7" y="0" z="2.2" />
             </transformations>
@@ -1242,7 +1369,7 @@
 
         <node id="porchLeftBottomTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1252,9 +1379,10 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchLeftTopTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1264,9 +1392,10 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchLeftRoofTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1276,9 +1405,12 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="smallVerticalLeft1">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0" z="0.4" />
             </transformations>
@@ -1286,9 +1418,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalLeft2">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0" z="1" />
             </transformations>
@@ -1296,9 +1431,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalLeft3">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0" z="1.6" />
             </transformations>
@@ -1309,7 +1447,7 @@
 
         <node id="porchRightBottomTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1319,9 +1457,10 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchRightTopTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1331,9 +1470,10 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="porchRightRoofTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1343,9 +1483,12 @@
                 <leaf type="cylinder" height="2.2" topRadius="0.15" bottomRadius="0.15" stacks="1" slices="15" />
             </descendants>
         </node>
+
         <node id="smallVerticalRight1">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="4.2" y="0" z="0.4" />
             </transformations>
@@ -1353,9 +1496,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalRight2">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="4.2" y="0" z="1" />
             </transformations>
@@ -1363,9 +1509,12 @@
                 <noderef id="porchSmallVerticalTrunk" />
             </descendants>
         </node>
+
         <node id="smallVerticalRight3">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="4.2" y="0" z="1.6" />
             </transformations>
@@ -1376,21 +1525,107 @@
 
         <node id="porchRoof">
             <material id="null" />
-            <texture id="cabanTexture">
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
+            <transformations>
+                <translation x="2.2" y="2.4" z="1" />
+            </transformations>
+            <descendants>
+                <noderef id="porchRoofBase" />
+                <noderef id="porchRoofTop" />
+                <noderef id="porchRoofFrontFace" />
+                <noderef id="porchRoofBackFace" />
+                <noderef id="porchRoofLeftFace" />
+                <noderef id="porchRoofRightFace" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofBase">
+            <material id="null" />
+            <texture id="null" >
                 <amplification afs="4.2" aft="2.2" />
             </texture>
             <transformations>
-                <translation x="2.2" y="2.4" z="1.2" />
-                <scale sx="4.2" sy="0.05" sz="2.2" />
+                <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="unitCube" />
+                <leaf type="rectangle" x1="-2.1" y1="-1.1" x2="2.1" y2="1.1" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofTop">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="4.2" aft="2.2" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.05" z="0" />
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-2.1" y1="-1.1" x2="2.1" y2="1.1" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofFrontFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="4.2" aft="0.05" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.025" z="1.1" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-2.1" y1="-0.025" x2="2.1" y2="0.025" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofBackFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="4.2" aft="0.05" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.025" z="-1.1" />
+                <rotation axis="x" angle="180" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-2.1" y1="-0.025" x2="2.1" y2="0.025" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofLeftFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="2.2" aft="0.05" />
+            </texture>
+            <transformations>
+                <translation x="-2.1" y="0.025" z="0" />
+                <rotation axis="y" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1.1" y1="-0.025" x2="1.1" y2="0.025" />
+            </descendants>
+        </node>
+
+        <node id="porchRoofRightFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="2.2" aft="0.05" />
+            </texture>
+            <transformations>
+                <translation x="2.1" y="0.025" z="0" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1.1" y1="-0.025" x2="1.1" y2="0.025" />
             </descendants>
         </node>
 
         <node id="porchSmallVerticalTrunk">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1422,13 +1657,101 @@
 
         <node id="tableTop">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="0.9" z="0" />
-                <scale sx="1.5" sy="0.1" sz="1" />
             </transformations>
             <descendants>
-                <noderef id="unitCube" />
+                <noderef id="tableTopBase" />
+                <noderef id="tableTopTopFace" />
+                <noderef id="tableTopFrontFace" />
+                <noderef id="tableTopBackFace" />
+                <noderef id="tableTopLeftFace" />
+                <noderef id="tableTopRightFace" />            
+            </descendants>
+        </node>
+
+        <node id="tableTopBase">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1.5" aft="1" />
+            </texture>
+            <transformations>
+                <rotation axis="x" angle="90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.75" y1="-0.5" x2="0.75" y2="0.5" />
+            </descendants>
+        </node>
+
+        <node id="tableTopTopFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1.5" aft="1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.1" z="0" />
+                <rotation axis="x" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.75" y1="-0.5" x2="0.75" y2="0.5" />
+            </descendants>
+        </node>
+
+        <node id="tableTopFrontFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1.5" aft="0.1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.05" z="0.5" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.75" y1="-0.05" x2="0.75" y2="0.05" />
+            </descendants>
+        </node>
+
+        <node id="tableTopBackFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1.5" aft="0.1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0.05" z="-0.5" />
+                <rotation axis="x" angle="180" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.75" y1="-0.05" x2="0.75" y2="0.05" />
+            </descendants>
+        </node>
+
+        <node id="tableTopLeftFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="0.1" />
+            </texture>
+            <transformations>
+                <translation x="-0.75" y="0.05" z="0" />
+                <rotation axis="y" angle="-90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.5" y1="-0.05" x2="0.5" y2="0.05" />
+            </descendants>
+        </node>
+
+        <node id="tableTopRightFace">
+            <material id="null" />
+            <texture id="null" >
+                <amplification afs="1" aft="0.1" />
+            </texture>
+            <transformations>
+                <translation x="0.75" y="0.05" z="0" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-0.5" y1="-0.05" x2="0.5" y2="0.05" />
             </descendants>
         </node>
 
@@ -1514,7 +1837,9 @@
 
         <node id="tableLampTop">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <leaf type="sphere" radius="0.1" slices="12" stacks="8" />
@@ -1868,7 +2193,9 @@
 
         <node id="coconut1">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0.3" y="5" z="0" />
             </transformations>
@@ -1879,7 +2206,9 @@
 
         <node id="coconut2">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="-0.25" y="5" z="0" />
             </transformations>
@@ -1890,7 +2219,9 @@
 
         <node id="coconut3">
             <material id="null" />
-            <texture id="null" />
+            <texture id="null">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations>
                 <translation x="0" y="5.2" z="0" />
             </transformations>
@@ -2014,7 +2345,7 @@
 
         <node id="leafPetiole">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2504,7 +2835,9 @@
 
         <node id="boatWindowBorder">
             <material id="darkGreyMaterial" />
-            <texture id="boatTexture" />
+            <texture id="boatTexture">
+                <amplification afs="1" aft="1" />
+            </texture>
             <transformations></transformations>
             <descendants>
                 <leaf type="torus" inner="0.1" outer="0.3" slices="6" loops="15" />
