@@ -1,20 +1,16 @@
 <lsf>
     <initials>
-        <reference length="2" />
+        <reference length="0.5" />
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="islandView">
+    <views default="boat2Perspective">
         <perspective id="islandView" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="8" y="0" z="0" />
         </perspective>
         <perspective id="frontCamera" near="0.3" far="500" angle="35">
             <from x="0" y="10" z="30" />
-            <to x="0" y="0" z="0" />
-        </perspective>
-        <perspective id="closeCamera" near="0.3" far="500" angle="35">
-            <from x="0" y="10" z="10" />
             <to x="0" y="0" z="0" />
         </perspective>
         <ortho id="frontOrtho" near="-30" far="100" left="-15" right="15" top="10" bottom="-1">
@@ -31,9 +27,13 @@
             <to x="0" y="0" z="0" />
             <up x="0" y="0" z="-1" />
         </ortho>
-        <perspective id="boatPerspective" near="0.3" far="20" angle="75">
-            <from x="-10" y="5" z="-15" />
-            <to x="-17" y="0" z="-22" />
+        <perspective id="boat1Perspective" near="0.3" far="20" angle="75">
+            <from x="-15" y="6" z="-12" />
+            <to x="-15" y="0" z="-25" />
+        </perspective>
+        <perspective id="boat2Perspective" near="0.3" far="20" angle="75">
+            <from x="19" y="6" z="14" />
+            <to x="23" y="0" z="22" />
         </perspective>
         <perspective id="treePerspective" near="0.3" far="20" angle="50">
             <from x="-10" y="8" z="3" />
@@ -1651,7 +1651,6 @@
             <descendants>
                 <noderef id="tableTop" />
                 <noderef id="tableLegs" />
-                <noderef id="tableLamp" />
             </descendants>
         </node>
 
@@ -1917,30 +1916,6 @@
             </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-0.05" y1="-0.45" x2="0.05" y2="0.45" />
-            </descendants>
-        </node>
-
-        <node id="tableLamp">
-            <material id="lampMaterial" />
-            <texture id="glassTexture">
-                <amplification afs="1" aft="1" />
-            </texture>
-            <transformations>
-                <translation x="0" y="1" z="0" />
-            </transformations>
-            <descendants>
-                <noderef id="tableLampTop" />
-            </descendants>
-        </node>
-
-        <node id="tableLampTop">
-            <material id="null" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
-            <transformations></transformations>
-            <descendants>
-                <leaf type="sphere" radius="0.1" slices="12" stacks="8" />
             </descendants>
         </node>
 
