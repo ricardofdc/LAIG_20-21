@@ -28,8 +28,8 @@ class MyTorus extends CGFobject {
         var theta = 2*Math.PI / this.slices;  //variação do angulo entre slices
         var phi = 2*Math.PI / this.loops;  //variação do angulo entre stacks
 
-        for (var i = 0; i < this.loops; i++) {
-            for (var j = 0; j < this.slices; j++) {
+        for (var i = 0; i <= this.loops; i++) {
+            for (var j = 0; j <= this.slices; j++) {
 
                 //vertices
                 var x = (this.outer + this.inner * Math.cos(j*theta)) * Math.cos(i*phi);
@@ -45,32 +45,32 @@ class MyTorus extends CGFobject {
                 var nz = Math.sin(j*theta);
 
                 this.normals.push(nx, ny, nz);
-                this.texCoords.push(1-(i / this.slices), 1-(j / this.loops));
+                this.texCoords.push(i / this.loops, j / this.slices);
             }
         }
 
         //indices
-        for(var i=0; i<this.loops; i++){
-          for(var j=0; j<this.slices; j++){
-            if (i == this.loops-1) {  //neste caso temos de unir ao loop inicial
-              if(j == this.slices - 1){
-                this.indices.push(i*this.slices + j, 0, (i-1)*this.slices + j+1);
-                this.indices.push(i*this.slices + j, j, 0);
+        for(var i=0; i<=this.loops; i++){
+          for(var j=0; j<=this.slices; j++){
+            if (i == this.loops) {  //neste caso temos de unir ao loop inicial
+              if(j == this.slices){
+                this.indices.push(i*(this.slices+1) + j, 0, (i-1)*(this.slices+1) + j+1);
+                this.indices.push(i*(this.slices+1) + j, j, 0);
               }
               else{
-                this.indices.push(i*this.slices + j, j+1, i*this.slices + j+1);
-                this.indices.push(i*this.slices + j, j, j+1);
+                this.indices.push(i*(this.slices+1) + j, j+1, i*(this.slices+1) + j+1);
+                this.indices.push(i*(this.slices+1) + j, j, j+1);
               }
             }
 
-            else if(j == this.slices -1){   //neste caso ao fazer 'j+1' iriamos para o loop seguinte
+            else if(j == this.slices){   //neste caso ao fazer 'j+1' iriamos para o loop seguinte
                                             //por isso retiramos 1 ao i sempre que temos 'j+1'
-              this.indices.push(i*this.slices + j, i*this.slices + j+1, (i-1)*this.slices + j+1);
-              this.indices.push(i*this.slices + j, (i+1)*this.slices + j, i*this.slices + j+1);
+              this.indices.push(i*(this.slices+1) + j, i*(this.slices+1) + j+1, (i-1)*(this.slices+1) + j+1);
+              this.indices.push(i*(this.slices+1) + j, (i+1)*(this.slices+1) + j, i*(this.slices+1) + j+1);
             }
             else{
-              this.indices.push(i*this.slices + j, (i+1)*this.slices + j+1, i*this.slices + j+1);
-              this.indices.push(i*this.slices + j, (i+1)*this.slices + j, (i+1)*this.slices + j+1);
+              this.indices.push(i*(this.slices+1) + j, (i+1)*(this.slices+1) + j+1, i*(this.slices+1) + j+1);
+              this.indices.push(i*(this.slices+1) + j, (i+1)*(this.slices+1) + j, (i+1)*(this.slices+1) + j+1);
             }
           }
         }
