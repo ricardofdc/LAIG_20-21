@@ -124,7 +124,7 @@
             </transformations>
             <descendants>
                 <!--<leaf type="cylinder" height="5" topRadius="10" bottomRadius="10" stacks="1" slices="30"/>-->
-                <leaf type="torus" inner="1" outer="3" slices="35" loops="38" />
+                <leaf type="torus" inner="1" outer="3" slices="5" loops="10" />
                <!-- <leaf type="rectangle" x1="0" y1="0" x2="8" y2="8" />-->
               <!--leaf type="triangle" x1="0" y1="0" x2="10" y2="0" x3="5" y3="5"/-->
                <!--leaf type="sphere" radius="7" slices="100" stacks="100" /-->
