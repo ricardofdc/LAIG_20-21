@@ -4,7 +4,7 @@
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="islandView">
+    <views default="insideCabanPerspective">
         <perspective id="islandView" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="8" y="0" z="0" />
@@ -389,34 +389,66 @@
         <!-- CABAN'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
         <node id="paintings">
-            <material id="darkGreyMaterial" />
+            <material id="whiteMaterial" />
             <texture id="clear"/>
             <transformations>
-                <translation x="0" y="2" z="0" />
             </transformations>
             <descendants>
                 <noderef id="paint1" />
+                <noderef id="paint2" />
             </descendants>
         </node>
 
         <node id="paint1">
             <material id="null" />
-            <texture id="drawTexture">
-                <amplification afs="2.2" aft="1.2" />
+            <texture id="null">
+                <amplification afs="2.1" aft="1.1" />
             </texture>
-            <transformations></transformations>
+            <transformations>
+                <translation x="0" y="2" z="-1.9" />
+            </transformations>
             <descendants>
-                <leaf type="rectangle" x1="-1.1" y1="-0.6" x2="1.1" y2="0.6" />
+                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
                 <noderef id="draw1" />
             </descendants>
         </node>
 
         <node id="draw1">
-            <material id="whiteMaterial" />
+            <material id="null" />
             <texture id="drawTexture">
                 <amplification afs="2" aft="1" />
             </texture>
-            <transformations></transformations>
+            <transformations>
+                <translation x="0" y="0" z="0.01" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
+            </descendants>
+        </node>
+
+        <node id="paint2">
+            <material id="null" />
+            <texture id="null">
+                <amplification afs="2.1" aft="1.1" />
+            </texture>
+            <transformations>
+                <translation x="-1.9" y="2" z="0" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
+                <noderef id="draw2" />
+            </descendants>
+        </node>
+
+        <node id="draw2">
+            <material id="null" />
+            <texture id="drawTexture">
+                <amplification afs="0.5" aft="0.25" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0" z="0.01" />
+            </transformations>
             <descendants>
                 <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
             </descendants>
