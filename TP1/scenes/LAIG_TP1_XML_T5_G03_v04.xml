@@ -430,7 +430,7 @@
         <node id="draw2">
             <material id="null" />
             <texture id="drawTexture">
-                <amplification afs="2" aft="1" />
+                <amplification afs="0.5" aft="0.25" />
             </texture>
             <transformations>
                 <translation x="0" y="0" z="0.01" />
