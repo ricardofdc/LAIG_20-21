@@ -1,6 +1,6 @@
 <lsf>
     <initials>
-        <reference length="0.5" />
+        <reference length="0.1" />
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
@@ -3420,9 +3420,7 @@
 
         <node id="boatWindow1">
             <material id="null" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
+            <texture id="clear" />
             <transformations>
                 <translation x="-0.6" y="0.9" z="1" />
             </transformations>
@@ -3433,9 +3431,7 @@
 
         <node id="boatWindow2">
             <material id="null" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
+            <texture id="clear" />
             <transformations>
                 <translation x="0.6" y="0.9" z="1" />
             </transformations>
@@ -3446,9 +3442,7 @@
 
         <node id="boatWindow3">
             <material id="null" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
+            <texture id="clear" />
             <transformations>
                 <translation x="0" y="0.9" z="-1" />
             </transformations>
@@ -3459,9 +3453,7 @@
 
         <node id="boatWindow">
             <material id="null" />
-            <texture id="null">
-                <amplification afs="1" aft="1" />
-            </texture>
+            <texture id="clear" />
             <transformations></transformations>
             <descendants>
                 <noderef id="boatWindowBorder" />
