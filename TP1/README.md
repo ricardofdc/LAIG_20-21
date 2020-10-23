@@ -11,7 +11,7 @@
 ## Project information
 
 - Scene
-  - Our scene represents an island composed by a big ocean, a circular sand island, a wood caban with a porch, some trees and a couple boats. Inside the caban there are four chairs and a table.
+  - Our scene represents an island composed by a big ocean, a circular sand island, a wooden hut with a porch, some trees and a couple boats. Inside the hut there are four chairs and a table.
   - Island scene: [LAIG_TP1_XML_T5_G03_v04.xml](TP1/scenes/LAIG_TP1_XML_T5_G03_v04.xml).
 
 <img src="photos/island_day.png" alt="Island" width="500"/>

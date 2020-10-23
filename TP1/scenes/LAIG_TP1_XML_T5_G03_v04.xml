@@ -4,38 +4,38 @@
         <!-- identifier of root node of the scene graph; this node -->
         <root id="root" />
     </initials>
-    <views default="insideCabanPerspective">
-        <perspective id="islandView" near="0.3" far="500" angle="35">
+    <views default="Island">
+        <perspective id="Island" near="0.3" far="500" angle="35">
             <from x="23" y="15" z="50" />
             <to x="8" y="0" z="0" />
         </perspective>
-        <perspective id="frontCamera" near="0.3" far="500" angle="35">
+        <perspective id="Hut Front" near="0.3" far="500" angle="35">
             <from x="0" y="10" z="30" />
             <to x="0" y="0" z="0" />
         </perspective>
-        <ortho id="frontOrtho" near="-30" far="100" left="-15" right="15" top="10" bottom="-1">
+        <ortho id="Hut Front-Ortho" near="-30" far="100" left="-15" right="15" top="10" bottom="-1">
             <from x="0" y="3" z="30" />
             <to x="0" y="0" z="0" />
             <up x="0" y="1" z="0" />
         </ortho>
-        <perspective id="insideCabanPerspective" near="0.3" far="20" angle="75">
+        <perspective id="Hut inside" near="0.3" far="20" angle="75">
             <from x="1.8" y="3.2" z="1.5" />
             <to x="-1.5" y="0" z="-1" />
         </perspective>
-        <ortho id="insideCabanOrtho" near="-0.1" far="5" left="-4" right="4" top="4" bottom="-4">
+        <ortho id="Hut inside-Ortho" near="-0.1" far="5" left="-4" right="4" top="4" bottom="-4">
             <from x="0" y="3.4" z="0" />
             <to x="0" y="0" z="0" />
             <up x="0" y="0" z="-1" />
         </ortho>
-        <perspective id="boat1Perspective" near="0.3" far="20" angle="75">
+        <perspective id="Left Boat" near="0.3" far="20" angle="75">
             <from x="-15" y="6" z="-12" />
             <to x="-15" y="0" z="-25" />
         </perspective>
-        <perspective id="boat2Perspective" near="0.3" far="20" angle="75">
+        <perspective id="Right Boat" near="0.3" far="20" angle="75">
             <from x="19" y="6" z="14" />
             <to x="23" y="0" z="22" />
         </perspective>
-        <perspective id="treePerspective" near="0.3" far="20" angle="50">
+        <perspective id="Tree" near="0.3" far="20" angle="50">
             <from x="-10" y="8" z="3" />
             <to x="-12" y="3" z="-10" />
         </perspective>
@@ -48,7 +48,7 @@
 
 
     <lights>
-        <light id="sun">
+        <light id="Sun">
             <!-- light identifier -->
             <enable value="1" />
             <!-- enable/disable -->
@@ -57,28 +57,28 @@
             <diffuse r="0.8" g="0.8" b="0.8" a="0.5" /> <!-- diffuse component -->
             <specular r="0.4" g="0.4" b="0.4" a="1.0" /> <!-- specular component -->
         </light>
-        <light id="moon">
+        <light id="Moon">
             <enable value="0" />
             <position x="0" y="-30" z="0" w="1" />
             <ambient r="0.063" g="0.153" b="0.250" a="1.0" />
             <diffuse r="0.251" g="0.612" b="1" a="1.0" />
             <specular r="0.0" g="0.0" b="0.0" a="1.0" />
         </light>
-        <light id="floorLight1">
+        <light id="Floor Light-Right">
             <enable value="0" />
             <position x="1.7" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="1.0" />
             <diffuse r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
-        <light id="floorLight2">
+        <light id="Floor Light-Left">
             <enable value="0" />
             <position x="-1.6" y="0.8" z="2.9" w="1" />
             <ambient r="0" g="0" b="0" a="0.5" />
             <diffuse r="1.0" g="0.7725" b="0.5608" a="0.1" />
             <specular r="1.0" g="0.7725" b="0.5608" a="0.1" />
         </light>
-        <light id="cabanLight">
+        <light id="Hut Light">
             <enable value="0" />
             <position x="0" y="4" z="0" w="1" />
             <ambient r="0" g="0" b="0" a="0.1" />
@@ -91,7 +91,7 @@
     <textures>
         <texture id="oceanTexture" path="./scenes/images/ocean.jpg" />
         <texture id="trunkTexture" path="./scenes/images/trunk.jpg" />
-        <texture id="cabanTexture" path="./scenes/images/caban.jpg" />
+        <texture id="hutTexture" path="./scenes/images/hut.jpg" />
         <texture id="coconutTexture" path="./scenes/images/coconut.jpg" />
         <texture id="leavesTexture" path="./scenes/images/leaf.jpg" />
         <texture id="sandTexture" path="./scenes/images/sand.jpg" />
@@ -189,7 +189,6 @@
                 <noderef id="skyCube" />
                 <noderef id="ocean" />
                 <noderef id="island" />
-                <noderef id="caban" />
                 <noderef id="boats" />
             </descendants>
         </node>
@@ -279,9 +278,10 @@
             <texture id="clear" />
             <transformations></transformations>
             <descendants>
-                <noderef id="islandBase" />
-                <noderef id="someTrees" />
                 <noderef id="someFloorLights" />
+                <noderef id="islandBase" />
+                <noderef id="hut" />
+                <noderef id="someTrees" />
             </descendants>
         </node>
 
@@ -349,23 +349,23 @@
             </descendants>
         </node>
 
-        <node id="caban">
+        <node id="hut">
             <material id="woodMaterial" />
-            <texture id="cabanTexture">
+            <texture id="hutTexture">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
                 <translation x="0" y="0.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="parede_esquerda" />
-                <noderef id="parede_direita" />
-                <noderef id="parede_tras" />
-                <noderef id="parede_frente" />
-                <noderef id="telhado_cabana" />
+                <noderef id="hutRoof" />
+                <noderef id="hutLeftWall" />
+                <noderef id="hutRightWall" />
+                <noderef id="hutBackWall" />
+                <noderef id="hutFrontWall" />
+                <noderef id="hutPorch" />
                 <noderef id="table" />
                 <noderef id="chairs" />
-                <noderef id="cabanPorch" />
                 <noderef id="paintings" />
             </descendants>
         </node>
@@ -374,85 +374,19 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- CABAN'S RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-        <node id="paintings">
-            <material id="whiteMaterial" />
-            <texture id="clear"/>
-            <transformations>
-            </transformations>
-            <descendants>
-                <noderef id="paint1" />
-                <noderef id="paint2" />
-            </descendants>
-        </node>
-
-        <node id="paint1">
-            <material id="null" />
-            <texture id="null">
-                <amplification afs="2.1" aft="1.1" />
-            </texture>
-            <transformations>
-                <translation x="0" y="2" z="-1.9" />
-            </transformations>
-            <descendants>
-                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
-                <noderef id="draw1" />
-            </descendants>
-        </node>
-
-        <node id="draw1">
-            <material id="null" />
-            <texture id="drawTexture">
-                <amplification afs="2" aft="1" />
-            </texture>
-            <transformations>
-                <translation x="0" y="0" z="0.01" />
-            </transformations>
-            <descendants>
-                <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
-            </descendants>
-        </node>
-
-        <node id="paint2">
-            <material id="null" />
-            <texture id="null">
-                <amplification afs="2.1" aft="1.1" />
-            </texture>
-            <transformations>
-                <translation x="-1.9" y="2" z="0" />
-                <rotation axis="y" angle="90" />
-            </transformations>
-            <descendants>
-                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
-                <noderef id="draw2" />
-            </descendants>
-        </node>
-
-        <node id="draw2">
-            <material id="null" />
-            <texture id="drawTexture">
-                <amplification afs="0.5" aft="0.25" />
-            </texture>
-            <transformations>
-                <translation x="0" y="0" z="0.01" />
-            </transformations>
-            <descendants>
-                <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
-            </descendants>
-        </node>
-
-        <node id="telhado_cabana">
+        <node id="hutRoof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="3.5" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="telhado_esquerda" />
-                <noderef id="telhado_direita" />
+                <noderef id="hutRoofLeft" />
+                <noderef id="hutRoofRight" />
             </descendants>
         </node>
 
-        <node id="telhado_esquerda">
+        <node id="hutRoofLeft">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -463,11 +397,11 @@
                 <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="telhado_metade" />
+                <noderef id="halfRoof" />
             </descendants>
         </node>
 
-        <node id="telhado_direita">
+        <node id="hutRoofRight">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -478,38 +412,38 @@
                 <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="telhado_metade" />
+                <noderef id="halfRoof" />
             </descendants>
         </node>
 
-        <node id="telhado_metade">
+        <node id="halfRoof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_telhado" />
-                <noderef id="tronco1_telhado" />
-                <noderef id="tronco2_telhado" />
-                <noderef id="tronco3_telhado" />
-                <noderef id="tronco4_telhado" />
-                <noderef id="tronco5_telhado" />
-                <noderef id="tronco6_telhado" />
-                <noderef id="tronco7_telhado" />
-                <noderef id="tronco8_telhado" />
-                <noderef id="tronco9_telhado" />
-                <noderef id="tronco10_telhado" />
-                <noderef id="tronco11_telhado" />
-                <noderef id="tronco12_telhado" />
-                <noderef id="tronco13_telhado" />
-                <noderef id="tronco14_telhado" />
-                <noderef id="tronco15_telhado" />
-                <noderef id="tronco16_telhado" />
+                <noderef id="trunk0_roof" />
+                <noderef id="trunk1_roof" />
+                <noderef id="trunk2_roof" />
+                <noderef id="trunk3_roof" />
+                <noderef id="trunk4_roof" />
+                <noderef id="trunk5_roof" />
+                <noderef id="trunk6_roof" />
+                <noderef id="trunk7_roof" />
+                <noderef id="trunk8_roof" />
+                <noderef id="trunk9_roof" />
+                <noderef id="trunk10_roof" />
+                <noderef id="trunk11_roof" />
+                <noderef id="trunk12_roof" />
+                <noderef id="trunk13_roof" />
+                <noderef id="trunk14_roof" />
+                <noderef id="trunk15_roof" />
+                <noderef id="trunk16_roof" />
             </descendants>
         </node>
 
-        <node id="parede_esquerda">
+        <node id="hutLeftWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -518,11 +452,11 @@
                 <translation x="-2.1" y="0.15" z="-2.5" />
             </transformations>
             <descendants>
-                <noderef id="parede_lateral" />
+                <noderef id="hutSideWall" />
             </descendants>
         </node>
 
-        <node id="parede_direita">
+        <node id="hutRightWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -531,11 +465,11 @@
                 <translation x="2.1" y="0.15" z="-2.5" />
             </transformations>
             <descendants>
-                <noderef id="parede_lateral" />
+                <noderef id="hutSideWall" />
             </descendants>
         </node>
 
-        <node id="parede_tras">
+        <node id="hutBackWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -545,12 +479,12 @@
                 <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="parede_lateral" />
-                <noderef id="parede_triangulo_superior" />
+                <noderef id="hutSideWall" />
+                <noderef id="hutTopTriangleWall" />
             </descendants>
         </node>
 
-        <node id="parede_frente">
+        <node id="hutFrontWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -560,70 +494,70 @@
                 <rotation axis="y" angle="90" />
             </transformations>
             <descendants>
-                <noderef id="parede_porta" />
-                <noderef id="parede_triangulo_superior" />
+                <noderef id="hutDoorWall" />
+                <noderef id="hutTopTriangleWall" />
             </descendants>
         </node>
 
-        <node id="parede_lateral">
+        <node id="hutSideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_parede_lateral" />
-                <noderef id="tronco1_parede_lateral" />
-                <noderef id="tronco2_parede_lateral" />
-                <noderef id="tronco3_parede_lateral" />
-                <noderef id="tronco4_parede_lateral" />
-                <noderef id="tronco5_parede_lateral" />
-                <noderef id="tronco6_parede_lateral" />
-                <noderef id="tronco7_parede_lateral" />
-                <noderef id="tronco8_parede_lateral" />
+                <noderef id="trunk0_sideWall" />
+                <noderef id="trunk1_sideWall" />
+                <noderef id="trunk2_sideWall" />
+                <noderef id="trunk3_sideWall" />
+                <noderef id="trunk4_sideWall" />
+                <noderef id="trunk5_sideWall" />
+                <noderef id="trunk6_sideWall" />
+                <noderef id="trunk7_sideWall" />
+                <noderef id="trunk8_sideWall" />
             </descendants>
         </node>
 
-        <node id="parede_porta">
+        <node id="hutDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_esq_parede_porta" />
-                <noderef id="tronco1_esq_parede_porta" />
-                <noderef id="tronco2_esq_parede_porta" />
-                <noderef id="tronco3_esq_parede_porta" />
-                <noderef id="tronco4_esq_parede_porta" />
-                <noderef id="tronco5_esq_parede_porta" />
-                <noderef id="tronco0_dir_parede_porta" />
-                <noderef id="tronco1_dir_parede_porta" />
-                <noderef id="tronco2_dir_parede_porta" />
-                <noderef id="tronco3_dir_parede_porta" />
-                <noderef id="tronco4_dir_parede_porta" />
-                <noderef id="tronco5_dir_parede_porta" />
-                <noderef id="tronco6_parede_lateral" />
-                <noderef id="tronco7_parede_lateral" />
-                <noderef id="tronco8_parede_lateral" />
+                <noderef id="trunk0_leftDoorWall" />
+                <noderef id="trunk1_leftDoorWall" />
+                <noderef id="trunk2_leftDoorWall" />
+                <noderef id="trunk3_leftDoorWall" />
+                <noderef id="trunk4_leftDoorWall" />
+                <noderef id="trunk5_leftDoorWall" />
+                <noderef id="trunk0_rightDoorWall" />
+                <noderef id="trunk1_rightDoorWall" />
+                <noderef id="trunk2_rightDoorWall" />
+                <noderef id="trunk3_rightDoorWall" />
+                <noderef id="trunk4_rightDoorWall" />
+                <noderef id="trunk5_rightDoorWall" />
+                <noderef id="trunk6_sideWall" />
+                <noderef id="trunk7_sideWall" />
+                <noderef id="trunk8_sideWall" />
             </descendants>
         </node>
 
-        <node id="parede_triangulo_superior">
+        <node id="hutTopTriangleWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
             <descendants>
-                <noderef id="tronco0_parede_triangulo" />
-                <noderef id="tronco1_parede_triangulo" />
-                <noderef id="tronco2_parede_triangulo" />
-                <noderef id="tronco3_parede_triangulo" />
+                <noderef id="trunk0_triangularWall" />
+                <noderef id="trunk1_triangularWall" />
+                <noderef id="trunk2_triangularWall" />
+                <noderef id="trunk3_triangularWall" />
             </descendants>
         </node>
 
-        <node id="tronco0_parede_lateral">
+        <node id="trunk0_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -632,11 +566,11 @@
                 <translation x="0" y="0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco1_parede_lateral">
+        <node id="trunk1_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -645,11 +579,11 @@
                 <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco2_parede_lateral">
+        <node id="trunk2_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -658,11 +592,11 @@
                 <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco3_parede_lateral">
+        <node id="trunk3_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -671,11 +605,11 @@
                 <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco4_parede_lateral">
+        <node id="trunk4_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -684,11 +618,11 @@
                 <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco5_parede_lateral">
+        <node id="trunk5_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -697,11 +631,11 @@
                 <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco6_parede_lateral">
+        <node id="trunk6_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -710,11 +644,11 @@
                 <translation x="0" y="1.8" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco7_parede_lateral">
+        <node id="trunk7_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -723,11 +657,11 @@
                 <translation x="0" y="2.1" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco8_parede_lateral">
+        <node id="trunk8_sideWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -736,11 +670,11 @@
                 <translation x="0" y="2.4" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_5metros" />
+                <noderef id="trunk_5m" />
             </descendants>
         </node>
 
-        <node id="tronco0_parede_triangulo">
+        <node id="trunk0_triangularWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -749,11 +683,11 @@
                 <translation x="0" y="2.7" z="0.5" />
             </transformations>
             <descendants>
-                <noderef id="tronco_4metros" />
+                <noderef id="trunk_4m" />
             </descendants>
         </node>
 
-        <node id="tronco1_parede_triangulo">
+        <node id="trunk1_triangularWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -762,11 +696,11 @@
                 <translation x="0" y="3.0" z="1.0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco2_parede_triangulo">
+        <node id="trunk2_triangularWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -775,11 +709,11 @@
                 <translation x="0" y="3.3" z="1.5" />
             </transformations>
             <descendants>
-                <noderef id="tronco_2metros" />
+                <noderef id="trunk_2m" />
             </descendants>
         </node>
 
-        <node id="tronco3_parede_triangulo">
+        <node id="trunk3_triangularWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -788,11 +722,11 @@
                 <translation x="0" y="3.6" z="2.0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco0_esq_parede_porta">
+        <node id="trunk0_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -801,11 +735,11 @@
                 <translation x="0" y="0.0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco1_esq_parede_porta">
+        <node id="trunk1_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -814,11 +748,11 @@
                 <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco2_esq_parede_porta">
+        <node id="trunk2_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -827,11 +761,11 @@
                 <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco3_esq_parede_porta">
+        <node id="trunk3_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -840,11 +774,11 @@
                 <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco4_esq_parede_porta">
+        <node id="trunk4_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -853,11 +787,11 @@
                 <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco5_esq_parede_porta">
+        <node id="trunk5_leftDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -866,11 +800,11 @@
                 <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3metros" />
+                <noderef id="trunk_3m" />
             </descendants>
         </node>
 
-        <node id="tronco0_dir_parede_porta">
+        <node id="trunk0_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -879,11 +813,11 @@
                 <translation x="0" y="0.0" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco1_dir_parede_porta">
+        <node id="trunk1_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -892,11 +826,11 @@
                 <translation x="0" y="0.3" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco2_dir_parede_porta">
+        <node id="trunk2_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -905,11 +839,11 @@
                 <translation x="0" y="0.6" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco3_dir_parede_porta">
+        <node id="trunk3_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -918,11 +852,11 @@
                 <translation x="0" y="0.9" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco4_dir_parede_porta">
+        <node id="trunk4_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -931,11 +865,11 @@
                 <translation x="0" y="1.2" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco5_dir_parede_porta">
+        <node id="trunk5_rightDoorWall">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -944,11 +878,11 @@
                 <translation x="0" y="1.5" z="4" />
             </transformations>
             <descendants>
-                <noderef id="tronco_1metros" />
+                <noderef id="trunk_1m" />
             </descendants>
         </node>
 
-        <node id="tronco0_telhado">
+        <node id="trunk0_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -957,11 +891,11 @@
                 <translation x="0" y="0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco1_telhado">
+        <node id="trunk1_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -970,11 +904,11 @@
                 <translation x="0" y="0.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco2_telhado">
+        <node id="trunk2_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -983,11 +917,11 @@
                 <translation x="0" y="0.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco3_telhado">
+        <node id="trunk3_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -996,11 +930,11 @@
                 <translation x="0" y="0.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco4_telhado">
+        <node id="trunk4_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1009,11 +943,11 @@
                 <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco5_telhado">
+        <node id="trunk5_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1022,11 +956,11 @@
                 <translation x="0" y="1.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco6_telhado">
+        <node id="trunk6_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1035,11 +969,11 @@
                 <translation x="0" y="1.8" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco7_telhado">
+        <node id="trunk7_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1048,11 +982,11 @@
                 <translation x="0" y="2.1" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco8_telhado">
+        <node id="trunk8_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1061,11 +995,11 @@
                 <translation x="0" y="2.4" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco9_telhado">
+        <node id="trunk9_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1074,11 +1008,11 @@
                 <translation x="0" y="2.7" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco10_telhado">
+        <node id="trunk10_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1087,11 +1021,11 @@
                 <translation x="0" y="1.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco11_telhado">
+        <node id="trunk11_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1100,11 +1034,11 @@
                 <translation x="0" y="3.0" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco12_telhado">
+        <node id="trunk12_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1113,11 +1047,11 @@
                 <translation x="0" y="3.3" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco13_telhado">
+        <node id="trunk13_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1126,11 +1060,11 @@
                 <translation x="0" y="3.6" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco14_telhado">
+        <node id="trunk14_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1139,11 +1073,11 @@
                 <translation x="0" y="3.9" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco15_telhado">
+        <node id="trunk15_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1152,11 +1086,11 @@
                 <translation x="0" y="4.2" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco16_telhado">
+        <node id="trunk16_roof">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1165,11 +1099,11 @@
                 <translation x="0" y="4.5" z="0" />
             </transformations>
             <descendants>
-                <noderef id="tronco_3.5metros" />
+                <noderef id="trunk_3.5m" />
             </descendants>
         </node>
 
-        <node id="tronco_5metros">
+        <node id="trunk_5m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1180,7 +1114,7 @@
             </descendants>
         </node>
 
-        <node id="tronco_4metros">
+        <node id="trunk_4m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1191,7 +1125,7 @@
             </descendants>
         </node>
 
-        <node id="tronco_3.5metros">
+        <node id="trunk_3.5m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1202,7 +1136,7 @@
             </descendants>
         </node>
 
-        <node id="tronco_3metros">
+        <node id="trunk_3m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1213,7 +1147,7 @@
             </descendants>
         </node>
 
-        <node id="tronco_2metros">
+        <node id="trunk_2m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1224,7 +1158,7 @@
             </descendants>
         </node>
 
-        <node id="tronco_1metros">
+        <node id="trunk_1m">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1235,7 +1169,7 @@
             </descendants>
         </node>
 
-        <node id="cabanPorch">
+        <node id="hutPorch">
             <material id="null" />
             <texture id="null">
                 <amplification afs="1" aft="1" />
@@ -1597,7 +1531,7 @@
 
         <node id="porchRoofBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="4.2" aft="2.2" />
             </texture>
             <transformations>
@@ -1610,7 +1544,7 @@
 
         <node id="porchRoofTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="4.2" aft="2.2" />
             </texture>
             <transformations>
@@ -1624,7 +1558,7 @@
 
         <node id="porchRoofFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="4.2" aft="0.05" />
             </texture>
             <transformations>
@@ -1637,7 +1571,7 @@
 
         <node id="porchRoofBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="4.2" aft="0.05" />
             </texture>
             <transformations>
@@ -1651,7 +1585,7 @@
 
         <node id="porchRoofLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="2.2" aft="0.05" />
             </texture>
             <transformations>
@@ -1665,7 +1599,7 @@
 
         <node id="porchRoofRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="2.2" aft="0.05" />
             </texture>
             <transformations>
@@ -1710,7 +1644,7 @@
 
         <node id="tableTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1728,7 +1662,7 @@
 
         <node id="tableTopBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="1" />
             </texture>
             <transformations>
@@ -1741,7 +1675,7 @@
 
         <node id="tableTopTopFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="1" />
             </texture>
             <transformations>
@@ -1755,7 +1689,7 @@
 
         <node id="tableTopFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="0.1" />
             </texture>
             <transformations>
@@ -1768,7 +1702,7 @@
 
         <node id="tableTopBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="0.1" />
             </texture>
             <transformations>
@@ -1782,7 +1716,7 @@
 
         <node id="tableTopLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="0.1" />
             </texture>
             <transformations>
@@ -1796,7 +1730,7 @@
 
         <node id="tableTopRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="0.1" />
             </texture>
             <transformations>
@@ -1810,7 +1744,7 @@
 
         <node id="tableLegs">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -1824,7 +1758,7 @@
 
         <node id="tableLeg1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1837,7 +1771,7 @@
 
         <node id="tableLeg2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1850,7 +1784,7 @@
 
         <node id="tableLeg3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1863,7 +1797,7 @@
 
         <node id="tableLeg4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -1876,11 +1810,10 @@
 
         <node id="tableLeg">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
                 <noderef id="tableLegBase" />
                 <noderef id="tableLegTop" />
@@ -1893,7 +1826,7 @@
 
         <node id="tableLegBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.1" />
             </texture>
             <transformations>
@@ -1906,7 +1839,7 @@
 
         <node id="tableLegTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.1" />
             </texture>
             <transformations>
@@ -1920,7 +1853,7 @@
 
         <node id="tableLegFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
@@ -1933,7 +1866,7 @@
 
         <node id="tableLegBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
@@ -1947,7 +1880,7 @@
 
         <node id="tableLegLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
@@ -1961,7 +1894,7 @@
 
         <node id="tableLegRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.1" aft="0.9" />
             </texture>
             <transformations>
@@ -1994,7 +1927,7 @@
 
         <node id="chair1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2008,7 +1941,7 @@
 
         <node id="chair2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2022,7 +1955,7 @@
 
         <node id="chair3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2035,7 +1968,7 @@
 
         <node id="chair4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2050,7 +1983,7 @@
         <!--Chair dimensions: width - 0.5 ; heigth - 1.35 -->
         <node id="chair">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -2063,7 +1996,7 @@
 
         <node id="chairBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2081,10 +2014,10 @@
 
         <node id="chairBaseBottom">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.5" />
             </texture>
-                <transformations>
+            <transformations>
                 <rotation axis="x" angle="90" />
             </transformations>
             <descendants>
@@ -2094,7 +2027,7 @@
 
         <node id="chairBaseTopFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.5" />
             </texture>
             <transformations>
@@ -2108,7 +2041,7 @@
 
         <node id="chairBaseFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.05" />
             </texture>
             <transformations>
@@ -2121,7 +2054,7 @@
 
         <node id="chairBaseBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.05" />
             </texture>
             <transformations>
@@ -2135,7 +2068,7 @@
 
         <node id="chairBaseLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.05" />
             </texture>
             <transformations>
@@ -2149,7 +2082,7 @@
 
         <node id="chairBaseRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.5" aft="0.05" />
             </texture>
             <transformations>
@@ -2163,7 +2096,7 @@
 
         <node id="chairLegs">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -2177,7 +2110,7 @@
 
         <node id="chairLeg1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2190,7 +2123,7 @@
 
         <node id="chairLeg2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2203,7 +2136,7 @@
 
         <node id="chairLeg3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2216,7 +2149,7 @@
 
         <node id="chairLeg4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2229,11 +2162,10 @@
 
         <node id="chairLeg">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
                 <noderef id="chairLegBase" />
                 <noderef id="chairLegTop" />
@@ -2246,7 +2178,7 @@
 
         <node id="chairLegBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.05" />
             </texture>
             <transformations>
@@ -2259,7 +2191,7 @@
 
         <node id="chairLegTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.05" />
             </texture>
             <transformations>
@@ -2273,7 +2205,7 @@
 
         <node id="chairLegFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.6" />
             </texture>
             <transformations>
@@ -2286,7 +2218,7 @@
 
         <node id="chairLegBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.6" />
             </texture>
             <transformations>
@@ -2300,7 +2232,7 @@
 
         <node id="chairLegLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.6" />
             </texture>
             <transformations>
@@ -2314,7 +2246,7 @@
 
         <node id="chairLegRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.6" />
             </texture>
             <transformations>
@@ -2328,7 +2260,7 @@
 
         <node id="chairBackSupport">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2343,7 +2275,7 @@
 
         <node id="backSupportLeft">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2356,7 +2288,7 @@
 
         <node id="backSupportRight">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2369,11 +2301,10 @@
 
         <node id="backSupportColumn">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
-            <transformations>
-            </transformations>
+            <transformations></transformations>
             <descendants>
                 <noderef id="backSupportColumnBase" />
                 <noderef id="backSupportColumnTop" />
@@ -2386,7 +2317,7 @@
 
         <node id="backSupportColumnBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.05" />
             </texture>
             <transformations>
@@ -2399,7 +2330,7 @@
 
         <node id="backSupportColumnTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.05" />
             </texture>
             <transformations>
@@ -2413,7 +2344,7 @@
 
         <node id="backSupportColumnFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.7" />
             </texture>
             <transformations>
@@ -2426,7 +2357,7 @@
 
         <node id="backSupportColumnBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.7" />
             </texture>
             <transformations>
@@ -2440,7 +2371,7 @@
 
         <node id="backSupportColumnLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.7" />
             </texture>
             <transformations>
@@ -2454,7 +2385,7 @@
 
         <node id="backSupportColumnRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.7" />
             </texture>
             <transformations>
@@ -2468,7 +2399,7 @@
 
         <node id="backBoardSupport">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2486,7 +2417,7 @@
 
         <node id="backBoardSupportBase">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.4" aft="0.05" />
             </texture>
             <transformations>
@@ -2499,7 +2430,7 @@
 
         <node id="backBoardSupportTop">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.4" aft="0.05" />
             </texture>
             <transformations>
@@ -2513,7 +2444,7 @@
 
         <node id="backBoardSupportFrontFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.4" aft="0.2" />
             </texture>
             <transformations>
@@ -2526,7 +2457,7 @@
 
         <node id="backBoardSupportBackFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.4" aft="0.2" />
             </texture>
             <transformations>
@@ -2540,7 +2471,7 @@
 
         <node id="backBoardSupportLeftFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.2" />
             </texture>
             <transformations>
@@ -2554,7 +2485,7 @@
 
         <node id="backBoardSupportRightFace">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.05" aft="0.2" />
             </texture>
             <transformations>
@@ -2569,9 +2500,80 @@
         <!-- END OF CHAIR'S RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- PAINTINGS RELATED CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <node id="paintings">
+            <material id="whiteMaterial" />
+            <texture id="clear" />
+            <transformations></transformations>
+            <descendants>
+                <noderef id="paint1" />
+                <noderef id="paint2" />
+            </descendants>
+        </node>
+
+        <node id="paint1">
+            <material id="null" />
+            <texture id="null">
+                <amplification afs="2.1" aft="1.1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="2" z="-1.9" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
+                <noderef id="draw1" />
+            </descendants>
+        </node>
+
+        <node id="draw1">
+            <material id="null" />
+            <texture id="drawTexture">
+                <amplification afs="2" aft="1" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0" z="0.01" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
+            </descendants>
+        </node>
+
+        <node id="paint2">
+            <material id="null" />
+            <texture id="null">
+                <amplification afs="2.1" aft="1.1" />
+            </texture>
+            <transformations>
+                <translation x="-1.9" y="2" z="0" />
+                <rotation axis="y" angle="90" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1.05" y1="-0.55" x2="1.05" y2="0.55" />
+                <noderef id="draw2" />
+            </descendants>
+        </node>
+
+        <node id="draw2">
+            <material id="null" />
+            <texture id="drawTexture">
+                <amplification afs="0.5" aft="0.25" />
+            </texture>
+            <transformations>
+                <translation x="0" y="0" z="0.01" />
+            </transformations>
+            <descendants>
+                <leaf type="rectangle" x1="-1" y1="-0.5" x2="1" y2="0.5" />
+            </descendants>
+        </node>
+
+        <!-- END OF PAINTINGS RELATED CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
         <node id="someTrees">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -2591,7 +2593,7 @@
 
         <node id="tree1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2604,7 +2606,7 @@
 
         <node id="tree2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2617,7 +2619,7 @@
 
         <node id="tree3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2630,7 +2632,7 @@
 
         <node id="tree4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2644,7 +2646,7 @@
 
         <node id="tree5">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2658,7 +2660,7 @@
 
         <node id="tree6">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2672,7 +2674,7 @@
 
         <node id="tree7">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2781,7 +2783,7 @@
 
         <node id="leaf1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2796,7 +2798,7 @@
 
         <node id="leaf2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2811,7 +2813,7 @@
 
         <node id="leaf3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2825,7 +2827,7 @@
 
         <node id="leaf4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2839,7 +2841,7 @@
 
         <node id="leaf5">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2854,7 +2856,7 @@
 
         <node id="leaf6">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2867,7 +2869,7 @@
         </node>
         <node id="leaf">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -2903,7 +2905,7 @@
 
         <node id="leafPt1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2917,7 +2919,7 @@
 
         <node id="leafPt2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2931,7 +2933,7 @@
 
         <node id="leafPt3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2945,7 +2947,7 @@
 
         <node id="leafPt4">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2959,7 +2961,7 @@
 
         <node id="leafPt5">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2973,7 +2975,7 @@
 
         <node id="leafPt6">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -2987,7 +2989,7 @@
 
         <node id="leafPt7">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -3001,7 +3003,7 @@
 
         <node id="leafPt8">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -3015,7 +3017,7 @@
 
         <node id="leafPt9">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -3029,7 +3031,7 @@
 
         <node id="leafPt10">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="0.2" aft="2.5" />
             </texture>
             <transformations>
@@ -3087,7 +3089,7 @@
 
         <node id="boat2">
             <material id="null" />
-            <texture id="boatTexture" >
+            <texture id="boatTexture">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3105,7 +3107,7 @@
 
         <node id="boatStructure">
             <material id="null" />
-            <texture id="boatTexture" >
+            <texture id="boatTexture">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
@@ -3120,7 +3122,7 @@
 
         <node id="boatStructureLeft">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3133,7 +3135,7 @@
 
         <node id="boatStructureRight">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3158,7 +3160,7 @@
 
         <node id="boatStructureSide1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="1.5" />
             </texture>
             <transformations></transformations>
@@ -3171,7 +3173,7 @@
 
         <node id="boatStructureSide2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3199,7 +3201,7 @@
 
         <node id="boatStructureBase1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="2" />
             </texture>
             <transformations>
@@ -3212,7 +3214,7 @@
 
         <node id="boatStructureBase2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1.5" aft="2" />
             </texture>
             <transformations>
@@ -3226,7 +3228,7 @@
 
         <node id="boatStructureFront">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3267,7 +3269,7 @@
 
         <node id="boatStructureBack">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3310,7 +3312,7 @@
 
         <node id="boatSmallFlag1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="0.7" />
             </texture>
             <transformations></transformations>
@@ -3321,7 +3323,7 @@
 
         <node id="boatSmallFlag2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3347,7 +3349,7 @@
 
         <node id="boatFrontMainSail1">
             <material id="null" />
-            <texture id="mainSailsTexture" >
+            <texture id="mainSailsTexture">
                 <amplification afs="3.8" aft="3.4" />
             </texture>
             <transformations></transformations>
@@ -3358,7 +3360,7 @@
 
         <node id="boatBackMainSail1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3383,7 +3385,7 @@
 
         <node id="boatFrontMainSail2">
             <material id="null" />
-            <texture id="mainSailsTexture" >
+            <texture id="mainSailsTexture">
                 <amplification afs="1.9" aft="1.7" />
             </texture>
             <transformations></transformations>
@@ -3394,7 +3396,7 @@
 
         <node id="boatBackMainSail2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3418,7 +3420,7 @@
 
         <node id="boatWindow1">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3431,7 +3433,7 @@
 
         <node id="boatWindow2">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3444,7 +3446,7 @@
 
         <node id="boatWindow3">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations>
@@ -3457,7 +3459,7 @@
 
         <node id="boatWindow">
             <material id="null" />
-            <texture id="null" >
+            <texture id="null">
                 <amplification afs="1" aft="1" />
             </texture>
             <transformations></transformations>
