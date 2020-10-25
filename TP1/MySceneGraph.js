@@ -825,7 +825,7 @@ class MySceneGraph {
                                 return this.onXMLMinorError("Unable to parse bottomRadius of the " + leaf_type + " on node " + nodeID);
 
                             // slices
-                            var slices = this.reader.getInteger(descendants[j], 'slices');
+                            var slices = this.reader.genew MyCylinder(this.scene, bottomRadius, topRadius, height, slices, stacks)tInteger(descendants[j], 'slices');
                             var slices_float = this.reader.getFloat(descendants[j], 'slices');
                             if(slices != slices_float){
                                 this.onXMLMinorError("On " + leaf_type + " declaration slices=" + slices_float + " was rounded to slices=" + slices + " on node " + nodeID);
@@ -841,7 +841,10 @@ class MySceneGraph {
                             }
                             if (stacks == null || isNaN(stacks))
                                 return this.onXMLMinorError("Unable to parse stacks of the " + leaf_type + " on node " + nodeID);
-                            this.nodes[nodeID].addLeaf(new MyCylinder(this.scene, bottomRadius, topRadius, height, slices, stacks));
+
+                            let cylinder = new MyCylinder(this.scene, bottomRadius, topRadius, height, slices, stacks);
+                            cylinder.updateTexCoords(texture_afs, texture_aft);
+                            this.nodes[nodeID].addLeaf(cylinder);
                             break;
 
                         case "torus":
@@ -1052,24 +1055,6 @@ class MySceneGraph {
      * @param {string} text - id of the texture from parent node
      */
     processNode(id, mat, text){
-        /**
-        *
-        * ProcessNode(id, tg, mat, text){
-        *   ajustar tg->tg1(matriz transformação Ma*Mn);
-        *   ajustar mat->mat1 (material);
-        *   ajustar text->text1 (textura);
-        *   para cada descendente:
-        *       if(descendente == primitiva):
-        *           desenhar descendente;
-        *       else:
-        *           push(t1);
-        *           push(mat1);
-        *           push(text1);
-        *           ProcessNode(child, tg1, mat1, text1);
-        * }
-        *
-        */
-
         var node = this.nodes[id];
         var node_material;
         var mat_id = mat;
