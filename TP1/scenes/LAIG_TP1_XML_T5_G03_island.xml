@@ -6,7 +6,7 @@
     </initials>
     <views default="Island">
         <perspective id="Island" near="0.3" far="500" angle="35">
-            <from x="23" y="15" z="50" />
+            <from x="17" y="15" z="50" />
             <to x="8" y="0" z="0" />
         </perspective>
         <perspective id="Hut Front" near="0.3" far="500" angle="35">
@@ -42,7 +42,7 @@
     </views>
 
     <illumination>
-        <ambient r="0.2" g="0.2" b="0.2" a="1.0" /> <!-- global ambient -->
+        <ambient r="0.1" g="0.1" b="0.1" a="1.0" /> <!-- global ambient -->
         <background r="0.529" g="0.808" b="0.922" a="1.0" /> <!-- background color -->
     </illumination>
 
@@ -60,7 +60,7 @@
         <light id="Moon">
             <enable value="0" />
             <position x="0" y="-30" z="0" w="1" />
-            <ambient r="0.063" g="0.153" b="0.250" a="1.0" />
+            <ambient r="0.032" g="0.077" b="0.125" a="1.0" />
             <diffuse r="0.251" g="0.612" b="1" a="1.0" />
             <specular r="0.0" g="0.0" b="0.0" a="1.0" />
         </light>
