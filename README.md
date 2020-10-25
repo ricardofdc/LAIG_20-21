@@ -13,7 +13,7 @@
 ### [TP1 - Scene Graph](TP1)
 
 - Cylinder texture:
-  - We implemented amplification factors to the texture of the cylinder: for unitary texture coordinatres `afs` must be equal to `height` and `aft` must be equal to `the perimeter of the biggest base` of the cylinder.
+  - We implemented amplification factors to the texture of the cylinder: for unitary texture coordinatres `afs = perimeter of the biggest base` and `aft = height` of the cylinder.
 
 - Main scene:
   - Our scene represents an island composed by a big ocean, a circular sand island, a wooden hut with a porch, some trees and a couple boats. Inside the hut there are four chairs and a table.

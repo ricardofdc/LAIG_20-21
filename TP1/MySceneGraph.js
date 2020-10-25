@@ -225,15 +225,20 @@ class MySceneGraph {
         this.idRoot = id;
 
         // Get axis length
-        if(referenceIndex == -1)
+        if(referenceIndex == -1){
             this.onXMLMinorError("no axis_length defined for scene; assuming 'length = 1'");
+            this.referenceLength = 1;
+        }
 
         var refNode = children[referenceIndex];
         var axis_length = this.reader.getFloat(refNode, 'length');
-        if (axis_length == null)
+        if (axis_length == null){
             this.onXMLMinorError("no axis_length defined for scene; assuming 'length = 1'");
-
-        this.referenceLength = axis_length || 1;
+            this.referenceLength = 1;
+        }
+        else{
+            this.referenceLength = axis_length;
+        }
 
         this.log("Parsed initials");
 

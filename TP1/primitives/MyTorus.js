@@ -45,7 +45,7 @@ class MyTorus extends CGFobject {
                 var nz = Math.sin(j*theta);
 
                 this.normals.push(nx, ny, nz);
-                this.texCoords.push(i / this.loops, j / this.slices);
+                this.texCoords.push(i / this.loops, 1 - j / this.slices);
             }
         }
 
