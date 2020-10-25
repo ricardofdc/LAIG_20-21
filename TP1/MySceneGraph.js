@@ -1063,7 +1063,7 @@ class MySceneGraph {
         var node = this.nodes[id];
         var node_material;
         var mat_id = mat;
-        var texture = text;
+        var texture_id = text;
 
         this.scene.pushMatrix();
 
@@ -1076,40 +1076,34 @@ class MySceneGraph {
         node_material = this.materials[mat_id];
 
         //Texturas
-        if(node.texture == "clear"){
-            node.clearTexture();
-        }
-        else if(node.texture != "null"){
-            texture = node.texture;
+        if(node.texture != "null"){
+            texture_id = node.texture;
         }
 
-        if(texture == null){
+        if(texture_id == "clear" || texture_id == "null"){  //texture_id == "null" can only happen if root's texture = "null"
             node_material.setTexture(null);
         }
         else{
-            node_material.setTexture(this.textures[texture]);
+            node_material.setTexture(this.textures[texture_id]);
         }
         node_material.setTextureWrap('REPEAT', 'REPEAT');
         node_material.apply();
 
         //ajustar matriz de transformação
-        if(node.transformations!=null){
-            this.scene.multMatrix(node.transformations);
-        }
+        this.scene.multMatrix(node.transformations);
 
         //correr os descendentes
         for(let i=0; i<node.descendants.leaves.length; i++){
             node.descendants.leaves[i].display();
         }
         for(let i=0; i<node.descendants.nodes.length; i++){
-
             var child_id = node.descendants.nodes[i];
             if (this.nodes[child_id] == null){
                 this.onXMLError(child_id + " node used in " + id + " not found!");
                 this.scene.sceneInited = false;
                 return;
             }
-            this.processNode(child_id, mat_id, texture);
+            this.processNode(child_id, mat_id, texture_id);
         }
         this.scene.popMatrix();
     }
