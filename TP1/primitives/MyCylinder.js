@@ -98,44 +98,43 @@ class MyCylinder extends CGFobject {
 		var maxRadius = (this.topRadius > this.bottomRadius) ? this.topRadius : this.bottomRadius;
 		var perimeter = 2 * Math.PI * maxRadius;
 
-		//afs -> altura do cilindro
-		//aft -> 2.pi.r = circunferencia
+		//aft -> altura do cilindro
+		//afs -> 2.pi.r = circunferencia
 
 
 		const delta_angle = 2 * Math.PI / this.slices;
-		//var radius = this.bottomRadius;
-		var incS = (this.height * this.stacks) / afs;
-		var incT = perimeter / (aft * this.slices) ;
+		var incT = this.height / (this.stacks * aft);
+		var incS = perimeter / (afs * this.slices) ;
 
 
 		for(let i=0; i<= this.slices; i++){
-			let s = perimeter / (aft*2);
-			let t = perimeter / (aft*2);
+			let s = perimeter / (afs*2);
+			let t = perimeter / (afs*2);
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s = -perimeter / (aft*2) * Math.cos(i * delta_angle) + perimeter / (aft*2);
-			let t = -perimeter / (aft*2) * Math.sin(i * delta_angle) + perimeter / (aft*2);
+			let s = -perimeter / (afs*2) * Math.cos(i * delta_angle) + perimeter / (afs*2);
+			let t = -perimeter / (afs*2) * Math.sin(i * delta_angle) + perimeter / (afs*2);
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<=this.stacks; i++){
 			for(let j=0; j<=this.slices; j++){
-				this.texCoords.push(1 - incS * i, incT * j);
+				this.texCoords.push(incS * j, 1 - incT * i);
 
 			}
 		}
 
 		for(let i=0; i<=this.slices; i++){
-			let s = perimeter / (aft*2);
-			let t = perimeter / (aft*2);
+			let s = perimeter / (afs*2);
+			let t = perimeter / (afs*2);
 			this.texCoords.push(s,t);
 		}
 
 		for(let i=0; i<= this.slices; i++){
-			let s = perimeter / (aft*2) * Math.cos(i * delta_angle) + perimeter / (aft*2);
-			let t = perimeter / (aft*2) * Math.sin(i * delta_angle) + perimeter / (aft*2);
+			let s = perimeter / (afs*2) * Math.cos(i * delta_angle) + perimeter / (afs*2);
+			let t = perimeter / (afs*2) * Math.sin(i * delta_angle) + perimeter / (afs*2);
 			this.texCoords.push(s,t);
 		}
 

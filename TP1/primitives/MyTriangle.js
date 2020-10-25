@@ -42,9 +42,9 @@ class MyTriangle extends CGFobject {
 	}
 
 	updateTexCoords(afs, aft) {
-		var a = Math.sqrt(Math.pow(this.p1[0] - this.p3[0], 2) + Math.pow(this.p1[1] - this.p3[1], 2));
-		var b = Math.sqrt(Math.pow(this.p2[0] - this.p1[0], 2) + Math.pow(this.p2[1] - this.p1[1], 2));
-		var c = Math.sqrt(Math.pow(this.p3[0] - this.p2[0], 2) + Math.pow(this.p3[1] - this.p2[1], 2));
+		var a = Math.sqrt(Math.pow(this.p1[0] - this.p2[0], 2) + Math.pow(this.p1[1] - this.p2[1], 2));
+		var b = Math.sqrt(Math.pow(this.p3[0] - this.p2[0], 2) + Math.pow(this.p3[1] - this.p2[1], 2));
+		var c = Math.sqrt(Math.pow(this.p3[0] - this.p1[0], 2) + Math.pow(this.p3[1] - this.p1[1], 2));
 
 		var alpha = Math.acos((Math.pow(a, 2) - Math.pow(b, 2) + Math.pow(c, 2)) / (2 * a * c));
 
