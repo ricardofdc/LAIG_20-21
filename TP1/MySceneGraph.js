@@ -397,11 +397,11 @@ class MySceneGraph {
             // Specifications for the current light.
 
             nodeNames = [];
-            for (var j = 0; j < grandChildren.length; j++) {
+            for (let j = 0; j < grandChildren.length; j++) {
                 nodeNames.push(grandChildren[j].nodeName);
             }
 
-            for (var j = 0; j < attributeNames.length; j++) {
+            for (let j = 0; j < attributeNames.length; j++) {
                 var attributeIndex = nodeNames.indexOf(attributeNames[j]);
 
                 if (attributeIndex != -1) {
@@ -825,7 +825,7 @@ class MySceneGraph {
                                 return this.onXMLMinorError("Unable to parse bottomRadius of the " + leaf_type + " on node " + nodeID);
 
                             // slices
-                            var slices = this.reader.genew MyCylinder(this.scene, bottomRadius, topRadius, height, slices, stacks)tInteger(descendants[j], 'slices');
+                            var slices = this.reader.getInteger(descendants[j], 'slices');
                             var slices_float = this.reader.getFloat(descendants[j], 'slices');
                             if(slices != slices_float){
                                 this.onXMLMinorError("On " + leaf_type + " declaration slices=" + slices_float + " was rounded to slices=" + slices + " on node " + nodeID);

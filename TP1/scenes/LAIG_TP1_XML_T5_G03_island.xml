@@ -339,7 +339,7 @@
         <node id="islandBase">
             <material id="sandMaterial" />
             <texture id="sandTexture">
-                <amplification afs="1" aft="1" />
+                <amplification afs="0.5" aft="30" />
             </texture>
             <transformations>
                 <rotation axis="x" angle="-90" />
